@@ -4,7 +4,7 @@ define(['underscoreM', 'marionette', 'templates', 'views/preView', 'bootstrap'],
         itemView: PreView,
 		itemViewContainer: '#compContainer',
         template: _.template(templates.composite),
-        initialize: function(opt) {
+        initialize: function() {
 			//
         }
     });

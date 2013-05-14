@@ -14,7 +14,9 @@ define(['backbone', 'underscoreM', 'marionette', 'vent', 'views/templateView', '
 
     // marionette app events...
     app.on('initialize:after', function() {
-        Backbone.history.start();
+        if (Backbone.history){
+            Backbone.history.start();
+        }
     });
 
     vent.on('app:show', function(nodeId) {
