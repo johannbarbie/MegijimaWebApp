@@ -22,7 +22,7 @@ define(['backbone', 'underscoreM', 'marionette', 'vent', 'views/templateView', '
     vent.on('app:show', function(nodeId) {
         var appView = new MainView({model: app.graph.getNode(nodeId)});
         app.content.show(appView);
-        var compView = new CompositeView({collection: app.graph.getClosest(nodeId,3)});
+        var compView = new CompositeView({collection: app.graph.getClosest(nodeId,7)});
         app.related.show(compView);
     });
 
@@ -46,11 +46,11 @@ define(['backbone', 'underscoreM', 'marionette', 'vent', 'views/templateView', '
 
         app.graph = new Graph();
 
-        app.header.show(new TemplateView({tmplt:templates.header}));
+        //app.header.show(new TemplateView({tmplt:templates.header}));
 
         app.navigation.show(new NavigationView());
 
-        app.footer.show(new TemplateView({tmplt:templates.footer}));
+        //app.footer.show(new TemplateView({tmplt:templates.footer}));
 
         new options.pageController.Router({
             controller: options.pageController // wire-up the start method

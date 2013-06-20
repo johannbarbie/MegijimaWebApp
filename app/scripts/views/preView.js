@@ -1,10 +1,10 @@
 define(['underscoreM', 'marionette'], function(_, Marionette) {
     'use strict';
     return Marionette.ItemView.extend({
-        className: 'fromTemplate',
+        className: 'overlay',
         render: function(){
             var val = this.model.get('preview');
-            var cont = '<div class="span4"><p>';
+            var cont = '<div><p>';
             for (var i=0;i<10;i++){
                 cont += val + ' ';
             }

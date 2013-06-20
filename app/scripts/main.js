@@ -10,7 +10,8 @@ require.config({
         marionette: '../components/marionette/lib/core/amd/backbone.marionette',  // amd version
         bootstrap: '../components/sass-bootstrap/docs/assets/js/bootstrap',
         text: '../components/requirejs-text/text',
-        jitGraph: 'libs/jitGraph/Graph'
+        jitGraph: 'libs/jitGraph/Graph',
+        leaflet: '../components/leaflet/dist/leaflet-src'
     },
     shim: {
         bootstrap: {

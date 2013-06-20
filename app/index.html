@@ -14,7 +14,10 @@
         <link rel="stylesheet" href="components/html5-boilerplate/css/main.css">
         <!-- endbuild -->
         <link rel="stylesheet" href="styles/main.css">
-
+        <link rel="stylesheet" href="styles/leaflet.css" />
+         <!--[if lte IE 8]>
+             <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.ie.css" />
+         <![endif]-->
         <!-- Fav and touch icons -->
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
@@ -29,16 +32,11 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
         <header></header>
-        <div class="container-fluid">
-          <div class="row-fluid">
-            <div class="span3">
-              <div id="navigation"></div>
-            </div>
-            <div class="span9">
+        <div id="map"></div>
+        <div class="main">
               <div id="content"></div>
               <div id="related"></div>
-            </div>
-          </div>
+              <div id="navigation"></div>
         </div>
         <footer></footer>
         <!-- build:js scripts/main.js -->

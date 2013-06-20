@@ -1,3 +1,4 @@
+
 define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', 'models/nodes'], function( $, _, Backbone, vent, JitGraph, Node, NodeList) {
     'use strict';
 
@@ -6,10 +7,14 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 'id': 'node0',
                 'name': 'perfect example',
                 'data': {
+
                         'left' : 'left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0',
                         'top' : 'top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 ',
                         'image' : 'image0 image0 image0 image0 image0 image0 image0 image0 image0 image0 image0 image0 image0 image0 ',
-                        'text' : 'text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 '
+                        'text' : 'text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 ',
+                        'background' : 'http://saonetuh.jsp',
+                        'personPic' : '.ouonutho.jpg',
+                        "video" : ''
                     },
                     'adjacencies': [{
                         'nodeTo': 'node1',
@@ -122,6 +127,74 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                         'text' : 'text5 text5 text5 text5 text5 text5 text5 text5 text5 text5 text5 text5 text5 text5 text5 text5 '
                     }
                 }],
+                geojsonFeatures: {
+                    'type': 'FeatureCollection',
+                    'features': [
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'nodeId': 'node0'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [134.050, 34.396]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'nodeId': 'node1'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [134.052, 34.396]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'nodeId': 'node2'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [134.054, 34.396]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'nodeId': 'node3'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [134.050, 34.394]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'nodeId': 'node4'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [134.050, 34.392]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'nodeId': 'node5'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [134.050, 34.390]
+                            }
+                        }
+                    ]
+                },
+                getGeoJson: function() {
+                    return this.geojsonFeatures;
+                },
                 initialize: function() {
                     var g = JitGraph.construct(this.gData);
                     this.set('data', g);
@@ -145,14 +218,14 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                         });
                     });
                     //fill up
-                    if (best.length < count){
-                        for (var i = best.length;i<count;i++){
-                            best[i] = new Node({
-                                preview: 'empty',
-                                weight: 10
-                            });
-                        }
-                    }
+                    // if (best.length < count){
+                    //     for (var i = best.length;i<count;i++){
+                    //         best[i] = new Node({
+                    //             preview: 'empty',
+                    //             weight: 10
+                    //         });
+                    //     }
+                    // }
                     //sort
                     var rv = new NodeList(best,{comparator: 'weight'});
                     //remove extra

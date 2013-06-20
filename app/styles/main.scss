@@ -8,6 +8,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
       body {
         position: relative;
+        background-image: url('../images/megijima_PML2068.jpg');
         padding-top: 40px;
         height: 100%;
       }
@@ -18,7 +19,40 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         font-weight: normal;
       }
 
+      #navigation { 
+        height: 400px; 
+      }
+      #map { 
+        height: 600px; 
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+      }
 
+      .overlay {
+        position:absolute;
+        z-index: 2;
+      }
+
+      #container { 
+        width: 700px; 
+        height: 700px; 
+        position: relative;
+      }
+      #center { 
+        width: 10px; 
+        height: 10px; 
+        position: absolute; 
+        left: 340px; 
+        top: 330px; 
+      }
+      .field {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        background: #f00;
+        z-index: 2;
+      }
 
       /* Tweak navbar brand link to be super sleek
       -------------------------------------------------- */
