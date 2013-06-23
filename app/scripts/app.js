@@ -1,4 +1,4 @@
-define(['backbone', 'underscoreM', 'marionette', 'vent', 'views/templateView', 'views/navigationView', 'views/compositeView', 'views/mainView', 'models/graph', 'templates', 'bootstrap' ], function(Backbone, _, Marionette, vent, TemplateView, NavigationView, CompositeView, MainView, Graph, templates) {
+define(['backbone', 'underscoreM', 'marionette', 'vent', 'views/templateView', 'views/navigationView', 'views/compositeView', 'views/mainView', 'models/graph', 'bootstrap' ], function(Backbone, _, Marionette, vent, TemplateView, NavigationView, CompositeView, MainView, Graph) {
     'use strict';
 
     var app = new Marionette.Application();

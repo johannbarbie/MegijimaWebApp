@@ -14,7 +14,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                         'text' : 'text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 ',
                         'background' : 'http://saonetuh.jsp',
                         'personPic' : '.ouonutho.jpg',
-                        "video" : ''
+                        'video' : ''
                     },
                     'adjacencies': [{
                         'nodeTo': 'node1',
