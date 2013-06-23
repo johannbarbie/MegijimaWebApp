@@ -16,7 +16,7 @@
     "backbone.babysitter": "git://github.com/marionettejs/backbone.babysitter.git#~0.0.4",
     "normalize.scss": null,
     "html5-boilerplate": null,
-    "leaflet": null
+    "leaflet": null 
   },
   "devDependencies": {}
 }
