@@ -1,7 +1,6 @@
-define(['underscoreM', 'marionette', 'models/graph', 'templates', 'leaflet', 'bootstrap'], function(_, Marionette, Graph) {
+define(['underscoreM', 'marionette', 'models/graph', 'leaflet', 'bootstrap'], function(_, Marionette, Graph) {
     'use strict';
     return Marionette.ItemView.extend({
-        //template: _.template(templates.navigation),
         className: 'map',
         render: function(){
             //aoeu

@@ -1,27 +1,10 @@
-define(['underscoreM', 'marionette'], function(_, Marionette) {
+define(['underscoreM', 'marionette', 'templates'], function(_, Marionette, templates) {
     'use strict';
     return Marionette.ItemView.extend({
-        className: 'overlay',
-        render: function(){
-            var val = this.model.get('preview');
-            var cont = '<div><p>';
-            for (var i=0;i<10;i++){
-                cont += val + ' ';
-            }
-            if (val !== 'empty'){
-                cont += '<a href="#node/'+val+'">'+val+'</a> ';
-            }
-            for (var j=0;j<10;j++){
-                cont += val + ' ';
-            }
-            cont += '</p></div>';
-            this.$el.html(cont);
-            return this;
-        },
-        getTemplate: function(){
-            return null;
-        },
+        className: 'field',
+        template: _.template(templates.portrait),
         onShow:function () {
+            console.log(this.model.get('data'));
             //do something
         }
     });

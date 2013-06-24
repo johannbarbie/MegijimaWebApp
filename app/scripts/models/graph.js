@@ -10,11 +10,8 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
 
                         'left' : 'left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0',
                         'top' : 'top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 ',
-                        'image' : 'image0 image0 image0 image0 image0 image0 image0 image0 image0 image0 image0 image0 image0 image0 ',
-                        'text' : 'text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 text0 ',
-                        'background' : 'http://saonetuh.jsp',
-                        'personPic' : '.ouonutho.jpg',
-                        'video' : ''
+                        'image' : 'megijimasuhee-5534.jpg',
+                        'text' : 'old (wo)man'
                     },
                     'adjacencies': [{
                         'nodeTo': 'node1',
@@ -38,8 +35,8 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     'data': {
                         'left' : 'left1 left1 left1 left1 left1 left1 left1 left1 left1 left1 left1 left1 left1 left1 left1',
                         'top' : 'top1 top1 top1 top1 top1 top1 top1 top1 top1 top1 top1 top1 top1 top1 top1 top1 top1 top1',
-                        'image' : 'image1 image1 image1 image1 image1 image1 image1 image1 image1 image1 image1 image1 image1 ',
-                        'text' : 'text1 text1 text1 text1 text1 text1 text1 text1 text1 text1 text1 text1 text1 text1 text1 '
+                        'image' : 'megijimasuhee-5614-2.jpg',
+                        'text' : 'old (wo)man'
                     },
                     'adjacencies': [{
                         'nodeTo': 'node0',
@@ -68,8 +65,8 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     'data': {
                         'left' : 'left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 ',
                         'top' : 'top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 ',
-                        'image' : 'image2 image2 image2 image2 image2 image2 image2 image2 image2 image2 image2 image2 image2 ',
-                        'text' : 'text2 text2 text2 text2 text2 text2 text2 text2 text2 text2 text2 text2 text2 text2 text2 '
+                        'image' : 'megijimasuhee-5621-2.jpg',
+                        'text' : 'old (wo)man'
                     },
                     'adjacencies': [{
                         'nodeTo': 'node0',
@@ -88,8 +85,8 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     'data': {
                         'left' : 'left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 ',
                         'top' : 'top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3',
-                        'image' : 'image3 image3 image3 image3 image3 image3 image3 image3 image3 image3 image3 image3 image3 ',
-                        'text' : 'text3 text3 text3 text3 text3 text3 text3 text3 text3 text3 text3 text3 text3 text3 text3 '
+                        'image' : 'megijimauntitled-5726.jpg',
+                        'text' : 'old (wo)man'
                     },
                     'adjacencies': [{
                         'nodeTo': 'node0',
@@ -108,8 +105,8 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     'data': {
                         'left' : 'left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 ',
                         'top' : 'top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 ',
-                        'image' : 'image4 image4 image4 image4 image4 image4 image4 image4 image4 image4 image4 image4 image4',
-                        'text' : 'text4 text4 text4 text4 text4 text4 text4 text4 text4 text4 text4 text4 text4 text4 text4 '
+                        'image' : 'megijimauntitled-5735.jpg',
+                        'text' : 'old (wo)man'
                     },
                     'adjacencies': [{
                         'nodeTo': 'node1',
@@ -123,8 +120,8 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     'data': {
                         'left' : 'left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 ',
                         'top' : 'top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 ',
-                        'image' : 'image5 image5 image5 image5 image5 image5 image5 image5 image5 image5 image5 image5 image5 ',
-                        'text' : 'text5 text5 text5 text5 text5 text5 text5 text5 text5 text5 text5 text5 text5 text5 text5 text5 '
+                        'image' : 'megijimauntitled-5735.jpg',
+                        'text' : 'old (wo)man'
                     }
                 }],
                 geojsonFeatures: {
@@ -206,13 +203,14 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 getClosest: function(id, count){
                     var best = [];
                     //read from graph and make nodes to models
+                    var self = this;
                     _.each(this.get('data').get(id).adjacencies, function(adjacence) {
-                        console.log('node: '+id+' has edge('+adjacence.data.weight+') from: ' + adjacence.nodeFrom.id + ' to: ' + adjacence.nodeTo.id);
                         var preview = adjacence.nodeTo.id;
                         if (preview === id){
                             preview = adjacence.nodeFrom.id;
                         }
                         best[best.length] = new Node({
+                            data: self.get('data').get(preview).data,
                             preview: preview,
                             weight: (10 - adjacence.data.weight)
                         });

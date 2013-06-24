@@ -5,7 +5,7 @@ define(function(require) {
         main: require('text!templates/main.htm'),
         header: require('text!templates/header.htm'),
         footer: require('text!templates/footer.htm'),
-        navigation: require('text!templates/navigation.htm'),
-        composite: require('text!templates/composite.htm')
+        composite: require('text!templates/composite.htm'),
+        portrait: require('text!templates/portrait.htm')
     };
 });

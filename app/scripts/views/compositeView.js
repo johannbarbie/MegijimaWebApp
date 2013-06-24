@@ -8,12 +8,8 @@ define(['underscoreM', 'marionette', 'templates', 'views/preView', 'bootstrap'],
 			this.fields = [];
         },
         appendHtml: function(collectionView, itemView, index){
-            var field = $('<div/>', {
-		            'class': 'field',
-		            'text': index + 1
-		        });
-            this.fields[index] = field;
-            field.appendTo(collectionView.el).append(itemView.el);
+            this.fields[index] = $(itemView.el);
+            this.fields[index].appendTo(collectionView.el);
 		},
 		distributeFields: function() {
 		    var radius = 200;
