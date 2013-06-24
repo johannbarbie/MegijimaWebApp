@@ -203,6 +203,10 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 getClosest: function(id, count){
                     var best = [];
                     //read from graph and make nodes to models
+                    var points = {};
+                    _.each(this.geojsonFeatures.features, function(point){
+                        points[point.properties.nodeId] = point;
+                    });
                     var self = this;
                     _.each(this.get('data').get(id).adjacencies, function(adjacence) {
                         var preview = adjacence.nodeTo.id;
@@ -212,6 +216,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                         best[best.length] = new Node({
                             data: self.get('data').get(preview).data,
                             preview: preview,
+                            coordinates: points[preview].geometry.coordinates,
                             weight: (10 - adjacence.data.weight)
                         });
                     });

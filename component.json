@@ -2,21 +2,21 @@
   "name": "natfarm",
   "version": "0.1.0",
   "dependencies": {
-    "modernizr": null,
+    "modernizr": "*",
     "jquery": "~2.0.0",
-    "requirejs": null,
-    "marionette": null,
-    "backbone-amd": null,
-    "underscore-amd": null,
-    "sass-bootstrap": null,
+    "requirejs": "*",
+    "marionette": "*",
+    "backbone-amd": "*",
+    "underscore-amd": "*",
+    "sass-bootstrap": "*",
     "r.js": "git://github.com/jrburke/r.js.git#~2.1.2",
-    "backbone.wreqr": null,
-    "backbone.eventbinder": null,
-    "requirejs-text": null,
+    "backbone.wreqr": "*",
+    "backbone.eventbinder": "*",
+    "requirejs-text": "*",
     "backbone.babysitter": "git://github.com/marionettejs/backbone.babysitter.git#~0.0.4",
-    "normalize.scss": null,
-    "html5-boilerplate": null,
-    "leaflet": null 
+    "normalize.scss": "*",
+    "html5-boilerplate": "*",
+    "leaflet": "*"
   },
   "devDependencies": {}
 }

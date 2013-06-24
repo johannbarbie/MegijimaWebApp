@@ -34,24 +34,66 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         z-index: 2;
       }
 
-      #container { 
-        width: 700px; 
-        height: 700px; 
-        position: relative;
-      }
-      #center { 
-        width: 10px; 
-        height: 10px; 
-        position: absolute; 
-        left: 340px; 
-        top: 330px; 
-      }
-      .field {
-        width: 200px;
-        height: 200px;
-        position: absolute;
-        z-index: 2;
-      }
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body { font-family: sans-serif; }
+
+.masonry {
+  background: #EEE;
+  max-width: 800px;
+  position: relative;
+}
+
+.item {
+  width:  60px;
+  height: 60px;
+  float: left;
+  background: #D26;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.item.w2 { width:  120px; }
+.item.w3 { width:  180px; }
+.item.w4 { width:  240px; }
+
+.item.h2 { height: 120px; }
+.item.h3 { height: 180px; }
+.item.h4 { height: 240px; }
+
+/* position stamp elements with CSS */
+.stamp {
+  position: absolute;
+  background: orange;
+  border: 4px dotted black;
+}
+.stamp1 {
+  left: 0%;
+  top: 10px;
+  width: 20%;
+  height: 100px;
+}
+.stamp2 {
+  left: 0%;
+  top: 10px;
+  width: 30%;
+  height: 30px;
+}
+.stamp3 {
+  left: 75%;
+  top: 30px;
+  width: 240px;
+  height: 240px;
+  margin-bottom: 15px;
+}
+
+
 
       /* Tweak navbar brand link to be super sleek
       -------------------------------------------------- */
