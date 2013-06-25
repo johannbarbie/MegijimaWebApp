@@ -11,7 +11,8 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                         'left' : 'left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0',
                         'top' : 'top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 ',
                         'image' : 'megijimasuhee-5534.jpg',
-                        'text' : 'old (wo)man'
+                        'text' : 'old (wo)man',
+                        'mapLayer' : 'some layer for map to overlay'
                     },
                     'adjacencies': [{
                         'nodeTo': 'node1',
@@ -196,17 +197,20 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     var g = JitGraph.construct(this.gData);
                     this.set('data', g);
                     _.bindAll(this,'getNode','getClosest');
+                    this.points = {};
+                    var self = this;
+                    _.each(this.geojsonFeatures.features, function(point){
+                        self.points[point.properties.nodeId] = point;
+                    });
                 },
                 getNode: function(id){
-                    return new Node(this.get('data').get(id).data);
+                    var rv = this.get('data').get(id);
+                    rv.coordinates = this.points[id].geometry.coordinates;
+                    return new Node(rv);
                 },
                 getClosest: function(id, count){
                     var best = [];
                     //read from graph and make nodes to models
-                    var points = {};
-                    _.each(this.geojsonFeatures.features, function(point){
-                        points[point.properties.nodeId] = point;
-                    });
                     var self = this;
                     _.each(this.get('data').get(id).adjacencies, function(adjacence) {
                         var preview = adjacence.nodeTo.id;
@@ -216,7 +220,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                         best[best.length] = new Node({
                             data: self.get('data').get(preview).data,
                             preview: preview,
-                            coordinates: points[preview].geometry.coordinates,
+                            coordinates: self.points[preview].geometry.coordinates,
                             weight: (10 - adjacence.data.weight)
                         });
                     });
@@ -237,6 +241,23 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                             rv.pop();
                         }
                     }
+                    //create css for masonry
+                    var partBig = 0.2, partMed = 0.3;
+                    partBig = Math.round(count * partBig);
+                    partMed = Math.round(count * partMed);
+                    rv.each(function(node){
+                        if (partBig > 0){
+                            node.set('css', 'w4 h4');
+                            partBig--;
+                        }else if (partMed > 0){
+                            node.set('css', 'w3 h3');
+                            partMed--;
+                        }else{
+                            node.set('css', 'w2 h2');
+                        }
+                    });
+                    //shuffle
+                    rv = new NodeList(rv.shuffle());
                     return rv;
                 }
             });

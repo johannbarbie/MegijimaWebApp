@@ -11,8 +11,7 @@ require.config({
         bootstrap: '../components/sass-bootstrap/docs/assets/js/bootstrap',
         text: '../components/requirejs-text/text',
         jitGraph: 'libs/jitGraph/Graph',
-        leaflet: '../components/leaflet/dist/leaflet-src',
-        masonry: 'libs/masonry/masonry.pkgd'
+        leaflet: '../components/leaflet/dist/leaflet-src'
     },
     shim: {
         bootstrap: {

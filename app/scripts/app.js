@@ -1,4 +1,4 @@
-define(['backbone', 'underscoreM', 'marionette', 'vent', 'views/templateView', 'views/navigationView', 'views/compositeView', 'views/mainView', 'models/graph', 'bootstrap' ], function(Backbone, _, Marionette, vent, TemplateView, NavigationView, CompositeView, MainView, Graph) {
+define(['backbone', 'underscoreM', 'marionette', 'vent', 'views/templateView', 'views/navigationView', 'views/compositeView', 'views/mainView', 'models/graph', 'leaflet', 'bootstrap' ], function(Backbone, _, Marionette, vent, TemplateView, NavigationView, CompositeView, MainView, Graph) {
     'use strict';
 
     var app = new Marionette.Application();
@@ -20,10 +20,19 @@ define(['backbone', 'underscoreM', 'marionette', 'vent', 'views/templateView', '
     });
 
     vent.on('app:show', function(nodeId) {
-        var appView = new MainView({model: app.graph.getNode(nodeId)});
-        app.content.show(appView);
+        var isFirstCall = (app.appView===undefined);
+        app.appView = new MainView({model: app.graph.getNode(nodeId), map: app.map});
+        app.content.show(app.appView);
         var compView = new CompositeView({collection: app.graph.getClosest(nodeId,7)});
         app.related.show(compView);
+        if (isFirstCall){
+            console.log('registered events');
+            var callUpdateLine = function(){
+                app.appView.updateLine();
+            };
+            app.map.on('zoomend', callUpdateLine);
+            app.map.on('moveend', callUpdateLine);
+        }
     });
 
     app.addInitializer(function(options) {
@@ -48,7 +57,26 @@ define(['backbone', 'underscoreM', 'marionette', 'vent', 'views/templateView', '
 
         //app.header.show(new TemplateView({tmplt:templates.header}));
 
-        app.navigation.show(new NavigationView());
+        //render map
+        //app.navigation.show(new NavigationView());
+        var map = window.L.map('map', {
+            dragging: false,
+            attributionControl: false
+        }).setView([34.39, 134.02], 14);
+        app.map = map;
+        window.L.tileLayer('http://{s}.tile.cloudmade.com/a57b9e7194ea41bba4ed92f6d3022766/99822/256/{z}/{x}/{y}.png', {
+            attribution: 'Map data © OpenStreetMap contributors',
+            maxZoom: 18
+        }).addTo(map);
+        var geoJson = new Graph().getGeoJson();
+        var onEachFeature = function(feature, layer) {
+            var onClickFeature = function(e){
+                var nodeId = e.target.feature.properties.nodeId;
+                window.location.href = '#node/'+nodeId;
+            };
+            layer.on('click', onClickFeature);
+        };
+        window.L.geoJson(geoJson,{onEachFeature: onEachFeature}).addTo(map);
 
         //app.footer.show(new TemplateView({tmplt:templates.footer}));
 

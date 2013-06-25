@@ -1,8 +1,9 @@
-define(['underscoreM', 'marionette', 'templates', 'views/preView', 'masonry','bootstrap'], function(_, Marionette, templates, PreView, Masonry) {
+define(['underscoreM', 'marionette', 'views/preView', 'templates', 'bootstrap'], function(_, Marionette, PreView, templates) {
     'use strict';
     return Marionette.CompositeView.extend({
         itemView: PreView,
-        className: 'js-masonry',
+        className: 'masonry js-masonry',
+        itemViewContainer: '#masonry',
         template: _.template(templates.composite),
         initialize: function() {
 			$('.field').remove();
@@ -13,15 +14,15 @@ define(['underscoreM', 'marionette', 'templates', 'views/preView', 'masonry','bo
             this.fields[index].appendTo(collectionView.el);
 		},
 		onShow: function(){
-			this.collection.each(function(element){
-				console.dir(element.get('coordinates'));
-			});
-			new Masonry( this.el, {
+			//this.collection.each(function(element){
+				//console.dir(element.get('coordinates'));
+			//});
+			new window.Masonry( this.el, {
 				// options
 				columnWidth: 60,
 				stamp: '.stamp',
 				isOriginLeft: false,
-				gutter:5,
+				gutter:3,
 				itemSelector: '.item'
 			});
 		},
