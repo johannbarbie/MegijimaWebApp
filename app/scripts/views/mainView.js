@@ -14,8 +14,9 @@ define(['underscoreM', 'marionette','templates'], function(_, Marionette, templa
 			var coord = this.model.get('coordinates');
             var latlng = new window.L.LatLng(coord[1], coord[0]);
             var posLl  = window.L.CRS.EPSG3857.latLngToPoint(latlng,this.map.getZoom());
-            var clickX = Math.round(posLl.x-this.map.getPixelOrigin().x);
-            var clickY = Math.round(posLl.y-this.map.getPixelOrigin().y);
+            var bounds = this.map.getPixelBounds().min;
+            var clickX = Math.round(posLl.x-bounds.x);
+            var clickY = Math.round(posLl.y-bounds.y);
             var jE = $('.mainView');
             this.drawLine(jE.offset().left + jE.width() / 2,jE.offset().top + jE.height() / 2,clickX,clickY);
         },
