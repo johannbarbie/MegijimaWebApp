@@ -2,12 +2,7 @@ define(['underscoreM', 'marionette'], function(_, Marionette) {
     'use strict';
     return Marionette.ItemView.extend({
         className: 'fromTemplate',
-        initialize: function(opt) {
-			this.tmplt = opt.tmplt;
-        },
-        getTemplate: function(){
-			return this.tmplt;
-        },
+        template: 'story',
         onShow:function () {
             //do something
         }

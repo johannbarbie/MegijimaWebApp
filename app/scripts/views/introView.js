@@ -6,7 +6,7 @@ define(['underscoreM', 'marionette'], function(_, Marionette) {
 			this.tmplt = opt.tmplt;
         },
         getTemplate: function(){
-			return this.tmplt;
+			return _.template(this.tmplt);
         },
         onShow:function () {
             //do something

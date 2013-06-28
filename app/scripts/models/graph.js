@@ -4,34 +4,32 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
 
     var Graph = Backbone.Model.extend({
         gData: [{
-                'id': 'node0',
+                'id': 'node00',
                 'name': 'perfect example',
                 'data': {
-
-                        'left' : 'left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0 left0',
-                        'top' : 'top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 top0 ',
+                        'name' : '',
                         'image' : 'megijimasuhee-5534.jpg',
-                        'text' : 'old (wo)man',
+                        'text' : 'node00.someText',
                         'mapLayer' : 'some layer for map to overlay'
                     },
                     'adjacencies': [{
-                        'nodeTo': 'node1',
+                        'nodeTo': 'node01',
                         'data': {
                             'weight': 1
                         }
                     }, {
-                        'nodeTo': 'node2',
+                        'nodeTo': 'node02',
                         'data': {
                             'weight': 2
                         }
                     }, {
-                        'nodeTo': 'node3',
+                        'nodeTo': 'node03',
                         'data': {
                             'weight': 3
                         }
                     }]
                 }, {
-                    'id': 'node1',
+                    'id': 'node01',
                     'name': 'to many',
                     'data': {
                         'left' : 'left1 left1 left1 left1 left1 left1 left1 left1 left1 left1 left1 left1 left1 left1 left1',
@@ -40,28 +38,28 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                         'text' : 'old (wo)man'
                     },
                     'adjacencies': [{
-                        'nodeTo': 'node0',
+                        'nodeTo': 'node00',
                         'data': {
                             'weight': 1
                         }
                     }, {
-                        'nodeTo': 'node2',
+                        'nodeTo': 'node02',
                         'data': {
                             'weight': 2
                         }
                     }, {
-                        'nodeTo': 'node3',
+                        'nodeTo': 'node03',
                         'data': {
                             'weight': 3
                         }
                     }, {
-                        'nodeTo': 'node4',
+                        'nodeTo': 'node04',
                         'data': {
                             'weight': 4
                         }
                     }]
                 }, {
-                    'id': 'node2',
+                    'id': 'node02',
                     'name': 'same weight and to few',
                     'data': {
                         'left' : 'left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 ',
@@ -70,19 +68,19 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                         'text' : 'old (wo)man'
                     },
                     'adjacencies': [{
-                        'nodeTo': 'node0',
+                        'nodeTo': 'node00',
                         'data': {
                             'weight': 3
                         }
                     }, {
-                        'nodeTo': 'node1',
+                        'nodeTo': 'node01',
                         'data': {
                             'weight': 2
                         }
                     }]
                 }, {
-                    'id': 'node3',
-                    'name': 'node3 name',
+                    'id': 'node03',
+                    'name': 'node03 name',
                     'data': {
                         'left' : 'left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 ',
                         'top' : 'top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3',
@@ -90,19 +88,19 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                         'text' : 'old (wo)man'
                     },
                     'adjacencies': [{
-                        'nodeTo': 'node0',
+                        'nodeTo': 'node00',
                         'data': {
                             'weight': 1
                         }
                     }, {
-                        'nodeTo': 'node1',
+                        'nodeTo': 'node01',
                         'data': {
                             'weight': 3
                         }
                     }]
                 }, {
-                    'id': 'node4',
-                    'name': 'node4 name',
+                    'id': 'node04',
+                    'name': 'node04 name',
                     'data': {
                         'left' : 'left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 ',
                         'top' : 'top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 ',
@@ -110,14 +108,14 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                         'text' : 'old (wo)man'
                     },
                     'adjacencies': [{
-                        'nodeTo': 'node1',
+                        'nodeTo': 'node01',
                         'data': {
                             'weight': 4
                         }
                     }]
                 }, {
-                    'id': 'node5',
-                    'name': 'node5 name',
+                    'id': 'node05',
+                    'name': 'node05 name',
                     'data': {
                         'left' : 'left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 ',
                         'top' : 'top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 ',
@@ -131,7 +129,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                         {
                             'type': 'Feature',
                             'properties': {
-                                'nodeId': 'node0'
+                                'nodeId': 'node00'
                             },
                             'geometry': {
                                 'type': 'Point',
@@ -141,7 +139,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                         {
                             'type': 'Feature',
                             'properties': {
-                                'nodeId': 'node1'
+                                'nodeId': 'node01'
                             },
                             'geometry': {
                                 'type': 'Point',
@@ -151,7 +149,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                         {
                             'type': 'Feature',
                             'properties': {
-                                'nodeId': 'node2'
+                                'nodeId': 'node02'
                             },
                             'geometry': {
                                 'type': 'Point',
@@ -161,7 +159,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                         {
                             'type': 'Feature',
                             'properties': {
-                                'nodeId': 'node3'
+                                'nodeId': 'node03'
                             },
                             'geometry': {
                                 'type': 'Point',
@@ -171,7 +169,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                         {
                             'type': 'Feature',
                             'properties': {
-                                'nodeId': 'node4'
+                                'nodeId': 'node04'
                             },
                             'geometry': {
                                 'type': 'Point',
@@ -181,7 +179,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                         {
                             'type': 'Feature',
                             'properties': {
-                                'nodeId': 'node5'
+                                'nodeId': 'node05'
                             },
                             'geometry': {
                                 'type': 'Point',

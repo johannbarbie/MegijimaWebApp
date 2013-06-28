@@ -1,4 +1,18 @@
-define(['backbone', 'underscoreM', 'marionette', 'vent', 'views/templateView', 'views/navigationView', 'views/compositeView', 'views/mainView', 'models/graph', 'leaflet', 'bootstrap' ], function(Backbone, _, Marionette, vent, TemplateView, NavigationView, CompositeView, MainView, Graph) {
+define(['backbone',
+        'underscoreM',
+        'marionette',
+        'vent',
+        'views/templateView',
+        'views/navigationView',
+        'views/compositeView',
+        'views/mainView',
+        'views/storyView',
+        'views/introView',
+        'models/graph',
+        'i18next',
+        'handlebars',
+        'leaflet',
+        'bootstrap' ], function(Backbone, _, Marionette, vent, TemplateView, NavigationView, CompositeView, MainView, StoryView, IntroView, Graph, I18next) {
     'use strict';
 
     var app = new Marionette.Application();
@@ -7,7 +21,6 @@ define(['backbone', 'underscoreM', 'marionette', 'vent', 'views/templateView', '
     app.addRegions({
         header: 'header',
         content: '#content',
-        navigation: '#navigation',
         related: '#related',
         footer: 'footer'
     });
@@ -23,7 +36,7 @@ define(['backbone', 'underscoreM', 'marionette', 'vent', 'views/templateView', '
         var isFirstCall = (app.appView===undefined);
         app.appView = new MainView({model: app.graph.getNode(nodeId), map: app.map});
         app.content.show(app.appView);
-        var compView = new CompositeView({collection: app.graph.getClosest(nodeId,7)});
+        var compView = new CompositeView({collection: app.graph.getClosest(nodeId,7),vent: vent});
         app.related.show(compView);
         if (isFirstCall){
             console.log('registered events');
@@ -35,23 +48,54 @@ define(['backbone', 'underscoreM', 'marionette', 'vent', 'views/templateView', '
         }
     });
 
+    vent.on('app:modal', function(viewName) {
+        var view = null;
+        if (viewName==='story'){
+            view = new StoryView();
+        }else{
+            view = new IntroView();
+        }
+        app.modal.show(view);
+    });
+
     app.addInitializer(function(options) {
-        // configure for loading templates stored externally...
-        Backbone.Marionette.TemplateCache.prototype.loadTemplate = function(templateId) {
-            // Marionette expects "templateId" to be the ID of a DOM element.
-            // But with RequireJS, templateId is actually the full text of the template.
-            var template = templateId;
-
-            // Make sure we have a template before trying to compile it
-            if (!template || template.length === 0) {
-                var msg = 'Could not find template: "' + templateId + '"';
-                var err = new Error(msg);
-                err.name = 'NoTemplateError';
-                throw err;
+        Marionette.Handlebars = {
+            path: 'scripts/templates/',
+            extension: '.htm'
+        };
+        Marionette.TemplateCache.prototype.loadTemplate = function(templateId) {
+            var template, templateUrl;
+            if (window.Handlebars.templates && window.Handlebars.templates[templateId]) {
+                return '[precompiled]';
             }
-
+            template = Marionette.$(templateId).html();
+            if (!template || template.length === 0) {
+                templateUrl = Marionette.Handlebars.path + templateId + Marionette.Handlebars.extension;
+                Marionette.$.ajax({
+                    url: templateUrl,
+                    success: function(data) {
+                        template = data;
+                    },
+                    async: false
+                });
+                if (!template || template.length === 0){
+                    throw 'NoTemplateError - Could not find template: \'' + templateUrl + '\'';
+                }
+            }
             return template;
         };
+
+        Marionette.TemplateCache.prototype.compileTemplate = function(rawTemplate) {
+            // if (window.Handlebars.templates && window.Handlebars.templates[templateId]) {
+            //     return window.Handlebars.templates[templateId];
+            // }
+            return window.Handlebars.compile(rawTemplate);
+        };
+
+        window.Handlebars.registerHelper('t', function(i18nKey) {
+            var result = I18next.t(i18nKey);
+            return new window.Handlebars.SafeString(result);
+        });
 
         app.graph = new Graph();
 

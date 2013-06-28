@@ -1,8 +1,8 @@
-define(['underscoreM', 'marionette', 'templates'], function(_, Marionette, templates) {
+define(['underscoreM', 'marionette'], function(_, Marionette) {
     'use strict';
     return Marionette.ItemView.extend({
         className: 'item',
-        template: _.template(templates.portrait),
+        template: 'portrait',
         onShow:function () {
             $(this.el).addClass(this.model.get('css'));
             //do something

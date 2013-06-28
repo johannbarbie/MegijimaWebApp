@@ -11,7 +11,10 @@ require.config({
         bootstrap: '../components/sass-bootstrap/docs/assets/js/bootstrap',
         text: '../components/requirejs-text/text',
         jitGraph: 'libs/jitGraph/Graph',
-        leaflet: '../components/leaflet/dist/leaflet-src'
+        leaflet: '../components/leaflet/dist/leaflet-src',
+        videojs: '../components/video.js/video',
+        handlebars: '../components/handlebars/handlebars',
+        i18next: '../components/i18next/release/i18next.amd-1.6.3.min'
     },
     shim: {
         bootstrap: {
@@ -24,12 +27,22 @@ require.config({
     }
 });
 
-require(['backbone', 'app', 'controllers/pageController'], function(Backbone, App, PageController) {
+require(['backbone', 'app', 'controllers/pageController', 'i18next', 'models/lngEnglish', 'models/lngJapan'], function(Backbone, App, PageController, I18next, english, japanese) {
     'use strict';
 
     var options = {
             pageController: PageController
         };
+    I18next.init({
+        lng: 'en',
+        debug: true,
+        resStore : {
+            en: english,
+            dev: japanese
+        }
+    },function(t) {
+        options.t = t;
+        App.start(options);
+    });
 
-    App.start(options);
 });
