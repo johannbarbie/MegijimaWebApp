@@ -5,11 +5,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
     var Graph = Backbone.Model.extend({
         gData: [{
                 'id': 'node00',
-                'name': 'perfect example',
                 'data': {
-                        'name' : '',
-                        'image' : 'megijimasuhee-5534.jpg',
-                        'text' : 'node00.someText',
                         'mapLayer' : 'some layer for map to overlay'
                     },
                     'adjacencies': [{
@@ -30,12 +26,8 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     }]
                 }, {
                     'id': 'node01',
-                    'name': 'to many',
                     'data': {
-                        'left' : 'left1 left1 left1 left1 left1 left1 left1 left1 left1 left1 left1 left1 left1 left1 left1',
-                        'top' : 'top1 top1 top1 top1 top1 top1 top1 top1 top1 top1 top1 top1 top1 top1 top1 top1 top1 top1',
-                        'image' : 'megijimasuhee-5614-2.jpg',
-                        'text' : 'old (wo)man'
+                        'mapLayer' : 'some layer for map to overlay'
                     },
                     'adjacencies': [{
                         'nodeTo': 'node00',
@@ -60,12 +52,8 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     }]
                 }, {
                     'id': 'node02',
-                    'name': 'same weight and to few',
                     'data': {
-                        'left' : 'left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 left2 ',
-                        'top' : 'top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 ',
-                        'image' : 'megijimasuhee-5621-2.jpg',
-                        'text' : 'old (wo)man'
+                        'mapLayer' : 'some layer for map to overlay'
                     },
                     'adjacencies': [{
                         'nodeTo': 'node00',
@@ -80,12 +68,8 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     }]
                 }, {
                     'id': 'node03',
-                    'name': 'node03 name',
                     'data': {
-                        'left' : 'left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 left3 ',
-                        'top' : 'top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3',
-                        'image' : 'megijimauntitled-5726.jpg',
-                        'text' : 'old (wo)man'
+                        'mapLayer' : 'some layer for map to overlay'
                     },
                     'adjacencies': [{
                         'nodeTo': 'node00',
@@ -100,12 +84,8 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     }]
                 }, {
                     'id': 'node04',
-                    'name': 'node04 name',
                     'data': {
-                        'left' : 'left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 left4 ',
-                        'top' : 'top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 ',
-                        'image' : 'megijimauntitled-5735.jpg',
-                        'text' : 'old (wo)man'
+                        'mapLayer' : 'some layer for map to overlay'
                     },
                     'adjacencies': [{
                         'nodeTo': 'node01',
@@ -115,12 +95,8 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     }]
                 }, {
                     'id': 'node05',
-                    'name': 'node05 name',
                     'data': {
-                        'left' : 'left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 left5 ',
-                        'top' : 'top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 top5 ',
-                        'image' : 'megijimauntitled-5735.jpg',
-                        'text' : 'old (wo)man'
+                        'mapLayer' : 'some layer for map to overlay'
                     }
                 }],
                 geojsonFeatures: {
@@ -203,6 +179,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 },
                 getNode: function(id){
                     var rv = this.get('data').get(id);
+                    rv.data.name = id + '.name';
+                    rv.data.text = id + '.text';
+                    rv.data.crops = id + '.crops';
                     rv.coordinates = this.points[id].geometry.coordinates;
                     return new Node(rv);
                 },

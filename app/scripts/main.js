@@ -35,7 +35,6 @@ require(['backbone', 'app', 'controllers/pageController', 'i18next', 'models/lng
         };
     I18next.init({
         lng: 'en',
-        debug: true,
         resStore : {
             en: english,
             dev: japanese

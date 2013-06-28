@@ -106,7 +106,7 @@ define(['backbone',
         var map = window.L.map('map', {
             dragging: false,
             attributionControl: false
-        }).setView([34.39, 134.02], 14);
+        }).setView([34.415, 134.015], 14);
         app.map = map;
         window.L.tileLayer('http://{s}.tile.cloudmade.com/a57b9e7194ea41bba4ed92f6d3022766/99822/256/{z}/{x}/{y}.png', {
             attribution: 'Map data © OpenStreetMap contributors',

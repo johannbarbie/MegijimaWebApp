@@ -1,12 +1,13 @@
 <div class="mainView row-fluid">
-  <div class="span7"><img src="images/{{id}}/portrait.jpg" alt="{{data.text}}"></div>
+  <div class="span7"><img src="images/{{id}}/portrait.jpg" alt="{{t data.name}}"></div>
   <div class="span5 description">
-  		<div class="name">{{data.text}}</div>
+  		<div class="name"><strong>{{t data.name}}</strong></div>
   		<div class="story">{{t data.text}}</div>
+      <div class="tags">{{t data.crops}}</div>
   		<div class="video">
   			<video id="example_video_1" class="video-js vjs-default-skin"
 			  controls preload="auto"
-			  poster="{{data.video.poster}}">
+			  poster="images/{{id}}/poster.png">
 			 <source src="videos/{{id}}/clip.mp4" type='video/mp4' />
 			 <source src="videos/{{id}}/clip.webm" type='video/webm' />
 			 <source src="videos/{{id}}/clip.ogg" type='video/ogg' />
