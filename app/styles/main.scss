@@ -66,7 +66,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
 
       #map { 
-        height: 100%; 
+        height: 600px; 
         width: 100%;
         position: absolute;
         z-index: 1;
@@ -81,35 +81,36 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       .masonry {
         max-width: 70%;
         position: relative;
+        top: 4em;
       }
 
       .item {
-        width:  60px;
-        height: 60px;
+        width:  3em;
+        height: 3em;
         float: left;
-        margin-bottom: 15px;
+        margin-bottom: 0.7em;
         overflow: hidden;
         opacity: 0.6;
         z-index: 2;
       }
 
       .item.w2 { 
-        width:  120px; 
+        width:  6em; 
       }
       .item.w3 { 
-        width:  180px; 
+        width:  9em; 
       }
       .item.w4 { 
-        width:  240px; 
+        width:  12em; 
       }
       .item.h2 { 
-        height: 120px; 
+        height: 6em; 
       }
       .item.h3 { 
-        height: 180px; 
+        height: 9em; 
       }
       .item.h4 { 
-        height: 240px; 
+        height: 12em; 
       }
 
       /* position stamp elements with CSS */
@@ -119,21 +120,21 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       .stamp1 {
         left: 0%;
         top: 0px;
-        width: 120px;
-        height: 120px;
+        width: 6em;
+        height: 6em;
       }
       .stamp2 {
         left: 0%;
         top: 0px;
-        width: 240px;
-        height: 30px;
+        width: 12em;
+        height: 1.5em;
       }
       .stamp3 {
         left: 65%;
         top: 0px;
-        width: 240px;
-        height: 240px;
-        margin-bottom: 15px;
+        width: 12em;
+        height: 12em;
+        margin-bottom: 0.5em;
       }
       .leaflet-container {
         background: none;

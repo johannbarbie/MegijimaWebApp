@@ -12,7 +12,7 @@ define(['marionette', 'views/templateView', 'vent'], function(Marionette, Templa
     });
 
     Controller.showIndex = function() {
-        this.showTemplate('node00');
+        //this.showTemplate('node00');
     };
 
     Controller.showTemplate = function(nodeId) {
