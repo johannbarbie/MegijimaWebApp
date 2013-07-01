@@ -4,4 +4,7 @@ dist
 .sass-cache
 app/components
 *.mp4
+**/portrait.jpg
+**/background.jpg
+**/poster.png
 *.webm

@@ -28,6 +28,9 @@
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
+        <!-- build:js scripts/handlebars/handlebars.js -->
+        <script src="components/handlebars/handlebars.js"></script>
+        <!-- endbuild -->
         <!-- build:js scripts/vendor/masonry.pkgd.js -->
         <script src="scripts/libs/masonry/masonry.pkgd.js"></script>
         <!-- endbuild -->
@@ -44,6 +47,40 @@
               <div class="map" id="navigation"></div>
         </div>
         <footer></footer>
+        <script id="composite" type="text/html">
+            <div class="stamp stamp1"></div>
+            <div class="stamp stamp2"></div>
+            <div class="stamp stamp4"></div>
+            <div class="stamp stamp5"></div>
+            <div class="stamp stamp3"></div>
+        </script>
+        <script id="main" type="text/html">
+            <div class="mainView row-fluid">
+              <div class="span7"><img src="images/{{id}}/portrait.jpg" alt="{{t data.name}}"></div>
+              <div class="span5 description">
+                    <div class="name textField"><strong>{{t data.name}}</strong></div>
+                    <div class="story textField ellipsis">{{t data.text}}</div>
+                  <div class="tags textField ellipsis">{{t data.cropText}}</div>
+                    <div id="mainVideo" class="video">
+                    </div>
+              </div>
+            </div>
+        </script>
+        <script id="portrait" type="text/html">
+            <p class="tag">{{data.cropText}}</p>
+            <img src="images/{{preview}}/portrait.jpg" alt="{{data.text}}">
+        </script>
+        <script id="story" type="text/html">
+             <div class="modal-header">
+                <h2>This is a modal!</h2>
+              </div>
+              <div class="modal-body">
+                <p>With some content in it!</p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn-default">Ok</button>
+             </div>
+        </script>
         <!-- build:js scripts/main.js -->
         <script data-main="scripts/main" src="components/requirejs/require.js"></script>
         <!-- endbuild -->

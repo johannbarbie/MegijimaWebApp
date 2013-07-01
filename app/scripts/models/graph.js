@@ -24,6 +24,31 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     'data': {
                         'weight': 3
                     }
+                }, {
+                    'nodeTo': 'node04',
+                    'data': {
+                        'weight': 4
+                    }
+                }, {
+                    'nodeTo': 'node05',
+                    'data': {
+                        'weight': 5
+                    }
+                }, {
+                    'nodeTo': 'node06',
+                    'data': {
+                        'weight': 6
+                    }
+                }, {
+                    'nodeTo': 'node07',
+                    'data': {
+                        'weight': 7
+                    }
+                }, {
+                    'nodeTo': 'node08',
+                    'data': {
+                        'weight': 8
+                    }
                 }]
             }, {
                 'id': 'node01',
@@ -288,6 +313,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 }
                 best[best.length] = new Node({
                     data: self.get('data').get(preview).data,
+                    mainId: id,
                     preview: preview,
                     coordinates: self.points[preview].geometry.coordinates,
                     weight: (10 - adjacence.data.weight)

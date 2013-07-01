@@ -14,16 +14,20 @@ define(['underscoreM', 'marionette', 'views/preView', 'bootstrap'], function(_, 
             this.fields[index] = $(itemView.el);
             this.fields[index].appendTo(collectionView.el);
 		},
+		getEmSize: function(el) {
+		    return Number(getComputedStyle(el, '').fontSize.match(/(\d+)px/)[1]);
+		},
 		onShow: function(){
 			//this.collection.each(function(element){
 				//console.dir(element.get('coordinates'));
 			//});
+            var cw = this.getEmSize(this.el) * 3;
 			this.msnry = new window.Masonry( this.el, {
 				// options
-				columnWidth: 60,
+				columnWidth: cw,
 				stamp: '.stamp',
 				isOriginLeft: false,
-				gutter:3,
+				gutter: 3,
 				itemSelector: '.item'
 			});
 		}

@@ -8,11 +8,12 @@ define(['backbone',
         'views/mainView',
         'views/storyView',
         'views/introView',
+        'views/languageView',
         'models/graph',
         'i18next',
         'handlebars',
         'leaflet',
-        'bootstrap' ], function(Backbone, _, Marionette, vent, TemplateView, NavigationView, CompositeView, MainView, StoryView, IntroView, Graph, I18next) {
+        'bootstrap' ], function(Backbone, _, Marionette, vent, TemplateView, NavigationView, CompositeView, MainView, StoryView, IntroView, LanguageView, Graph, I18next) {
     'use strict';
 
     var app = new Marionette.Application();
@@ -34,17 +35,24 @@ define(['backbone',
 
     vent.on('app:show', function(nodeId) {
         var isFirstCall = (app.appView===undefined);
+        app.currNode = nodeId;
         app.appView = new MainView({model: app.graph.getNode(nodeId), map: app.map});
         app.content.show(app.appView);
         var compView = new CompositeView({collection: app.graph.getClosest(nodeId,7),vent: vent});
         app.related.show(compView);
         if (isFirstCall){
-            console.log('registered events');
             var callUpdateLine = function(){
                 app.appView.updateLine();
             };
             app.map.on('zoomend', callUpdateLine);
             app.map.on('moveend', callUpdateLine);
+        }
+    });
+
+    vent.on('app:setLang', function(lng) {
+        I18next.setLng(lng);
+        if (app.currNode!==undefined){
+            vent.trigger('app:show', app.currNode);
         }
     });
 
@@ -70,14 +78,15 @@ define(['backbone',
             }
             template = Marionette.$(templateId).html();
             if (!template || template.length === 0) {
-                templateUrl = Marionette.Handlebars.path + templateId + Marionette.Handlebars.extension;
-                Marionette.$.ajax({
-                    url: templateUrl,
-                    success: function(data) {
-                        template = data;
-                    },
-                    async: false
-                });
+                template = $('#'+templateId).html();
+                // templateUrl = Marionette.Handlebars.path + templateId + Marionette.Handlebars.extension;
+                // Marionette.$.ajax({
+                //     url: templateUrl,
+                //     success: function(data) {
+                //         template = data;
+                //     },
+                //     async: false
+                // });
                 if (!template || template.length === 0){
                     throw 'NoTemplateError - Could not find template: \'' + templateUrl + '\'';
                 }
@@ -99,19 +108,24 @@ define(['backbone',
 
         app.graph = new Graph();
 
-        //app.header.show(new TemplateView({tmplt:templates.header}));
+        app.header.show(new LanguageView());
 
         //render map
         //app.navigation.show(new NavigationView());
         var map = window.L.map('map', {
             dragging: false,
-            attributionControl: false
+            attributionControl: false,
+            zoomControl: false
         }).setView([34.399, 134.015], 14);
         app.map = map;
+        window.L.Icon.Default.imagePath = 'images';
         window.L.tileLayer('http://{s}.tile.cloudmade.com/a57b9e7194ea41bba4ed92f6d3022766/99822/256/{z}/{x}/{y}.png', {
             attribution: 'Map data © OpenStreetMap contributors',
-            maxZoom: 18
+            maxZoom: 17,
+            minZoom: 13
         }).addTo(map);
+        var zc = new window.L.Control.Zoom({position: 'topright'});
+        zc.addTo(map);
         var geoJson = new Graph().getGeoJson();
         var onEachFeature = function(feature, layer) {
             var onClickFeature = function(e){

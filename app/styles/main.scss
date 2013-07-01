@@ -9,18 +9,18 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       body {
         position: relative;
         background-image: url('../images/background.jpg');
-        background-repeat: no-repeat;
+        background-size: 100%;
         height: 100%;
       }
 
       div.mainView {
         position: absolute;
-        left: 50%;
-        top: 4em;
+        cursor: pointer;
+        overflow:hidden;
+        right: 0%;
         width: 35em;
         height: 20em;
         z-index: 3;
-        overflow:hidden;
         -webkit-transition:width 300ms ease-in-out, height 300ms ease-in-out, margin 300ms ease-in-out;
         -moz-transition:width 300ms ease-in-out, height 300ms ease-in-out, margin 300ms ease-in-out;
         -o-transition:width 300ms ease-in-out, height 300ms ease-in-out, margin 300ms ease-in-out;
@@ -31,37 +31,56 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         width: 63em;
         height: 36em;
         margin-top: -2em;
-        margin-left: -25em;
+        margin-right: -8em;
       }
 
       .mainView .description{
         height: 100%;
       }
 
+      .mainView .textField{
+        overflow:hidden;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 0.2em;
+      }
+
       .mainView .name{
-        background-color: rgba(0, 0, 0, 0.4);
         height: 10%;
         color: #fff;
-        padding: 0.4em;
         margin-bottom: 1%;
       }
 
       .mainView .story{
-        background-color: rgba(0, 0, 0, 0.4);
-        color: #330;
-        height: 43%; 
+        color: #880;
+        height: 43%;
         margin-bottom: 1%;
       }
 
       .mainView .tags{
-        background-color: rgba(0, 0, 0, 0.4);
+        color: #880;
         height: 10%;
         margin-bottom: 1%;
-        overflow: hidden;
       }
 
       .mainView .video{
         height: 34%;
+        overflow:hidden;
+      }
+
+      p.tag{
+        position: absolute;
+        color: #880;
+        font-weight:bold;
+      }
+
+      div.lngView {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        color: #fff;
+        cursor: pointer;
+        font-weight:bold;
+        z-index: 3;
       }
 
 
@@ -79,12 +98,14 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       }
 
       .masonry {
-        max-width: 70%;
+        max-width: 56em;
         position: relative;
-        top: 4em;
+        top: 6em;
+        left: 4em;
       }
 
       .item {
+        cursor: pointer;
         width:  3em;
         height: 3em;
         float: left;
@@ -126,20 +147,39 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       .stamp2 {
         left: 0%;
         top: 0px;
-        width: 12em;
+        width: 14em;
         height: 1.5em;
       }
-      .stamp3 {
-        left: 65%;
+      .stamp4 {
+        left: 0%;
         top: 0px;
-        width: 12em;
-        height: 12em;
+        width: 1.5em;
+        height: 16em;
+      }
+      .stamp5 {
+        right: 0%;
+        top: 20em;
+        width: 8em;
+        height: 8em;
+      }
+      .stamp3 {
+        right: 0%;
+        top: 0px;
+        width: 35em;
+        height: 20em;
         margin-bottom: 0.5em;
       }
       .leaflet-container {
         background: none;
       }
 
+      .leaflet-tile {
+        cursor: default;
+      }
+
+      .row-fluid [class*="span"] {
+        margin-left: 0.5%;
+      }
 
       /* Tweak navbar brand link to be super sleek
       -------------------------------------------------- */

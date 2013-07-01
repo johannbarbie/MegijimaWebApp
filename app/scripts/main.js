@@ -14,7 +14,8 @@ require.config({
         leaflet: '../components/leaflet/dist/leaflet-src',
         videojs: '../components/video.js/video',
         handlebars: '../components/handlebars/handlebars',
-        i18next: '../components/i18next/release/i18next.amd-1.6.3.min'
+        i18next: '../components/i18next/release/i18next.amd-1.6.3.min',
+        dotdotdot: 'libs/dotdotdot/jquery.dotdotdot-1.5.9'
     },
     shim: {
         bootstrap: {
@@ -22,6 +23,9 @@ require.config({
             exports: 'jquery'
         },
         jitGraph: {
+            deps: ['jquery']
+        },
+        dotdotdot: {
             deps: ['jquery']
         }
     }
