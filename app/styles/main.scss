@@ -8,9 +8,11 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
       body {
         position: relative;
+        background-color: #000;
         background-image: url('../images/background.jpg');
-        background-size: 100%;
+        background-repeat: no-repeat;
         height: 100%;
+        max-width: 1024px;
       }
 
       div.mainView {
@@ -83,9 +85,31 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         z-index: 3;
       }
 
+      div.introView {
+        position: absolute;
+        top: 10em;
+        color: #fff;
+        left: 15em;
+        width: 45em;
+        z-index: 3;
+        -webkit-transition:all 300ms ease-in-out;
+        -moz-transition:all 300ms ease-in-out;
+        -o-transition:all 300ms ease-in-out;
+        transition:all 300ms ease-in-out;
+      }
+
+      div.introView.small {
+        transform:translate(40em,25em);
+        -moz-transform:translate(40em,25em);
+        -webkit-transform:translate(40em,25em);
+        -o-transform:translate(40em,25em);
+        width: 15em;
+        z-index: 0;
+      }
+
 
       #map { 
-        height: 600px; 
+        height: 639px; 
         width: 100%;
         position: absolute;
         z-index: 1;
@@ -101,7 +125,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         max-width: 56em;
         position: relative;
         top: 6em;
-        left: 4em;
+        left: 3em;
       }
 
       .item {

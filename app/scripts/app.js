@@ -21,6 +21,7 @@ define(['backbone',
     // these regions correspond to #ID's in the index.html 
     app.addRegions({
         header: 'header',
+        intro: '#intro',
         content: '#content',
         related: '#related',
         footer: 'footer'
@@ -64,6 +65,11 @@ define(['backbone',
             view = new IntroView();
         }
         app.modal.show(view);
+    });
+
+    vent.on('app:start', function(){
+        app.map.panTo([34.396, 134.050]);
+        app.map.zoomIn(1);
     });
 
     app.addInitializer(function(options) {
@@ -110,18 +116,21 @@ define(['backbone',
 
         app.header.show(new LanguageView());
 
+        app.intro.show(new IntroView());
+
         //render map
         //app.navigation.show(new NavigationView());
         var map = window.L.map('map', {
             dragging: false,
             attributionControl: false,
             zoomControl: false
-        }).setView([34.399, 134.015], 14);
+        //}).setView([34.399, 134.015], 14);
+        }).setView([34.399, 133.995], 13);
         app.map = map;
         window.L.Icon.Default.imagePath = 'images/leaflet';
         window.L.tileLayer('http://{s}.tile.cloudmade.com/a57b9e7194ea41bba4ed92f6d3022766/99822/256/{z}/{x}/{y}.png', {
             attribution: 'Map data © OpenStreetMap contributors',
-            maxZoom: 17,
+            maxZoom: 16,
             minZoom: 13
         }).addTo(map);
         var zc = new window.L.Control.Zoom({position: 'topright'});
@@ -130,6 +139,7 @@ define(['backbone',
         var onEachFeature = function(feature, layer) {
             var onClickFeature = function(e){
                 var nodeId = e.target.feature.properties.nodeId;
+                map.panTo([34.396, 134.02]);
                 window.location.href = '#node/'+nodeId;
             };
             layer.on('click', onClickFeature);

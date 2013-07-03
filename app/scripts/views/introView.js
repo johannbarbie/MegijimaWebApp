@@ -1,15 +1,30 @@
-define(['underscoreM', 'marionette'], function(_, Marionette) {
+define(['underscoreM', 'marionette', 'vent'], function(_, Marionette, vent) {
     'use strict';
-    return Marionette.ItemView.extend({
-        className: 'fromTemplate',
-        initialize: function(opt) {
-			this.tmplt = opt.tmplt;
+    var itemView = Marionette.ItemView.extend({
+        className: 'introView',
+        initialize: function() {
+            //
         },
-        getTemplate: function(){
-			return _.template(this.tmplt);
+        render: function(){
+            this.$el.html('<img src="images/logo.png" alt="human-nature, megijima"><p><strong>A community mapping project by Suhi, Songe, Patrick, and Johann.</strong></p>');
+            return this;
         },
         onShow:function () {
             //do something
+        },
+        events: {
+            'click':'handleClick'
+        },
+        handleClick: function(){
+            vent.trigger('app:start');
+            $(this.el).toggleClass('small');
+            $('.introView p').toggleClass('hidden');
         }
     });
+
+    vent.on('app:start', function(){
+        console.log('start');
+    });
+
+    return itemView;
 });

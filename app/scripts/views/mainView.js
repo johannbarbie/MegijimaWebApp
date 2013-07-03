@@ -17,9 +17,13 @@ define(['underscoreM', 'marionette', 'i18next', 'videojs','dotdotdot'], function
             this.model.get('data').cropText = cropText;
         },
         onShow: function(){
+            //prevent text overflow or cutoff
             $('.ellipsis').dotdotdot({
                 watch: '.mainview'
             });
+            //set background image for app
+            $('body').css('background-image', 'url(images/'+this.model.get('id')+'/background.jpg)');
+            //set background image for video
             var jMainVideo = $('#mainVideo');
             jMainVideo.css('background-image', 'url(images/'+this.model.get('id')+'/poster.png)');
 		    this.updateLine();
@@ -139,7 +143,7 @@ define(['underscoreM', 'marionette', 'i18next', 'videojs','dotdotdot'], function
             }else{
                 element = this.line;
             }
-            element.setAttribute('style','border:1px solid black;z-index: 1;width:'+width+'px;height:0px;-moz-transform:rotate('+deg+'deg);-webkit-transform:rotate('+deg+'deg);position:absolute;top:'+y+'px;left:'+x+'px;');
+            element.setAttribute('style','border:0px;z-index: 1; background-image: url("images/lineBg.png"); width:'+width+'px;height:4px;-moz-transform:rotate('+deg+'deg);-webkit-transform:rotate('+deg+'deg);position:absolute;top:'+y+'px;left:'+x+'px;');
         }
     });
 });
