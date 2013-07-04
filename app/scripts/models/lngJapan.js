@@ -12,88 +12,166 @@ define([], function() {
 				activity: '\u8FB2\u5BB6'
 			},
 			node01: {
-				name: '\u897F\u5CA1\u3000\u85E4\u516B',
+				name: '',
 				text: '',
-				crops: ['\u30B9\u30CA\u30C3\u30D7\u30A8\u30F3\u30C9\u30A6', '\u5B9F\u30A8\u30F3\u30C9\u30A6', '\u30A4\u30F3\u30B2\u30F3'],
-				activity: '\u8FB2\u5BB6'
+				crops: [],
+				activity: ''
 			},
 			node02: {
-				name: '\u6C60\u7530\u3000\u8302',
+				name: '',
 				text: '',
 				crops: [],
-				activity: '\u8FB2\u5BB6'
+				activity: ''
 			},
 			node03: {
-				name: '\u6A4B\u672C\u3000\u5FE0\u4E00',
+				name: '',
 				text: '',
 				crops: [],
-				activity: '\u8FB2\u5BB6'
+				activity: ''
 			},
 			node04: {
-				name: '\u6A4B\u672C\u3000\u5FE0\u4E00\u592B\u4EBA',
+				name: '',
 				text: '',
 				crops: [],
-				activity: '\u8FB2\u5BB6'
+				activity: ''
 			},
 			node05: {
-				name: '\u5317\u6D66\u3000\u4FEE\u4E09',
+				name: '',
 				text: '',
 				crops: [],
-				activity: '\u8FB2\u5BB6'
+				activity: ''
 			},
 			node06: {
-				name: '\u897F\u53E3\u3000\u654F\u592B',
+				name: '',
 				text: '',
 				crops: [],
-				activity: '\u6F01\u696D'
+				activity: ''
 			},
 			node07: {
-				name: '\u9ED2\u5DDD\u3000\u7D14\u4E00\u592B\u4EBA',
+				name: '',
 				text: '',
 				crops: [],
-				activity: '\u8FB2\u5BB6'
+				activity: ''
 			},
 			node08: {
-				name: '\u6A4B\u672C\u3000\u535A\u5DF3',
+				name: '',
 				text: '',
 				crops: [],
-				activity: '\u99D0\u5728\u3055\u3093'
+				activity: ''
 			},
 			node09: {
-				name: '\u9AD8\u5CB8\u3000\u5F25\u4E00',
+				name: '',
 				text: '',
 				crops: [],
-				activity: '\u8FB2\u5BB6'
+				activity: ''
 			},
 			node10: {
-				name: '\u9AD8\u6A4B\u3000\u5229\u548C',
+				name: '',
 				text: '',
 				crops: [],
-				activity: '\u8FB2\u5BB6'
+				activity: ''
 			},
 			node11: {
-				name: '\u8C37\u3000\u30AD\u30DF\u5B50',
+				name: '',
 				text: '',
 				crops: [],
-				activity: '\u8FB2\u5BB6'
+				activity: ''
 			},
 			node12: {
-				name: '\u4E2D\u91CE\u3000\u52C9',
+				name: '',
 				text: '',
 				crops: [],
-				activity: '\u6F01\u696D'
+				activity: ''
 			},
 			node13: {
-				name: '\u4E09\u4E95\u3000\u8C4A',
+				name: '',
 				text: '',
 				crops: [],
-				activity: '\u3046\u3069\u3093\u5C4B\u5E97\u54E1'
+				activity: ''
 			},
 			node14: {
-				name: '\u5CA1\u7530\u3000\u30CA\u30C4\u30A8',
+				name: '',
 				text: '',
 				crops: [],
-				activity: '\u8FB2\u5BB6'
+				activity: ''
+			},
+			node15 : {
+				name: '',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node16 : {
+				name: '',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node17 : {
+				name: '',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node18 : {
+				name: '',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node19 : {
+				name: '',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node20 : {
+				name: '',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node21 : {
+				name: '',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node22 : {
+				name: '',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node23 : {
+				name: '',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node24 : {
+				name: '',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node25 : {
+				name: '',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node26 : {
+				name: '',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node27 : {
+				name: '',
+				text: '',
+				crops: [],
+				activity: ''
 			}
 		}
 	};
