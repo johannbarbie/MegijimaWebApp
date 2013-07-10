@@ -128,7 +128,7 @@ define(['backbone',
         }).setView([34.399, 133.995], 13);
         app.map = map;
         window.L.Icon.Default.imagePath = 'images/leaflet';
-        window.L.tileLayer('http://{s}.tile.cloudmade.com/a57b9e7194ea41bba4ed92f6d3022766/99822/256/{z}/{x}/{y}.png', {
+	window.L.tileLayer('images/tiles/{z}/{x}/{y}.png', {
             attribution: 'Map data © OpenStreetMap contributors',
             maxZoom: 16,
             minZoom: 13

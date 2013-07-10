@@ -8,3 +8,4 @@ app/components
 **/background.jpg
 **/poster.png
 *.webm
+app/images/**/*.png
