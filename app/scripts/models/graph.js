@@ -136,7 +136,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.050, 34.396]
+                        'coordinates': [134.054078, 34.401247]
                     }
                 },
                 {
@@ -146,7 +146,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.052, 34.396]
+                        'coordinates': [134.050792, 34.398004]
                     }
                 },
                 {
@@ -156,7 +156,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.054, 34.396]
+                        'coordinates': [134.049443,34.388832]
                     }
                 },
                 {
@@ -166,7 +166,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.050, 34.394]
+                        'coordinates': [134.049443,34.388832]
                     }
                 },
                 {
@@ -176,7 +176,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.050, 34.392]
+                        'coordinates': [134.055014,34.404834]
                     }
                 },
                 {
@@ -186,7 +186,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.050, 34.390]
+                        'coordinates': [0,0]
                     }
                 },
                 {
@@ -196,7 +196,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.048, 34.390]
+                        'coordinates': [134.051123,34.392411]
                     }
                 },
                 {
@@ -206,7 +206,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.046, 34.390]
+                        'coordinates': [134.05356,34.391967]
                     }
                 },
                 {
@@ -216,7 +216,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.044, 34.390]
+                        'coordinates': [134.054274,34.390979]
                     }
                 },
                 {
@@ -226,7 +226,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.044, 34.388]
+                        'coordinates': [134.046387,34.386982]
                     }
                 },
                 {
@@ -236,7 +236,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.044, 34.386]
+                        'coordinates': [134.05356, 34.391967]
                     }
                 },
                 {
@@ -246,7 +246,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.044, 34.384]
+                        'coordinates': [134.048228, 34.3975]
                     }
                 },
                 {
@@ -256,7 +256,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.042, 34.384]
+                        'coordinates': [134.046366, 34.397110]
                     }
                 },
                 {
@@ -266,7 +266,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.040, 34.382]
+                        'coordinates': [0,0]
                     }
                 },
                 {
@@ -276,7 +276,117 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.040, 34.380]
+                        'coordinates': [134.05534, 34.385379]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node15'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [134.052005, 34.390824]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node16'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [134.05436, 34.391442]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node17'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [134.051123,34.392411]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node18'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [134.051123,34.392411]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node19'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [134.050792, 34.398004]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node20'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [134.038061, 34.379952]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node21'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [0,0]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node22'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [0,0]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node23'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [0,0]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node24'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [0,0]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node25'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [134.038877,34.383724]
                     }
                 }
             ]
