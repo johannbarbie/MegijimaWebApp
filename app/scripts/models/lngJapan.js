@@ -172,6 +172,18 @@ define([], function() {
 				text: '',
 				crops: [],
 				activity: ''
+			},
+			node28 : {
+				name: '',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node29 : {
+				name: '',
+				text: '',
+				crops: [],
+				activity: ''
 			}
 		}
 	};

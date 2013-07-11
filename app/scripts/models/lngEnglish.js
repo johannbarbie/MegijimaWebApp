@@ -3,19 +3,19 @@ define([], function() {
     var en = {
 		translation : {
 			node00 : {
-				name: 'Nakamura Masakatsu',
+				name: 'Hiromi Hashimoto',
 				text: 'when the lotus flowers was blooming, went to the rice field to have the picknick with their grand chirdren.',
 				crops: ['rice', 'biwa', 'corn', 'tomato', 'eggplant'],
 				activity: 'farming'
 			},
 			node01 : {
-				name: 'Nishioka Touhachi',
+				name: 'Takahashi Toshikazu',
 				text: 'In 1950\'s, Megi still has the junior high school and elementary school, sports festival and the Bon festival dance are memorable. ',
 				crops: ['snap green peas', 'green peas', 'string beans'],
 				activity: 'farming'
 			},
 			node02 : {
-				name: 'Ikeda Shigeru',
+				name: 'Mrs. Hashimoto',
 				text: 'The field of barley when Megi were commercially successful (80% of the whole land)',
 				crops: [],
 				activity: 'farming'
@@ -27,144 +27,156 @@ define([], function() {
 				activity: 'farming'
 			},
 			node04 : {
-				name: 'Mrs. Hashimoto Chuichi',
+				name: 'Nakamura Masakatsu',
 				text: 'Harbor (not for ferry), the big covern',
 				crops: ['corn', 'garlic', 'peanuts', 'etc.'],
 				activity: 'farming'
 			},
 			node05 : {
-				name: 'Kitaura Shuzo',
+				name: 'Mrs. Masakatsu',
 				text: 'Beach under the shrine, camping in his child4hood & the cavern',
 				crops: ['corn', 'garlic', 'peanuts', 'other many kinds of vegetables & fruits'],
 				activity: 'farming'
 			},
 			node06 : {
-				name: 'Nishiguchi Toshio',
+				name: 'Nishioka touhachi',
 				text: 'Orange field near Nishiura which my relatives have. I help them working for it.',
 				crops: ['Sawara in spring', 'Managatsuo in summer', 'Sazae & Awabi in autumn', 'Namako in winter'],
 				activity: 'farming'
 			},
 			node07 : {
-				name: 'Kurokawa Junichi',
+				name: 'Ikeda Shigeru',
 				text: 'Cherry blossom viewing party on big cave with their chilren and grand children.',
 				crops: ['Sweet potatoes', 'peanuts', 'corn'],
 				activity: 'farming'
 			},
 			node08 : {
-				name: 'Hashimoto Hiromi',
+				name: 'Kitaura Shuzo',
 				text: '',
 				crops: [],
 				activity: 'policeman'
 			},
 			node09 : {
-				name: 'Takagishi Yaichi',
+				name: 'Mitsuko Nakakoji',
 				text: 'community centre and the cultrure festival ',
 				crops: ['garlic', 'peanuts'],
 				activity: 'farming'
 			},
 			node10 : {
-				name: 'Takagishi Toshikazu',
+				name: 'Tani Kimiko',
 				text: 'the View of the Ocean & the big Cavern. Spending time with his grand children',
 				crops: ['winter: Japanese radish', 'cabbage', 'chinese cabbage', 'summer: corns', 'tomato', 'watermelon'],
 				activity: 'farming'
 			},
 			node11 : {
-				name: 'Tani Kimiko',
+				name: 'Mrs.Kurokawa Junichi',
 				text: 'Elementary school: she started playing valleyball & now still playing.',
 				crops: ['corns', 'garlic', 'a bit of greenpeas'],
 				activity: 'farming'
 			},
 			node12 : {
-				name: 'Nakano Tsutomu',
+				name: 'Nishiguchi Toshio',
 				text: 'He had a boat accident on the sea near by Megi. The ship was almost 20times bigger than his, he jumped in the sea to survive. Worked as fisherman till 85(now 88)',
 				crops: [],
 				activity: 'farming'
 			},
 			node13 : {
-				name: 'Mitsui Yutaka',
+				name: 'Takagishi Yaichi',
 				text: 'the top of the moutain for the wide view of Setouchi & the cherry blossom(Because she growed up in a local site, so it wasn’t hard to use to Megi. )',
 				crops: [],
 				activity: 'restaurent server'
 			},
 			node14 : {
-				name: 'Okada Natsue',
+				name: 'Nakano Tsutomu',
 				text: 'She was the guide of the big Cavern, that period so many tourist for the cavern, 4 or 5 times everyday need to go to the ccavern.',
 				crops: ['Nankin　Beans', 'greenpeas', 'beans etc'],
 				activity: 'farming'
 			},
 			node15 : {
-				name: '',
+				name: 'Mitsui Yutaka',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node16 : {
-				name: '',
+				name: 'Okada Natsue',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node17 : {
-				name: '',
+				name: 'Yashuhide Kawamura',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node18 : {
-				name: '',
+				name: 'Akino Kaji',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node19 : {
-				name: '',
+				name: 'Shinzou Yanagi',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node20 : {
-				name: '',
+				name: 'Tokio Hashimoto',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node21 : {
-				name: '',
+				name: 'Mrs. Yamamoto',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node22 : {
-				name: '',
+				name: 'Ayako Okamoto',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node23 : {
-				name: '',
+				name: 'Eiko Shibamoto',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node24 : {
-				name: '',
+				name: 'Katsuo Shibamoto',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node25 : {
-				name: '',
+				name: 'Momotaro 1',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node26 : {
-				name: '',
+				name: 'Momotaro 2',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node27 : {
+				name: 'Momotaro 3',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node28 : {
+				name: 'Momotaro 4',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node29 : {
 				name: '',
 				text: '',
 				crops: [],

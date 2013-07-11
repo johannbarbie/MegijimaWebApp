@@ -6,124 +6,196 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
         gData: [
             {
                 'id': 'node00',
-                'data': {
-                    'mapLayer' : 'some layer for map to overlay'
-                },
-                'adjacencies': [{
-                    'nodeTo': 'node01',
-                    'data': {
-                        'weight': 1
-                    }
-                }, {
-                    'nodeTo': 'node02',
-                    'data': {
-                        'weight': 2
-                    }
-                }, {
-                    'nodeTo': 'node03',
-                    'data': {
-                        'weight': 3
-                    }
-                }, {
-                    'nodeTo': 'node04',
-                    'data': {
-                        'weight': 4
-                    }
-                }, {
-                    'nodeTo': 'node05',
-                    'data': {
-                        'weight': 5
-                    }
-                }, {
-                    'nodeTo': 'node06',
-                    'data': {
-                        'weight': 6
-                    }
-                }, {
-                    'nodeTo': 'node07',
-                    'data': {
-                        'weight': 7
-                    }
-                }, {
-                    'nodeTo': 'node08',
-                    'data': {
-                        'weight': 8
-                    }
-                }]
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 1}},
+                    {'nodeTo': 'node02','data': {'weight': 2}},
+                    {'nodeTo': 'node03','data': {'weight': 3}},
+                    {'nodeTo': 'node04','data': {'weight': 4}},
+                    {'nodeTo': 'node05','data': {'weight': 5}},
+                    {'nodeTo': 'node06','data': {'weight': 6}},
+                    {'nodeTo': 'node07','data': {'weight': 7}},
+                    {'nodeTo': 'node08','data': {'weight': 8}}
+                ]
             }, {
                 'id': 'node01',
-                'data': {
-                    'mapLayer' : 'some layer for map to overlay'
-                },
-                'adjacencies': [{
-                    'nodeTo': 'node00',
-                    'data': {
-                        'weight': 1
-                    }
-                }, {
-                    'nodeTo': 'node02',
-                    'data': {
-                        'weight': 2
-                    }
-                }, {
-                    'nodeTo': 'node03',
-                    'data': {
-                        'weight': 3
-                    }
-                }, {
-                    'nodeTo': 'node04',
-                    'data': {
-                        'weight': 4
-                    }
-                }]
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node00','data': {'weight': 1}},
+                    {'nodeTo': 'node02','data': {'weight': 2}},
+                    {'nodeTo': 'node03','data': {'weight': 3}},
+                    {'nodeTo': 'node04','data': {'weight': 4}}
+                ]
             }, {
                 'id': 'node02',
-                'data': {
-                    'mapLayer' : 'some layer for map to overlay'
-                },
-                'adjacencies': [{
-                    'nodeTo': 'node00',
-                    'data': {
-                        'weight': 3
-                    }
-                }, {
-                    'nodeTo': 'node01',
-                    'data': {
-                        'weight': 2
-                    }
-                }]
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node00','data': {'weight': 3}},
+                    {'nodeTo': 'node01','data': {'weight': 2}}
+                ]
             }, {
                 'id': 'node03',
-                'data': {
-                    'mapLayer' : 'some layer for map to overlay'
-                },
-                'adjacencies': [{
-                    'nodeTo': 'node00',
-                    'data': {
-                        'weight': 1
-                    }
-                }, {
-                    'nodeTo': 'node01',
-                    'data': {
-                        'weight': 3
-                    }
-                }]
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node00','data': {'weight': 1}},
+                    {'nodeTo': 'node01','data': {'weight': 3}}
+                ]
             }, {
                 'id': 'node04',
-                'data': {
-                    'mapLayer' : 'some layer for map to overlay'
-                },
-                'adjacencies': [{
-                    'nodeTo': 'node01',
-                    'data': {
-                        'weight': 4
-                    }
-                }]
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
             }, {
                 'id': 'node05',
-                'data': {
-                    'mapLayer' : 'some layer for map to overlay'
-                }
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node06',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node07',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node08',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node09',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node10',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node11',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node12',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node13',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node14',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node15',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node16',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node17',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node18',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node19',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node20',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node21',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node22',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node23',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node24',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node25',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node26',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node27',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node28',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node29',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
             }
         ],
         geojsonFeatures: {
@@ -156,7 +228,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.049443,34.388832]
+                        'coordinates': [134.048989, 34.389594]
                     }
                 },
                 {
@@ -166,7 +238,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.049443,34.388832]
+                        'coordinates': [134.048989, 34.389594]
                     }
                 },
                 {
@@ -186,7 +258,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [0,0]
+                        'coordinates': [134.03,34.4]
                     }
                 },
                 {
@@ -266,7 +338,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [0,0]
+                        'coordinates': [134.03,34.4]
                     }
                 },
                 {
@@ -346,7 +418,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [0,0]
+                        'coordinates': [134.049443, 34.388832]
                     }
                 },
                 {
@@ -356,7 +428,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [0,0]
+                        'coordinates': [134.03,34.4]
                     }
                 },
                 {
@@ -366,7 +438,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [0,0]
+                        'coordinates': [134.03,34.4]
                     }
                 },
                 {
@@ -376,7 +448,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [0,0]
+                        'coordinates': [134.03,34.4]
                     }
                 },
                 {
@@ -386,7 +458,47 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.038877,34.383724]
+                        'coordinates': [134.039016, 34.383892]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node26'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [134.054078, 34.401247]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node27'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [134.056318, 34.407003]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node28'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [134.045015, 34.395968]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node29'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [0,0]
                     }
                 }
             ]
