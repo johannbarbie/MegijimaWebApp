@@ -35,7 +35,9 @@ require(['backbone', 'app', 'controllers/pageController', 'i18next', 'models/lng
     'use strict';
 
     var options = {
-            pageController: PageController
+            pageController: PageController,
+            megiCenter: {lat: 34.397987, lng: 134.048989},
+            mapOffset: 700
         };
     I18next.init({
         lng: 'en',

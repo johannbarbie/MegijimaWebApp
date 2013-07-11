@@ -67,15 +67,36 @@ define(['backbone',
         app.modal.show(view);
     });
 
+    vent.on('app:index', function(){
+        app.intro.show(new IntroView());
+    });
+
     vent.on('app:start', function(){
-        app.map.panTo([34.396, 134.050]);
-        app.map.zoomIn(1);
+        app.map.setView([34.396, 134.050],15);
+    });
+
+    vent.on('app:zoomIn', function(){
+        var node = app.graph.getNode(app.currNode).get('coordinates');
+        app.map.setViewWithOffset([node[1],node[0]],+1);
+        //app.map.setViewWithOffset(undefined,+1);
+    });
+
+    vent.on('app:zoomOut', function(){
+        var node = app.graph.getNode(app.currNode).get('coordinates');
+        app.map.setViewWithOffset([node[1],node[0]],-1);
+        //app.map.setViewWithOffset(undefined,-1);
     });
 
     app.addInitializer(function(options) {
         Marionette.Handlebars = {
             path: 'scripts/templates/',
             extension: '.htm'
+        };
+        Marionette.Region.prototype.open = function(view){
+            this.$el.hide();
+            this.$el.html(view.el);
+            //this.$el.fadeIn();
+            this.$el.slideDown('slow');
         };
         Marionette.TemplateCache.prototype.loadTemplate = function(templateId) {
             var template, templateUrl;
@@ -85,14 +106,6 @@ define(['backbone',
             template = Marionette.$(templateId).html();
             if (!template || template.length === 0) {
                 template = $('#'+templateId).html();
-                // templateUrl = Marionette.Handlebars.path + templateId + Marionette.Handlebars.extension;
-                // Marionette.$.ajax({
-                //     url: templateUrl,
-                //     success: function(data) {
-                //         template = data;
-                //     },
-                //     async: false
-                // });
                 if (!template || template.length === 0){
                     throw 'NoTemplateError - Could not find template: \'' + templateUrl + '\'';
                 }
@@ -101,9 +114,6 @@ define(['backbone',
         };
 
         Marionette.TemplateCache.prototype.compileTemplate = function(rawTemplate) {
-            // if (window.Handlebars.templates && window.Handlebars.templates[templateId]) {
-            //     return window.Handlebars.templates[templateId];
-            // }
             return window.Handlebars.compile(rawTemplate);
         };
 
@@ -116,16 +126,26 @@ define(['backbone',
 
         app.header.show(new LanguageView());
 
-        app.intro.show(new IntroView());
-
         //render map
-        //app.navigation.show(new NavigationView());
+
         var map = window.L.map('map', {
             dragging: false,
             attributionControl: false,
-            zoomControl: false
-        //}).setView([34.399, 134.015], 14);
-        }).setView([34.399, 133.995], 13);
+            zoomControl: false,
+            mapOffset: options.mapOffset,
+            megiCenter: options.megiCenter,
+            graph: app.graph
+        });
+        map.setViewWithOffset = function(targetPoint, targetZoom){
+            targetZoom = (targetZoom === undefined)?map.getZoom():
+                (targetZoom === -1)?map.getZoom()-1:
+                (targetZoom === 1)?map.getZoom()+1:targetZoom;
+            targetPoint = (targetPoint === undefined)?map.options.megiCenter:targetPoint;
+            targetPoint = map.project(targetPoint, targetZoom).subtract([map.options.mapOffset / 2, 0]);
+            var targetLatLng = map.unproject(targetPoint, targetZoom);
+            map.setView(targetLatLng,targetZoom);
+        };
+        map.setViewWithOffset(options.megiCenter, 13);
         app.map = map;
         window.L.Icon.Default.imagePath = 'images/leaflet';
         window.L.tileLayer('images/tiles/{z}/{x}/{y}.png', {
@@ -133,18 +153,32 @@ define(['backbone',
             maxZoom: 16,
             minZoom: 13
         }).addTo(map);
-        var zc = new window.L.Control.Zoom({position: 'topright'});
-        zc.addTo(map);
         var geoJson = new Graph().getGeoJson();
         var onEachFeature = function(feature, layer) {
             var onClickFeature = function(e){
                 var nodeId = e.target.feature.properties.nodeId;
-                map.panTo([34.396, 134.02]);
+                var node = map.options.graph.getNode(nodeId).get('coordinates');
+                map.setViewWithOffset([node[1],node[0]], 14);
+                //map.setViewWithOffset(undefined, 14);
                 window.location.href = '#node/'+nodeId;
             };
             layer.on('click', onClickFeature);
         };
-        window.L.geoJson(geoJson,{onEachFeature: onEachFeature}).addTo(map);
+        var geojsonMarkerOptions = {
+            radius: 8,
+            fillColor: '#ff7800',
+            color: '#000',
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.8
+        };
+
+        window.L.geoJson(geoJson,{
+            onEachFeature: onEachFeature,
+            pointToLayer: function (feature, latlng) {
+                return window.L.circleMarker(latlng, geojsonMarkerOptions);
+            }
+        }).addTo(map);
 
         //app.footer.show(new TemplateView({tmplt:templates.footer}));
 

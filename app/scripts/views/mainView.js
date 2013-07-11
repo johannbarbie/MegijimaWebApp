@@ -17,16 +17,26 @@ define(['underscoreM', 'marionette', 'i18next', 'videojs','dotdotdot'], function
             this.model.get('data').cropText = cropText;
         },
         onShow: function(){
+            this.$el.hide().fadeIn();
             //prevent text overflow or cutoff
             $('.ellipsis').dotdotdot({
                 watch: '.mainview'
             });
+            var self = this;
             //set background image for app
-            $('body').css('background-image', 'url(images/'+this.model.get('id')+'/background.jpg)');
+            $('body').fadeOut('fast', function() {
+                $('body').css('background-image', 'url(images/'+self.model.get('id')+'/background.jpg)')
+                     .slideDown(900);
+            });
             //set background image for video
             var jMainVideo = $('#mainVideo');
             jMainVideo.css('background-image', 'url(images/'+this.model.get('id')+'/poster.png)');
 		    this.updateLine();
+        },
+        remove: function(){
+            this.$el.fadeOut(function(){
+                $(this).remove();
+            });
         },
         updateLine: function(){
 			var coord = this.model.get('coordinates');

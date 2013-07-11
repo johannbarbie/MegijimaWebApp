@@ -16,9 +16,10 @@ define(['underscoreM', 'marionette', 'vent'], function(_, Marionette, vent) {
             'click':'handleClick'
         },
         handleClick: function(){
-            vent.trigger('app:start');
+            console.dir($(this.el));
             $(this.el).toggleClass('small');
             $('.introView p').toggleClass('hidden');
+            vent.trigger('app:start');
         }
     });
 

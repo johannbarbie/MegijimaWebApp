@@ -77,12 +77,14 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
       div.lngView {
         position: absolute;
-        top: 10%;
-        left: 10%;
+        top: 2em;
+        left: 5%;
+        width: 6em;
+        height: 44px;
+        z-index: 3;
         color: #fff;
         cursor: pointer;
         font-weight:bold;
-        z-index: 3;
       }
 
       div.introView {
