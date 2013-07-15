@@ -36,7 +36,6 @@ define(['backbone',
 
     vent.on('app:show', function(nodeId) {
         var isFirstCall = (app.appView===undefined);
-        app.currNode = nodeId;
         app.appView = new MainView({model: app.graph.getNode(nodeId), map: app.map});
         app.content.show(app.appView);
         var compView = new CompositeView({collection: app.graph.getClosest(nodeId,7),vent: vent});
@@ -72,19 +71,29 @@ define(['backbone',
     });
 
     vent.on('app:start', function(){
-        app.map.setView([34.396, 134.050],15);
+        //app.map.setView([34.396, 134.050],15);
     });
 
     vent.on('app:zoomIn', function(){
-        var node = app.graph.getNode(app.currNode).get('coordinates');
-        app.map.setViewWithOffset([node[1],node[0]],+1);
-        //app.map.setViewWithOffset(undefined,+1);
+        //var node = app.graph.getNode(app.currNode).get('coordinates');
+        //app.map.setViewWithOffset([node[1],node[0]],+1);
+        app.map.setViewWithOffset(undefined,+1);
+    });
+
+    vent.on('map:clickPoi', function(nodeId){
+        var nodeCoord = app.map.options.graph.getNode(nodeId).get('coordinates');
+        app.currNode = nodeId;
+        app.map.setViewWithOffset([nodeCoord[1],nodeCoord[0]], 14);
+    });
+
+    vent.on('map:moveend', function(){
+        vent.trigger('app:show', app.currNode);
     });
 
     vent.on('app:zoomOut', function(){
-        var node = app.graph.getNode(app.currNode).get('coordinates');
-        app.map.setViewWithOffset([node[1],node[0]],-1);
-        //app.map.setViewWithOffset(undefined,-1);
+        //var node = app.graph.getNode(app.currNode).get('coordinates');
+        //app.map.setViewWithOffset([node[1],node[0]],-1);
+        app.map.setViewWithOffset(undefined,-1);
     });
 
     app.addInitializer(function(options) {
@@ -147,26 +156,26 @@ define(['backbone',
         };
         map.setViewWithOffset(options.megiCenter, 13);
         app.map = map;
+        map.on('moveend', function(e) {
+            vent.trigger('map:moveend',e);
+        });
         window.L.Icon.Default.imagePath = 'images/leaflet';
         window.L.tileLayer('images/tiles/{z}/{x}/{y}.png', {
             attribution: 'Map data © OpenStreetMap contributors',
-            maxZoom: 16,
+            maxZoom: 17,
             minZoom: 13
         }).addTo(map);
         var geoJson = new Graph().getGeoJson();
         var onEachFeature = function(feature, layer) {
             var onClickFeature = function(e){
                 var nodeId = e.target.feature.properties.nodeId;
-                var node = map.options.graph.getNode(nodeId).get('coordinates');
-                map.setViewWithOffset([node[1],node[0]], 14);
-                //map.setViewWithOffset(undefined, 14);
                 window.location.href = '#node/'+nodeId;
             };
             layer.on('click', onClickFeature);
         };
         var geojsonMarkerOptions = {
             radius: 8,
-            fillColor: '#ff7800',
+            fillColor: '#88b440',
             color: '#000',
             weight: 1,
             opacity: 1,

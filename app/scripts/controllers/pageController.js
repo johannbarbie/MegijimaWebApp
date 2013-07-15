@@ -7,6 +7,8 @@ define(['marionette', 'views/templateView', 'vent'], function(Marionette, Templa
     Controller.Router = Marionette.AppRouter.extend({
         appRoutes: {
             '': 'showIndex',
+            'map': 'showMap',
+            'credits': 'showCredits',
             'node/:nodeId': 'showTemplate'
         }
     });
@@ -15,8 +17,16 @@ define(['marionette', 'views/templateView', 'vent'], function(Marionette, Templa
         vent.trigger('app:index');
     };
 
+    Controller.showMap = function() {
+        vent.trigger('app:index');
+    };
+
+    Controller.showCredits = function() {
+        vent.trigger('app:index');
+    };
+
     Controller.showTemplate = function(nodeId) {
-        vent.trigger('app:show', nodeId);
+        vent.trigger('map:clickPoi', nodeId);
     };
 
     return Controller;
