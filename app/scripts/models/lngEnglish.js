@@ -3,25 +3,25 @@ define([], function() {
     var en = {
 		translation : {
 			node00 : {
-				name: 'Hiromi Hashimoto',
+				name: 'Hashimoto Hiromi',
 				text: 'when the lotus flowers was blooming, went to the rice field to have the picknick with their grand chirdren.',
 				crops: ['rice', 'biwa', 'corn', 'tomato', 'eggplant'],
 				activity: 'farming'
 			},
 			node01 : {
-				name: 'Takahashi Toshikazu',
+				name: 'Takagishi Toshikazu',
 				text: 'In 1950\'s, Megi still has the junior high school and elementary school, sports festival and the Bon festival dance are memorable. ',
 				crops: ['snap green peas', 'green peas', 'string beans'],
 				activity: 'farming'
 			},
 			node02 : {
-				name: 'Mrs. Hashimoto',
+				name: 'Hashimoto Kisoe',
 				text: 'The field of barley when Megi were commercially successful (80% of the whole land)',
 				crops: [],
 				activity: 'farming'
 			},
 			node03 : {
-				name: 'Hashimoto Chuichi',
+				name: 'Hashimoto Tadakazu',
 				text: 'Harbor (not for ferry), the big covern',
 				crops: ['black porgy', 'stromateidae'],
 				activity: 'farming'
@@ -39,7 +39,7 @@ define([], function() {
 				activity: 'farming'
 			},
 			node06 : {
-				name: 'Nishioka touhachi',
+				name: 'Nishioka Touhachi',
 				text: 'Orange field near Nishiura which my relatives have. I help them working for it.',
 				crops: ['Sawara in spring', 'Managatsuo in summer', 'Sazae & Awabi in autumn', 'Namako in winter'],
 				activity: 'farming'
@@ -57,7 +57,7 @@ define([], function() {
 				activity: 'policeman'
 			},
 			node09 : {
-				name: 'Mitsuko Nakakoji',
+				name: 'Nakakoji Mitsuko',
 				text: 'community centre and the cultrure festival ',
 				crops: ['garlic', 'peanuts'],
 				activity: 'farming'
@@ -69,7 +69,7 @@ define([], function() {
 				activity: 'farming'
 			},
 			node11 : {
-				name: 'Mrs.Kurokawa Junichi',
+				name: 'Kurokawa Isako',
 				text: 'Elementary school: she started playing valleyball & now still playing.',
 				crops: ['corns', 'garlic', 'a bit of greenpeas'],
 				activity: 'farming'
@@ -117,37 +117,37 @@ define([], function() {
 				activity: ''
 			},
 			node19 : {
-				name: 'Shinzou Yanagi',
+				name: 'Yanagi Shinzou',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node20 : {
-				name: 'Tokio Hashimoto',
+				name: 'Hashimoto Tokio',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node21 : {
-				name: 'Mrs. Yamamoto',
+				name: 'Yamamoto Toyoko',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node22 : {
-				name: 'Ayako Okamoto',
+				name: 'Okamoto Ayako',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node23 : {
-				name: 'Eiko Shibamoto',
+				name: 'Shibamoto Eiko',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node24 : {
-				name: 'Katsuo Shibamoto',
+				name: 'Shibamoto Katsuo',
 				text: '',
 				crops: [],
 				activity: ''
@@ -177,7 +177,25 @@ define([], function() {
 				activity: ''
 			},
 			node29 : {
-				name: '',
+				name: 'Yokoyama Seiko',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node30 : {
+				name: 'Kawai Miho',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node31 : {
+				name: 'Matsuuchi Chiho',
+				text: '',
+				crops: [],
+				activity: ''
+			},
+			node32 : {
+				name: 'Mastuuchi Hideo',
 				text: '',
 				crops: [],
 				activity: ''

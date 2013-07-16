@@ -207,6 +207,11 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         margin-left: 0.5%;
       }
 
+      .shadow {
+          -webkit-filter: drop-shadow( 2px 2px 5px #000 );
+          filter: drop-shadow( 2px 2px 5px #000 ); /* Same syntax as box-shadow */
+      }
+
       /* Tweak navbar brand link to be super sleek
       -------------------------------------------------- */
 

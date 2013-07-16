@@ -6,7 +6,7 @@ define(['underscoreM', 'marionette', 'vent'], function(_, Marionette, vent) {
             //
         },
         render: function(){
-            this.$el.html('<img src="images/logo.png" alt="human-nature, megijima"><p><strong>A community mapping project by Suhi, Songe, Patrick, and Johann.</strong></p>');
+            this.$el.html('<object type="image/svg+xml" data="images/logo.svg" class="shadow">Your browser does not support SVG</object><p><strong>A community mapping project by Suhi, Songe, Patrick, and Johann.</strong></p>');
             return this;
         },
         onShow:function () {
@@ -16,15 +16,14 @@ define(['underscoreM', 'marionette', 'vent'], function(_, Marionette, vent) {
             'click':'handleClick'
         },
         handleClick: function(){
-            console.dir($(this.el));
-            $(this.el).toggleClass('small');
+            var svgDoc = this.$el.children(':first')[0].contentDocument;
+            var styleElement = svgDoc.createElementNS('http://www.w3.org/2000/svg', 'style');
+            styleElement.textContent = 'path { fill: #ebebeb }; polygon { fill: #ebebeb };'; // add whatever you need here
+            svgDoc.getElementById("Layer_1").appendChild(styleElement);
+            this.$el.toggleClass('small');
             $('.introView p').toggleClass('hidden');
             vent.trigger('app:start');
         }
-    });
-
-    vent.on('app:start', function(){
-        console.log('start');
     });
 
     return itemView;
