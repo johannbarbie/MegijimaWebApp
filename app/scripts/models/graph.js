@@ -196,6 +196,24 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
+            }, {
+                'id': 'node30',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node31',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
+            }, {
+                'id': 'node32',
+                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'adjacencies': [
+                    {'nodeTo': 'node01','data': {'weight': 4}}
+                ]
             }
         ],
         geojsonFeatures: {
@@ -238,7 +256,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.048989, 34.389594]
+                        'coordinates': [134.051267, 34.388762]
                     }
                 },
                 {
@@ -258,7 +276,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.03,34.4]
+                        'coordinates': [134.053576, 34.391856]
                     }
                 },
                 {
@@ -268,7 +286,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.051123,34.392411]
+                        'coordinates': [134.050787, 34.392644]
                     }
                 },
                 {
@@ -338,7 +356,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.03,34.4]
+                        'coordinates': [134.051688, 34.39217]
                     }
                 },
                 {
@@ -378,7 +396,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.051123,34.392411]
+                        'coordinates': [134.05023,34.392411]
                     }
                 },
                 {
@@ -388,7 +406,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.051123,34.392411]
+                        'coordinates': [134.051469,34.39262]
                     }
                 },
                 {
@@ -498,7 +516,37 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [0,0]
+                        'coordinates': [134.045044, 34.388708]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node30'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [134.038609, 34.381368]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node31'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [134.056066, 34.394722]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'nodeId': 'node32'
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [134.055833, 34.392688]
                     }
                 }
             ]
@@ -517,6 +565,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
             });
         },
         getNode: function(id){
+            console.log(id);
             var rv = this.get('data').get(id);
             rv.data.name = id + '.name';
             rv.data.text = id + '.text';

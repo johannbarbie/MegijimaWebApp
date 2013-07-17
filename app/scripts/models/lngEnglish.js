@@ -199,6 +199,10 @@ define([], function() {
 				text: '',
 				crops: [],
 				activity: ''
+			},
+			credits : {
+				text: '',
+				title: ''
 			}
 		}
 	};

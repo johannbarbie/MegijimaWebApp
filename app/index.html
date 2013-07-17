@@ -46,9 +46,12 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
         <header>
-            <div id="intro"></div>
+            <div id="logoView"></div>
         </header>
-        <img class="bg" src="images/background.jpg"/>
+        <div id="crossfade">
+            <img class="bottom" src="images/background.jpg"/>
+            <img class="top" style="width:100%; height:100%;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP7//wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+        </div>
         <div id="map"></div>
         <div class="main">
               <div id="content"></div>
@@ -88,11 +91,11 @@
             <p class="credits">[CREDITS]</p>
                 <div style="position: absolute;right:0; top:0;" class="leaflet-control-zoom leaflet-control"><a class="leaflet-control-zoom-in leaflet-bar-part leaflet-bar-part-top" href="#" title="Zoom in">+</a><a class="leaflet-control-zoom-out leaflet-bar-part leaflet-bar-part-bottom" href="#" title="Zoom out">-</a></div>
         </script>
-        <script id="intro" type="text/html">
+        <script id="logo" type="text/html">
                 <object type="image/svg+xml" data="images/logo.svg" class="shadow">Your browser does not support SVG</object>
-                <!-- <audio controls><source src="audio/intro.wav" type="audio/wav"></audio> -->
                 <p><strong>A community mapping project by Suhi, Songe, Patrick, and Johann.</strong></p>
         </script>
+        <!-- <audio controls><source src="audio/intro.wav" type="audio/wav"></audio> -->
         <script id="story" type="text/html">
              <div class="modal-header">
                 <h2>This is a modal!</h2>

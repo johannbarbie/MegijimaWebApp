@@ -5,14 +5,9 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
         template: 'main',
         className: 'masonry',
         initialize: function(opt){
-
-            //TODO:
-            //             var callUpdateLine = function(){
-            //     app.appView.updateLine();
-            // };
-            // app.map.on('zoomend', callUpdateLine);
-            // app.map.on('moveend', callUpdateLine);
             this.map = opt.map;
+            this.map.on('zoomend', this.updateLine);
+            this.map.on('moveend', this.updateLine);
             var crops = I18next.t(this.model.get('id')+'.crops',{ returnObjectTrees: true });
             var cropText = '';
             _.each(crops, function(crop){
@@ -29,29 +24,36 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
                 watch: '.mainview'
             });
             var self = this;
-            var jBg = $('img.bg');
-            jBg[0].src = 'images/' + this.model.get('id') + '/background.jpg';
-            jBg.animate({'opacity': 1},700,function(){
-                vent.trigger('map:display', function(){
-                        var thisView = $('div.mainView');
-                        thisView.one(self.transEvent(), function(){
-                            self.updateLine();
-                            vent.trigger('map:showPOIs', function(){
-                                console.log('map pois displayed');
-                            });
-                        });
-                        thisView.animate({'opacity': 1});
-                    },undefined,14);
+            this.jView = $('div.mainView');
+            var jCF = $('#crossfade');
+            var oldImg = jCF.children(':first');
+            oldImg.addClass('top').removeClass('bottom');
+            oldImg.next().remove();
+            var img = $('<img class="bottom">'); //Equivalent: $(document.createElement('img'))
+            img.attr('src', 'images/' + this.model.get('id') + '/background.jpg');
+            img.prependTo(jCF);
+            oldImg.animate({'opacity': 0},500,function(){
+                console.dir(self.jView);
+                self.jView.one(self.transEvent(), function(){
+                    self.updateLine();
+                    vent.trigger('map:showPOIs', function(){
+                        //do something
+                    });
+                });
+                self.jView.animate({'opacity': 1});
             });
+            vent.trigger('map:display');
             //set background image for video
             var jMainVideo = $('#mainVideo');
             jMainVideo.css('background-image', 'url(images/'+this.model.get('id')+'/poster.png)');
         },
         onClose: function(){
-            $('div.mainView').animate({'opacity': 0});
-            $('img.bg').animate({'opacity': 0},1000,function(){
+            this.map.off('zoomend', this.updateLine);
+            this.map.off('moveend', this.updateLine);
+            this.jView.one(this.transEvent(), function(){
                 vent.trigger('app:show');
             });
+            this.jView.animate({'opacity': 0});
         },
         updateLine: function(){
 			var coord = this.model.get('coordinates');
@@ -111,17 +113,17 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
                 // from here: http://help.videojs.com/discussions/problems/861-how-to-destroy-a-video-js-object
                 var player = self.player;
                 // for html5 - clear out the src which solves a browser memory leak
-                //  this workaround was found here: http://stackoverflow.com/questions/5170398/ios-safari-memory-leak-when-loading-unloading-html5-video                                         
-                if(player.techName === 'html5'){
-                    player.tag.src = '';
-                    player.tech.removeTriggers();
-                    player.load();
-                }
+                //  this workaround was found here: http://stackoverflow.com/questions/5170398/ios-safari-memory-leak-when-loading-unloading-html5-video                
+                // if(player.techName === 'html5'){
+                //     player.tag.src = '';
+                //     player.tech.removeTriggers();
+                //     player.load();
+                // }
                 // destroy the player                 
                 player.dispose();
                 self.player = undefined;
             };
-            if (jMainView.width() < 500){
+            if (jMainView.width() < 700){
                 //var jStamp3 = $('.stamp3');
                 //todo: deal with underlying masonry layer
                 jMainView.one(transitionEnd, onEnlarged);

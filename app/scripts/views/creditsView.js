@@ -12,7 +12,8 @@ define(['underscoreM', 'marionette', 'vent'], function(_, Marionette, vent) {
         events: {
             'click':'handleClick'
         },
-        handleClick: function(){
+        handleClick: function(e){
+            e.preventDefault();
             vent.trigger('app:credits',true);
         }
     });

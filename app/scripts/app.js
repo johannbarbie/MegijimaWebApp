@@ -20,7 +20,7 @@ define(['backbone',
     // these regions correspond to #ID's in the index.html 
     app.addRegions({
         header: 'header',
-        logo: '#logo',
+        logo: '#logoView',
         content: '#content',
         related: '#related',
         modal: new ModalRegion({el:'#modal'})
@@ -44,6 +44,9 @@ define(['backbone',
     });
 
     vent.on('app:show', function() {
+        if (!app.currNode){
+            return;
+        }
         var appView = new MainView({model: app.graph.getNode(app.currNode), map: app.map});
         app.content.show(appView);
         var compView = new CompositeView({collection: app.graph.getClosest(app.currNode,7),vent: vent});
@@ -67,6 +70,9 @@ define(['backbone',
 
     //a state after clicking the logo, to show the map big
     vent.on('app:map', function(){
+        app.currNode = undefined;
+        app.related.close();
+        app.content.close();
         if (app.logo.currentView){
             vent.trigger('intro:shrink');
         }else{
@@ -77,7 +83,7 @@ define(['backbone',
                 vent.trigger('map:showPOIs', function(){
                     console.log(e);
                 });
-            }, undefined, 15);
+            }, {lat: 34.394987, lng: 134.078989}, 15);
         });
     });
 
@@ -93,11 +99,11 @@ define(['backbone',
             var curCenter = app.map.getCenterWithOffset();
             if (curCenter.lng!==newCenter.lng ||
                 curCenter.lat !== newCenter.lat ||
-                app.map.getZoom() !==14){
+                app.map.getZoom() !==15){
                 app.map.once('moveend', function() {
                     vent.trigger('app:changeView');
                 });
-                app.map.setViewWithOffset(newCenter, 14);
+                app.map.setViewWithOffset(newCenter, 15);
             }else{
                 vent.trigger('app:changeView');
             }
@@ -107,7 +113,7 @@ define(['backbone',
     //display the map
     vent.on('map:display', function(callback,center,zoom){
         var newCenter = center||app.map.options.megiCenter;
-        var newZoom = zoom||13;
+        var newZoom = zoom||15;
         var setLoc = function(firstZoom){
             var curCenter;
             if (!firstZoom){
@@ -117,11 +123,15 @@ define(['backbone',
                 curCenter.lat !== newCenter.lat ||
                 app.map.getZoom() !==newZoom){
                 app.map.once('moveend', function(e) {
-                    callback(e);
+                    if (callback){
+                        callback(e);
+                    }
                 });
                 app.map.setViewWithOffset(newCenter, newZoom);
             }else{
-                callback();
+                if (callback){
+                    callback();
+                }
             }
         };
         if (!app.mapInitialized){
@@ -129,7 +139,7 @@ define(['backbone',
             window.L.tileLayer('images/tiles/{z}/{x}/{y}.png', {
                 attribution: 'Map data © OpenStreetMap contributors',
                 maxZoom: 17,
-                minZoom: 13
+                minZoom: 14
             }).addTo(app.map);
             app.mapInitialized = true;
             setLoc(true);
@@ -140,7 +150,7 @@ define(['backbone',
 
     //put all the pois on the map
     vent.on('map:showPOIs', function(callback){
-        if (!app.geoInitialized){
+        if (!app.markers){
             var geoJson = new Graph().getGeoJson();
             var onEachFeature = function(feature, layer) {
                 layer.on('click', function(e){
@@ -149,7 +159,7 @@ define(['backbone',
                 });
             };
             var geojsonMarkerOptions = {
-                radius: 8,
+                radius: 16,
                 fillColor: '#88b440',
                 color: '#000',
                 weight: 1,
@@ -159,13 +169,14 @@ define(['backbone',
             app.map.once('layeradd', function() {
                     callback();
                 });
-            app.map.on('click', function(){
-                vent.trigger('app:zoomOut');
-            });
+            // app.map.on('click', function(){
+            //     vent.trigger('app:zoomOut');
+            // });
             var markers = window.L.markerClusterGroup({
                 maxClusterRadius: 40,
                 animateAddingMarkers: true,
-                zoomToBoundsOnClick: false
+                zoomToBoundsOnClick: false,
+                spiderfyDistanceMultiplier: 2
             });
             markers.on('clusterclick', function (a) {
                 vent.trigger('app:zoomIn',a.latlng);
@@ -179,7 +190,7 @@ define(['backbone',
             });
             markers.addLayer(geoJsonLayer);
             app.map.addLayer(markers);
-            app.geoInitialized = true;
+            app.markers = markers;
         }else{
             callback();
         }

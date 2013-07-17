@@ -36,7 +36,7 @@ define(['underscoreM', 'marionette', 'i18next'], function(_, Marionette, I18next
             }
         },
         onShow:function () {
-            this.$el.delay(3000).animate({'opacity': 0.6});
+            this.$el.delay(800).animate({'opacity': 0.6});
             this.$el.addClass(this.model.get('css'));
             //do something
         },

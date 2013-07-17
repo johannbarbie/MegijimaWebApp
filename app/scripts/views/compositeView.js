@@ -21,13 +21,13 @@ define(['underscoreM', 'marionette', 'views/preView', 'bootstrap'], function(_, 
 			//this.collection.each(function(element){
 				//console.dir(element.get('coordinates'));
 			//});
-            var cw = this.getEmSize(this.el) * 3;
+            var cw = this.getEmSize(this.el) * 6;
 			this.msnry = new window.Masonry( this.el, {
 				// options
 				columnWidth: cw,
 				stamp: '.stamp',
 				isOriginLeft: false,
-				gutter: 3,
+				gutter: 6,
 				itemSelector: '.item'
 			});
 		}

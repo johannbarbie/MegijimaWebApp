@@ -1,7 +1,7 @@
 define(['underscoreM', 'marionette', 'vent'], function(_, Marionette, vent) {
     'use strict';
     var itemView = Marionette.ItemView.extend({
-        template: 'intro',
+        template: 'logo',
         className: 'introView',
         initialize: function(opt) {
             this.renderSmall = (opt)?opt.renderSmall:false;
@@ -9,13 +9,9 @@ define(['underscoreM', 'marionette', 'vent'], function(_, Marionette, vent) {
             vent.on('intro:shrink',function(){
                 self.shrink();
             });
-        },
-        render: function(){
-            this.$el.html(
-                '<object type="image/svg+xml" data="images/logo.svg" class="shadow">Your browser does not support SVG</object>'+
-                //'<audio controls><source src="audio/intro.wav" type="audio/wav"></audio>'+
-                '<p><strong>A community mapping project by Suhi, Songe, Patrick, and Johann.</strong></p>');
-            return this;
+            $(document).click(function(e) {
+                self.handleClick(e);
+            });
         },
         shrink: function(){
             this.$el.addClass('small');
@@ -42,13 +38,15 @@ define(['underscoreM', 'marionette', 'vent'], function(_, Marionette, vent) {
                 this.shrink();
             }else{
                 var self = this;
-                $('img.bg').animate({'opacity': 1},2000,function(){
-                    self.$el.delay(100).animate({'opacity': 1});
+                var jCF = $('#crossfade');
+                var oldImg = jCF.children(':first').next();
+                oldImg.animate({'opacity': 0},1000,function(){
                     self.$el.one(self.transEvent(), function(){
                         vent.trigger('map:display', function(){
                             //do something
                         });
                     });
+                    self.$el.delay(1000).animate({'opacity': 1});
                 });
             }
 
@@ -56,7 +54,8 @@ define(['underscoreM', 'marionette', 'vent'], function(_, Marionette, vent) {
         events: {
             'click':'handleClick'
         },
-        handleClick: function(){
+        handleClick: function(e){
+            e.preventDefault();
             var svgDoc = this.$el.children(':first')[0].contentDocument;
             var styleElement = svgDoc.createElementNS('http://www.w3.org/2000/svg', 'style');
             styleElement.textContent = 'polygon { fill: #000 } path { fill: #000 }'; // add whatever you need here

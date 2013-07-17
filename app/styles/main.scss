@@ -11,6 +11,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       width:100%;
       padding:0px;
       margin:0px;
+      overflow:hidden;
       }
 
       body {
@@ -23,12 +24,27 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         overflow:hidden;
       }
 
-      .bg {
-        opacity: 0; 
+      #crossfade {
+        opacity: 1;
         position: absolute; 
+        width: 100%;
+        height: 100%;
         top: 0; 
         left: 0; 
+        overflow:hidden;
       }
+
+      #crossfade img {
+          position:absolute;
+          left:0;
+          opacity: 1;
+          -webkit-transition: opacity 1s ease-in-out;
+          -moz-transition: opacity 1s ease-in-out;
+          -o-transition: opacity 1s ease-in-out;
+          -ms-transition: opacity 1s ease-in-out;    
+          transition: opacity 1s ease-in-out;
+      }
+
 
       div.mainView {
         opacity: 0;
@@ -36,8 +52,8 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         cursor: pointer;
         overflow:hidden;
         right: 0%;
-        width: 35em;
-        height: 20em;
+        width: 49em;
+        height: 28em;
         z-index: 3;
         -webkit-transition:width 300ms ease-in-out, height 300ms ease-in-out, margin 300ms ease-in-out, opacity 1000ms ease-in-out;
         -moz-transition:width 300ms ease-in-out, height 300ms ease-in-out, margin 300ms ease-in-out, opacity 1000ms ease-in-out;
@@ -46,10 +62,10 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       }
 
       div.mainView.enlarged{
-        width: 63em;
-        height: 36em;
+        width: 83em;
+        height: 58em;
         margin-top: -2em;
-        margin-right: -8em;
+        margin-right: 8em;
       }
 
       .mainView .description{
@@ -108,8 +124,8 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         position: absolute;
         top: 10em;
         color: #fff;
-        left: 15em;
-        width: 45em;
+        left: 25%;
+        width: 50%;
         z-index: 3;
         -webkit-transition:all 1000ms ease-in-out;
         -moz-transition:all 1000ms ease-in-out;
@@ -158,7 +174,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       }
 
       .masonry {
-        max-width: 56em;
+        max-width: 100em;
         position: relative;
         top: 6em;
         left: 3em;
@@ -166,8 +182,8 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
       .item {
         cursor: pointer;
-        width:  3em;
-        height: 3em;
+        width:  6em;
+        height: 6em;
         float: left;
         margin-bottom: 0.7em;
         overflow: hidden;
@@ -177,25 +193,30 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         -moz-transition:opacity 1000ms ease-in-out;
         -o-transition:opacity 1000ms ease-in-out;
         transition:opacity 1000ms ease-in-out;
+            -webkit-filter: grayscale(50%);
+       -moz-filter: grayscale(50%);
+         -o-filter: grayscale(50%);
+        -ms-filter: grayscale(50%);
+            filter: grayscale(50%);
       }
 
       .item.w2 { 
-        width:  6em; 
-      }
-      .item.w3 { 
-        width:  9em; 
-      }
-      .item.w4 { 
         width:  12em; 
       }
+      .item.w3 { 
+        width:  18em; 
+      }
+      .item.w4 { 
+        width:  24em; 
+      }
       .item.h2 { 
-        height: 6em; 
+        height: 12em; 
       }
       .item.h3 { 
-        height: 9em; 
+        height: 18em; 
       }
       .item.h4 { 
-        height: 12em; 
+        height: 24em; 
       }
 
       /* position stamp elements with CSS */
@@ -205,32 +226,32 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       .stamp1 {
         left: 0%;
         top: 0px;
-        width: 6em;
-        height: 6em;
+        width: 12em;
+        height: 12em;
       }
       .stamp2 {
         left: 0%;
         top: 0px;
-        width: 14em;
-        height: 1.5em;
+        width: 28em;
+        height: 3em;
       }
       .stamp4 {
         left: 0%;
         top: 0px;
-        width: 1.5em;
-        height: 16em;
+        width: 3em;
+        height: 32em;
       }
       .stamp5 {
         right: 0%;
-        top: 20em;
-        width: 8em;
-        height: 8em;
+        top: 40em;
+        width: 16em;
+        height: 16em;
       }
       .stamp3 {
         right: 0%;
         top: 0px;
-        width: 35em;
-        height: 20em;
+        width: 49em;
+        height: 28em;
         margin-bottom: 0.5em;
       }
       .leaflet-container {
