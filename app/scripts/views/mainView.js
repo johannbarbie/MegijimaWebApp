@@ -1,10 +1,17 @@
-define(['underscoreM', 'marionette', 'i18next', 'videojs','dotdotdot'], function(_, Marionette, I18next) {
+define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'], function(_, Marionette, I18next, vent) {
     'use strict';
 
-    return Marionette.ItemView.extend({
+    var mainView = Marionette.ItemView.extend({
         template: 'main',
         className: 'masonry',
         initialize: function(opt){
+
+            //TODO:
+            //             var callUpdateLine = function(){
+            //     app.appView.updateLine();
+            // };
+            // app.map.on('zoomend', callUpdateLine);
+            // app.map.on('moveend', callUpdateLine);
             this.map = opt.map;
             var crops = I18next.t(this.model.get('id')+'.crops',{ returnObjectTrees: true });
             var cropText = '';
@@ -17,25 +24,33 @@ define(['underscoreM', 'marionette', 'i18next', 'videojs','dotdotdot'], function
             this.model.get('data').cropText = cropText;
         },
         onShow: function(){
-            this.$el.hide().fadeIn();
             //prevent text overflow or cutoff
             $('.ellipsis').dotdotdot({
                 watch: '.mainview'
             });
             var self = this;
-            //set background image for app
-            $('body').fadeOut('fast', function() {
-                $('body').css('background-image', 'url(images/'+self.model.get('id')+'/background.jpg)')
-                     .slideDown(900);
+            var jBg = $('img.bg');
+            jBg[0].src = 'images/' + this.model.get('id') + '/background.jpg';
+            jBg.animate({'opacity': 1},700,function(){
+                vent.trigger('map:display', function(){
+                        var thisView = $('div.mainView');
+                        thisView.one(self.transEvent(), function(){
+                            self.updateLine();
+                            vent.trigger('map:showPOIs', function(){
+                                console.log('map pois displayed');
+                            });
+                        });
+                        thisView.animate({'opacity': 1});
+                    },undefined,14);
             });
             //set background image for video
             var jMainVideo = $('#mainVideo');
             jMainVideo.css('background-image', 'url(images/'+this.model.get('id')+'/poster.png)');
-		    this.updateLine();
         },
-        remove: function(){
-            this.$el.fadeOut(function(){
-                $(this).remove();
+        onClose: function(){
+            $('div.mainView').animate({'opacity': 0});
+            $('img.bg').animate({'opacity': 0},1000,function(){
+                vent.trigger('app:show');
             });
         },
         updateLine: function(){
@@ -53,7 +68,7 @@ define(['underscoreM', 'marionette', 'i18next', 'videojs','dotdotdot'], function
         events: {
             'click':'handleClick'
         },
-        whichTransitionEvent: function(){
+        transEvent: function(){
             var t;
             var el = document.createElement('fakeelement');
             var transitions = {
@@ -77,7 +92,7 @@ define(['underscoreM', 'marionette', 'i18next', 'videojs','dotdotdot'], function
             }
             var jMainView = $('.mainView');
             var jStamp3 = $('.stamp3');
-            var transitionEnd = this.whichTransitionEvent();
+            var transitionEnd = this.transEvent();
             var self = this;
             var onEnlarged = function(){
                 self.removeLine();
@@ -156,4 +171,5 @@ define(['underscoreM', 'marionette', 'i18next', 'videojs','dotdotdot'], function
             element.setAttribute('style','border:0px;z-index: 1; background-image: url("images/lineBg.png"); width:'+width+'px;height:4px;-moz-transform:rotate('+deg+'deg);-webkit-transform:rotate('+deg+'deg);position:absolute;top:'+y+'px;left:'+x+'px;');
         }
     });
+    return mainView;
 });

@@ -1,4 +1,4 @@
-define(['marionette', 'views/templateView', 'vent'], function(Marionette, TemplateView, vent) {
+define(['marionette', 'vent'], function(Marionette, vent) {
     'use strict';
 
     var Controller = {};
@@ -18,11 +18,11 @@ define(['marionette', 'views/templateView', 'vent'], function(Marionette, Templa
     };
 
     Controller.showMap = function() {
-        vent.trigger('app:index');
+        vent.trigger('app:map');
     };
 
     Controller.showCredits = function() {
-        vent.trigger('app:index');
+        vent.trigger('app:credits');
     };
 
     Controller.showTemplate = function(nodeId) {

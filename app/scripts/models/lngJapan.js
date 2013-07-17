@@ -36,7 +36,7 @@ define([], function() {
 				activity: ''
 			},
 			node05: {
-				name: '',
+				name: '\u4E2D\u6751\u3000\u6D0B\u5B50',
 				text: '',
 				crops: [],
 				activity: ''
@@ -114,7 +114,7 @@ define([], function() {
 				activity: ''
 			},
 			node18 : {
-				name: '',
+				name: '\u52A0\u5730\u3000\u7AE0\u4E43',
 				text: '',
 				crops: [],
 				activity: ''
@@ -138,19 +138,19 @@ define([], function() {
 				activity: ''
 			},
 			node22 : {
-				name: '',
+				name: '\u5CA1\u672C\u3000\u7DBE\u5B50',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node23 : {
-				name: '',
+				name: '\u67F4\u672C\u3000\u6804\u5B50',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node24 : {
-				name: '',
+				name: '\u67F4\u672C\u3000\u52DD\u96C4',
 				text: '',
 				crops: [],
 				activity: ''
@@ -180,19 +180,19 @@ define([], function() {
 				activity: ''
 			},
 			node29 : {
-				name: '',
+				name: '\u677E\u5185\u3000\u5343\u5E06',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node30 : {
-				name: '',
+				name: '\u5DDD\u4E95\u3000\u7F8E\u4FDD',
 				text: '',
 				crops: [],
 				activity: ''
 			},
 			node31 : {
-				name: '',
+				name: '\u677E\u5185\u3000\u5343\u5E06',
 				text: '',
 				crops: [],
 				activity: ''

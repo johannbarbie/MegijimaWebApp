@@ -6,16 +6,32 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       /* Body and structure
       -------------------------------------------------- */
 
+      html {
+       height:100%;
+      width:100%;
+      padding:0px;
+      margin:0px;
+      }
+
       body {
         position: relative;
         background-color: #000;
-        background-image: url('../images/background.jpg');
-        background-repeat: no-repeat;
         height: 100%;
-        max-width: 1024px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        overflow:hidden;
+      }
+
+      .bg {
+        opacity: 0; 
+        position: absolute; 
+        top: 0; 
+        left: 0; 
       }
 
       div.mainView {
+        opacity: 0;
         position: absolute;
         cursor: pointer;
         overflow:hidden;
@@ -23,10 +39,10 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         width: 35em;
         height: 20em;
         z-index: 3;
-        -webkit-transition:width 300ms ease-in-out, height 300ms ease-in-out, margin 300ms ease-in-out;
-        -moz-transition:width 300ms ease-in-out, height 300ms ease-in-out, margin 300ms ease-in-out;
-        -o-transition:width 300ms ease-in-out, height 300ms ease-in-out, margin 300ms ease-in-out;
-        transition:width 300ms ease-in-out, height 300ms ease-in-out, margin 300ms ease-in-out;
+        -webkit-transition:width 300ms ease-in-out, height 300ms ease-in-out, margin 300ms ease-in-out, opacity 1000ms ease-in-out;
+        -moz-transition:width 300ms ease-in-out, height 300ms ease-in-out, margin 300ms ease-in-out, opacity 1000ms ease-in-out;
+        -o-transition:width 300ms ease-in-out, height 300ms ease-in-out, margin 300ms ease-in-out, opacity 1000ms ease-in-out;
+        transition:width 300ms ease-in-out, height 300ms ease-in-out, margin 300ms ease-in-out, opacity 1000ms ease-in-out;
       }
 
       div.mainView.enlarged{
@@ -88,16 +104,17 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       }
 
       div.introView {
+        opacity: 0;
         position: absolute;
         top: 10em;
         color: #fff;
         left: 15em;
         width: 45em;
         z-index: 3;
-        -webkit-transition:all 300ms ease-in-out;
-        -moz-transition:all 300ms ease-in-out;
-        -o-transition:all 300ms ease-in-out;
-        transition:all 300ms ease-in-out;
+        -webkit-transition:all 1000ms ease-in-out;
+        -moz-transition:all 1000ms ease-in-out;
+        -o-transition:all 1000ms ease-in-out;
+        transition:all 1000ms ease-in-out;
       }
 
       div.introView.small {
@@ -109,11 +126,28 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         z-index: 0;
       }
 
+      marquee {
+        width: 100%;
+        height: 100%;
+      }
+
+      div.creditsView {
+        position: absolute;
+        left: 30%;
+        width: 40%;
+        height: 70%;
+        top: 20%;
+        z-index: 1050;
+      }
 
       #map { 
-        height: 639px; 
-        width: 100%;
         position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        padding:0px;
+        margin:0px;
         z-index: 1;
       }
 
@@ -137,8 +171,12 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         float: left;
         margin-bottom: 0.7em;
         overflow: hidden;
-        opacity: 0.6;
+        opacity: 0;
         z-index: 2;
+        -webkit-transition:opacity 1000ms ease-in-out;
+        -moz-transition:opacity 1000ms ease-in-out;
+        -o-transition:opacity 1000ms ease-in-out;
+        transition:opacity 1000ms ease-in-out;
       }
 
       .item.w2 { 
@@ -211,6 +249,22 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
           -webkit-filter: drop-shadow( 2px 2px 5px #000 );
           filter: drop-shadow( 2px 2px 5px #000 ); /* Same syntax as box-shadow */
       }
+
+
+      p.credits{
+        top: 40px;
+      }
+
+      .lala{
+          animation: fadein 2s;
+          -moz-animation: fadein 2s; /* Firefox */
+          -webkit-animation: fadein 2s; /* Safari and Chrome */
+          -o-animation: fadein 2s; /* Opera */
+      }
+      @keyframes fadein {from {opacity:0;}to {opacity:1;}}
+      @-moz-keyframes fadein { /* Firefox */from {opacity:0;}to {opacity:1;}}
+      @-webkit-keyframes fadein { /* Safari and Chrome */from {opacity:0;}to {opacity:1;}}
+      @-o-keyframes fadein { /* Opera */from {opacity:0;}to {opacity: 1;}}​
 
       /* Tweak navbar brand link to be super sleek
       -------------------------------------------------- */

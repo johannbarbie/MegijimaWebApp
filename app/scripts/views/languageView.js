@@ -1,24 +1,28 @@
 define(['underscoreM', 'marionette', 'vent', 'i18next'], function(_, Marionette, vent, I18next) {
     'use strict';
     return Marionette.ItemView.extend({
+        template: 'lang',
         className: 'lngView',
-        render: function(){
-            this.$el.html('<p style="position:absolute;">[EN/JP]</p>' +
-                '<div style="position: absolute;right:0; top:0;" class="leaflet-control-zoom leaflet-control"><a class="leaflet-control-zoom-in leaflet-bar-part leaflet-bar-part-top" href="#" title="Zoom in">+</a><a class="leaflet-control-zoom-out leaflet-bar-part leaflet-bar-part-bottom" href="#" title="Zoom out">-</a></div>');
-            return this;
+        initialize: function(opt){
+            this.app = opt.app;
         },
         events: {
-            'click p':'toggleLanguage',
+            'click p.credits':'showCredits',
+            'click p.lang':'toggleLanguage',
             'click a.leaflet-control-zoom-in':'zoomIn',
             'click a.leaflet-control-zoom-out':'zoomOut'
         },
         zoomIn: function(e){
             e.preventDefault();
-            vent.trigger('app:zoomIn', e);
+            vent.trigger('app:zoomIn');
         },
         zoomOut: function(e){
             e.preventDefault();
-            vent.trigger('app:zoomOut', e);
+            vent.trigger('app:zoomOut');
+        },
+        showCredits: function(e){
+            e.preventDefault();
+            vent.trigger('app:credits', false);
         },
         toggleLanguage: function (e){
             e.preventDefault();
@@ -29,7 +33,10 @@ define(['underscoreM', 'marionette', 'vent', 'i18next'], function(_, Marionette,
                     break;
                 }
             }
-            vent.trigger('app:setLang', newLang);
+            I18next.setLng(newLang);
+            if (this.app.currNode){
+                vent.trigger('app:changeView');
+            }
         }
     });
 });

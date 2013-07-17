@@ -10,13 +10,19 @@
         <meta name="description" content="Megijima">
         <meta name="author" content="Johann Barbie">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- build:css styles/vendor/html5bp.js -->
+        <!-- build:css styles/vendor/html5bp.css -->
         <link rel="stylesheet" href="components/html5-boilerplate/css/main.css">
         <!-- endbuild -->
-        <!-- build:css styles/vendor/leaflet.js -->
+        <!-- build:css styles/vendor/leaflet.css -->
         <link rel="stylesheet" href="components/leaflet/dist/leaflet.css" />
         <!-- endbuild -->
-        <!-- build:css styles/vendor/videojs.js -->
+        <!-- build:css styles/vendor/MarkerCluster.css -->
+        <link rel="stylesheet" href="components/leaflet.markerclusterer/dist/MarkerCluster.css" />
+        <!-- endbuild -->
+        <!-- build:css styles/vendor/MarkerCluster.Default.css -->
+        <link rel="stylesheet" href="components/leaflet.markerclusterer/dist/MarkerCluster.Default.css" />
+        <!-- endbuild -->
+        <!-- build:css styles/vendor/videojs.css -->
         <link rel="stylesheet" href="components/video.js/video-js.css"/>
         <!-- endbuild -->
         <link rel="stylesheet" href="styles/main.css">
@@ -39,14 +45,17 @@
         <!--[if lt IE 9]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-        <header></header>
+        <header>
+            <div id="intro"></div>
+        </header>
+        <img class="bg" src="images/background.jpg"/>
         <div id="map"></div>
         <div class="main">
-              <div id="intro"></div>
               <div id="content"></div>
               <div id="related"></div>
               <div class="map" id="navigation"></div>
         </div>
+        <div id="modal"></div>
         <footer></footer>
         <script id="composite" type="text/html">
             <div class="stamp stamp1"></div>
@@ -54,6 +63,9 @@
             <div class="stamp stamp4"></div>
             <div class="stamp stamp5"></div>
             <div class="stamp stamp3"></div>
+        </script>
+        <script id="credits" type="text/html">
+            <marquee scrollamount="2" direction="up" loop="true"> <center> <font color="#ffffff"><strong> THIS IS A COOL WAY<br> TO MAKE YOUR TEXT<br> SCROLL UPWARDS<br> <br> IT IS EASY AND FAST LOADING </strong></font></center></marquee>
         </script>
         <script id="main" type="text/html">
             <div class="mainView row-fluid">
@@ -70,6 +82,16 @@
         <script id="portrait" type="text/html">
             <p class="tag">{{data.cropText}}</p>
             <img src="images/{{preview}}/portrait.jpg" alt="{{data.text}}">
+        </script>
+        <script id="lang" type="text/html">
+            <p class="lang">[EN/JP]</p>
+            <p class="credits">[CREDITS]</p>
+                <div style="position: absolute;right:0; top:0;" class="leaflet-control-zoom leaflet-control"><a class="leaflet-control-zoom-in leaflet-bar-part leaflet-bar-part-top" href="#" title="Zoom in">+</a><a class="leaflet-control-zoom-out leaflet-bar-part leaflet-bar-part-bottom" href="#" title="Zoom out">-</a></div>
+        </script>
+        <script id="intro" type="text/html">
+                <object type="image/svg+xml" data="images/logo.svg" class="shadow">Your browser does not support SVG</object>
+                <!-- <audio controls><source src="audio/intro.wav" type="audio/wav"></audio> -->
+                <p><strong>A community mapping project by Suhi, Songe, Patrick, and Johann.</strong></p>
         </script>
         <script id="story" type="text/html">
              <div class="modal-header">

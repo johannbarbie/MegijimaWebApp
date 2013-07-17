@@ -177,7 +177,7 @@ define([], function() {
 				activity: ''
 			},
 			node29 : {
-				name: 'Yokoyama Seiko',
+				name: 'Yokoyama Shigeko',
 				text: '',
 				crops: [],
 				activity: ''

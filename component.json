@@ -1,3 +1,4 @@
+
 {
   "name": "natfarm",
   "version": "0.1.0",
@@ -17,6 +18,7 @@
     "normalize.scss": "*",
     "html5-boilerplate": "*",
     "leaflet": "*",
+    "leaflet.markerclusterer": "*",
     "video.js": "*",
     "i18next": "*",
     "handlebars": "*"

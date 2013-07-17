@@ -11,7 +11,8 @@ require.config({
         bootstrap: '../components/sass-bootstrap/docs/assets/js/bootstrap',
         text: '../components/requirejs-text/text',
         jitGraph: 'libs/jitGraph/Graph',
-        leaflet: '../components/leaflet/dist/leaflet-src',
+        leaflet: '../components/leaflet/dist/leaflet',
+        llMarkerClusterer: '../components/leaflet.markerclusterer/dist/leaflet.markercluster',
         videojs: '../components/video.js/video',
         handlebars: '../components/handlebars/handlebars',
         i18next: '../components/i18next/release/i18next.amd-1.6.3.min',
@@ -24,6 +25,9 @@ require.config({
         },
         jitGraph: {
             deps: ['jquery']
+        },
+        llMarkerClusterer: {
+            deps: ['leaflet']
         },
         dotdotdot: {
             deps: ['jquery']

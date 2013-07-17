@@ -9,3 +9,9 @@ app/components
 *.webm
 app/images/**/*.png
 app/images/**/*.jpg
+
+app/audio/intro.wav
+
+app/images/human-nature-web-logo.svg
+
+app/images/node00/portrait.jpg

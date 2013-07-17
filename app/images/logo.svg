@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 548 108" enable-background="new 0 0 548 108" xml:space="preserve">
+	<defs>
+		<style type="text/css"><![CDATA[
+			path { fill: #ebebeb }
+			polygon { fill: #ebebeb }
+		]]></style>
+	</defs>
 <g>
 	<path d="M263.939,94.476h-4.586l1.96-8.511c0.369-1.582,0.546-2.675,0.546-3.273c0-1.317-0.721-1.978-2.164-1.978
 		c-0.847,0-2.151,0.478-3.91,1.432c-0.021,0.522-0.111,1.134-0.28,1.843l-2.434,10.487h-4.587l1.962-8.497
