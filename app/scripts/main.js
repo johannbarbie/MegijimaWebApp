@@ -41,7 +41,9 @@ require(['backbone', 'app', 'controllers/pageController', 'i18next', 'models/lng
     var options = {
             pageController: PageController,
             megiCenter: {lat: 34.397987, lng: 134.048989},
-            mapOffset: 1400
+            mapOffset: 1400,
+            minZoom: 14,
+            maxZoom: 17
         };
     I18next.init({
         lng: 'en',

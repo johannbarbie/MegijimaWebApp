@@ -6,7 +6,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
         gData: [
             {
                 'id': 'node00',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 1}},
                     {'nodeTo': 'node02','data': {'weight': 2}},
@@ -19,7 +19,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node01',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node00','data': {'weight': 1}},
                     {'nodeTo': 'node02','data': {'weight': 2}},
@@ -28,189 +28,189 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node02',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node00','data': {'weight': 3}},
                     {'nodeTo': 'node01','data': {'weight': 2}}
                 ]
             }, {
                 'id': 'node03',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node00','data': {'weight': 1}},
                     {'nodeTo': 'node01','data': {'weight': 3}}
                 ]
             }, {
                 'id': 'node04',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'black'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node05',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node06',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node07',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node08',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node09',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node10',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node11',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node12',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node13',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node14',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node15',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node16',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node17',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node18',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node19',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node20',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node21',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node22',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node23',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node24',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node25',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node26',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node27',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node28',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node29',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node30',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node31',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }, {
                 'id': 'node32',
-                'data': {'mapLayer' : 'some layer for map to overlay'},
+                'data': {'logoColor' : 'white'},
                 'adjacencies': [
                     {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
@@ -565,7 +565,6 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
             });
         },
         getNode: function(id){
-            console.log(id);
             var rv = this.get('data').get(id);
             rv.data.name = id + '.name';
             rv.data.text = id + '.text';

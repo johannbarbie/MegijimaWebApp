@@ -14,6 +14,12 @@ define(['underscoreM', 'marionette', 'views/preView', 'bootstrap'], function(_, 
             this.fields[index] = $(itemView.el);
             this.fields[index].appendTo(collectionView.el);
 		},
+		fadeIn: function(){
+			this.children.call('fadeIn');
+		},
+		fadeOut: function(){
+			this.children.call('fadeOut');
+		},
 		getEmSize: function(el) {
 		    return Number(getComputedStyle(el, '').fontSize.match(/(\d+)px/)[1]);
 		},

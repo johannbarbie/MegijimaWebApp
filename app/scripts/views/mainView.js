@@ -6,8 +6,16 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
         className: 'masonry',
         initialize: function(opt){
             this.map = opt.map;
-            this.map.on('zoomend', this.updateLine);
-            this.map.on('moveend', this.updateLine);
+            var self = this;
+
+            //handle map events
+            var mapChanged = function(){
+                self.updateLine();
+            };
+            this.map.on('zoomend moveend', mapChanged);
+            this.mapChanged = mapChanged;
+
+            //deal with tags
             var crops = I18next.t(this.model.get('id')+'.crops',{ returnObjectTrees: true });
             var cropText = '';
             _.each(crops, function(crop){
@@ -24,7 +32,6 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
                 watch: '.mainview'
             });
             var self = this;
-            this.jView = $('div.mainView');
             var jCF = $('#crossfade');
             var oldImg = jCF.children(':first');
             oldImg.addClass('top').removeClass('bottom');
@@ -33,27 +40,36 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
             img.attr('src', 'images/' + this.model.get('id') + '/background.jpg');
             img.prependTo(jCF);
             oldImg.animate({'opacity': 0},500,function(){
-                console.dir(self.jView);
-                self.jView.one(self.transEvent(), function(){
+                self.fadeIn( function(){
                     self.updateLine();
                     vent.trigger('map:showPOIs', function(){
                         //do something
                     });
                 });
-                self.jView.animate({'opacity': 1});
             });
             vent.trigger('map:display');
             //set background image for video
             var jMainVideo = $('#mainVideo');
             jMainVideo.css('background-image', 'url(images/'+this.model.get('id')+'/poster.png)');
         },
-        onClose: function(){
-            this.map.off('zoomend', this.updateLine);
-            this.map.off('moveend', this.updateLine);
-            this.jView.one(this.transEvent(), function(){
-                vent.trigger('app:show');
+        fadeIn: function(callback){
+            var jView = $('div.mainView');
+            jView.one(this.transEvent(), callback);
+            jView.css('opacity',1);
+            //this.updateLine();
+        },
+        fadeOut: function(callback){
+            var jView = $('div.mainView');
+            jView.one(this.transEvent(), callback);
+            jView.css('opacity', 0);
+            this.removeLine();
+        },
+        remove: function(){
+            var mapChanged = this.mapChanged;
+            this.map.off('zoomend moveend', mapChanged);
+            this.fadeOut(function(){
+                this.remove();
             });
-            this.jView.animate({'opacity': 0});
         },
         updateLine: function(){
 			var coord = this.model.get('coordinates');
@@ -88,54 +104,66 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
         },
         handleClick: function (e){
             e.preventDefault();
+            var self = this;
             var jVideo = $('#mainVideo');
             if ($(e.target).parents().is(jVideo[0])){
                 return;
             }
             var jMainView = $('.mainView');
             var jStamp3 = $('.stamp3');
-            var transitionEnd = this.transEvent();
-            var self = this;
-            var onEnlarged = function(){
-                self.removeLine();
-                var id = self.model.get('id');
-                jVideo.html('<video id="example_video_1" class="video-js vjs-default-skin" controls preload="auto" poster="images/'+id+'/poster.png"><source src="videos/'+id+'/clip.mp4" type="video/mp4" /><source src="videos/'+id+'/clip.webm" type="video/webm" /><source src="videos/'+id+'/clip.ogg" type="video/ogg" /></video>');
-                window.videojs('example_video_1', { 'height': jVideo.height(), 'width':jVideo.width() }, function(){
-                    var myPlayer = this;
-                    self.player = myPlayer;
-                    myPlayer.play();
-                });
-            };
-            var onShrinked = function(){
-                self.updateLine();
-            };
-            var removePlayer = function(){
-                // from here: http://help.videojs.com/discussions/problems/861-how-to-destroy-a-video-js-object
-                var player = self.player;
-                // for html5 - clear out the src which solves a browser memory leak
-                //  this workaround was found here: http://stackoverflow.com/questions/5170398/ios-safari-memory-leak-when-loading-unloading-html5-video                
-                // if(player.techName === 'html5'){
-                //     player.tag.src = '';
-                //     player.tech.removeTriggers();
-                //     player.load();
-                // }
-                // destroy the player                 
-                player.dispose();
-                self.player = undefined;
-            };
             if (jMainView.width() < 700){
+                this.enlarged = true;
                 //var jStamp3 = $('.stamp3');
                 //todo: deal with underlying masonry layer
-                jMainView.one(transitionEnd, onEnlarged);
+                jMainView.one(this.transEvent(), function(){
+                    self.onEnlarged();
+                });
                 jMainView.toggleClass('enlarged');
                 jStamp3.toggleClass('enlarged');
             }else{
-                removePlayer();
-                jMainView.one(transitionEnd, onShrinked);
-                jMainView.toggleClass('enlarged');
-                jStamp3.toggleClass('enlarged');
+                this.shrink();
             }
-            //vent.trigger('app:modal', 'story');
+        },
+        onEnlarged: function(){
+            var self = this;
+            var jVideo = $('#mainVideo');
+            this.removeLine();
+            var id = this.model.get('id');
+            jVideo.html('<video id="example_video_1" class="video-js vjs-default-skin" controls preload="auto" poster="images/'+id+'/poster.png"><source src="videos/'+id+'/clip.mp4" type="video/mp4" /><source src="videos/'+id+'/clip.webm" type="video/webm" /><source src="videos/'+id+'/clip.ogg" type="video/ogg" /></video>');
+            window.videojs('example_video_1', { 'height': jVideo.height(), 'width':jVideo.width() }, function(){
+                var myPlayer = this;
+                self.player = myPlayer;
+                myPlayer.play();
+            });
+        },
+        onShrinked: function(){
+            this.updateLine();
+        },
+        removePlayer: function(){
+            // from here: http://help.videojs.com/discussions/problems/861-how-to-destroy-a-video-js-object
+            //var player = self.player;
+            // for html5 - clear out the src which solves a browser memory leak
+            //  this workaround was found here: http://stackoverflow.com/questions/5170398/ios-safari-memory-leak-when-loading-unloading-html5-video                
+            // if(player.techName === 'html5'){
+            //     player.tag.src = '';
+            //     player.tech.removeTriggers();
+            //     player.load();
+            // }
+            // destroy the player                 
+            this.player.dispose();
+            this.player = undefined;
+        },
+        shrink: function (){
+            var self = this;
+            this.enlarged = false;
+            this.removePlayer();
+            var jMainView = $('.mainView');
+            jMainView.one(this.transEvent(), function(){
+                self.onShrinked();
+            });
+            jMainView.toggleClass('enlarged');
+            var jStamp3 = $('.stamp3');
+            jStamp3.toggleClass('enlarged');
         },
         removeLine: function (){
             $(this.line).remove();

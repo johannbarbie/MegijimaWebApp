@@ -19,7 +19,7 @@ define(['backbone',
 
     // these regions correspond to #ID's in the index.html 
     app.addRegions({
-        header: 'header',
+        header: '#lngContainer',
         logo: '#logoView',
         content: '#content',
         related: '#related',
@@ -36,18 +36,24 @@ define(['backbone',
     //prepare fadeout 
     vent.on('app:changeView', function() {
         if (!app.content.currentView){
-            vent.trigger('app:show');
+            //vent.trigger('app:show');
         }else{
             app.related.close();
             app.content.close();
+            //vent.trigger('app:show');
         }
+        vent.trigger('app:show');
     });
 
     vent.on('app:show', function() {
         if (!app.currNode){
             return;
         }
-        var appView = new MainView({model: app.graph.getNode(app.currNode), map: app.map});
+        var data = app.graph.getNode(app.currNode);
+        if (!app.logo.currentView){
+            app.logo.currentView.setColor(data.get('data').logoColor);
+        }
+        var appView = new MainView({model: data, map: app.map});
         app.content.show(appView);
         var compView = new CompositeView({collection: app.graph.getClosest(app.currNode,7),vent: vent});
         app.related.show(compView);
@@ -65,31 +71,72 @@ define(['backbone',
 
     //blank index called, fade in logo
     vent.on('app:index', function(){
-        app.logo.show(new IntroView());
+        if (!app.logo.currentView){
+            app.logo.show(new IntroView());
+        }else{
+            app.logo.currentView.enlarge();
+            app.currNode = undefined;
+            app.related.close();
+            app.content.close();
+            vent.trigger('map:display', function(){
+                //do something
+            });
+        }
     });
 
+    vent.on('app:background', function(){
+        if (app.content.currentView && app.content.currentView.enlarged){
+            app.content.currentView.shrink();
+        }else if (app.content.currentView){
+            if (!app.background){
+                app.content.currentView.fadeOut();
+                app.related.currentView.fadeOut();
+                $('#map').animate({'opacity': 0},500);
+                app.background=true;
+            }else{
+                app.content.currentView.fadeIn();
+                app.related.currentView.fadeIn();
+                $('#map').animate({'opacity': 1},500);
+                app.background=false;
+            }
+        }
+    });
     //a state after clicking the logo, to show the map big
     vent.on('app:map', function(){
+        if (!app.logo.currentView){
+            app.logo.show(new IntroView({renderSmall:true}));
+        }
+        //disable content, if active before
         app.currNode = undefined;
         app.related.close();
         app.content.close();
-        if (app.logo.currentView){
-            vent.trigger('intro:shrink');
-        }else{
-            app.logo.show(new IntroView({renderSmall:true}));
-        }
-        $('img.bg').animate({'opacity': 1},700,function(){
-            vent.trigger('map:display', function(e){
-                vent.trigger('map:showPOIs', function(){
-                    console.log(e);
-                });
-            }, {lat: 34.394987, lng: 134.078989}, 15);
-        });
+        //show map and points
+        vent.trigger('map:display', function(e){
+            vent.trigger('map:showPOIs', function(){
+                console.log(e);
+            });
+        }, {lat: 34.394987, lng: 134.078989}, 15);
+        //crossfade background
+        var jCF = $('#crossfade');
+        var oldImg = jCF.children(':first').next();
+        oldImg.animate({'opacity': 0},100);
     });
 
     //a point on the map has been clicked
     vent.on('map:clickPoi', function(nodeId){
+        //only shrink the main view, if it's enlarged
+        if (app.content.currentView && app.content.currentView.enlarged){
+            app.content.currentView.shrink();
+            return;
+        }
         app.currNode = nodeId;
+        //display logo small if it didn't exist yet
+        if (!app.logo.currentView){
+            app.logo.show(new IntroView({renderSmall:true}));
+        }else{
+            vent.trigger('intro:shrink');
+        }
+        //display map, then call changeView
         if(!app.mapInitialized){
             vent.trigger('map:display', function(){
                 vent.trigger('app:changeView');
@@ -100,13 +147,9 @@ define(['backbone',
             if (curCenter.lng!==newCenter.lng ||
                 curCenter.lat !== newCenter.lat ||
                 app.map.getZoom() !==15){
-                app.map.once('moveend', function() {
-                    vent.trigger('app:changeView');
-                });
                 app.map.setViewWithOffset(newCenter, 15);
-            }else{
-                vent.trigger('app:changeView');
             }
+            vent.trigger('app:changeView');
         }
     });
 
@@ -169,9 +212,15 @@ define(['backbone',
             app.map.once('layeradd', function() {
                     callback();
                 });
-            // app.map.on('click', function(){
-            //     vent.trigger('app:zoomOut');
-            // });
+            app.map.on('click', function(e){
+                if (!app.background){
+                    if (e.latlng.lng < 134.035593){
+                        vent.trigger('app:background');
+                    }
+                }else{
+                    vent.trigger('app:background');
+                }
+            });
             var markers = window.L.markerClusterGroup({
                 maxClusterRadius: 40,
                 animateAddingMarkers: true,
@@ -198,18 +247,19 @@ define(['backbone',
 
 
     vent.on('app:zoomIn', function(latlng){
-        //var node = app.graph.getNode(app.currNode).get('coordinates');
-        //app.map.setViewWithOffset([node[1],node[0]],+1);
-        app.map.setViewWithOffset(latlng,+1);
+        if (app.map.getZoom()<app.options.maxZoom){
+            app.map.setViewWithOffset(latlng,+1);
+        }
     });
 
     vent.on('app:zoomOut', function(latlng){
-        //var node = app.graph.getNode(app.currNode).get('coordinates');
-        //app.map.setViewWithOffset([node[1],node[0]],-1);
-        app.map.setViewWithOffset(latlng,-1);
+        if (app.map.getZoom()>app.options.minZoom){
+            app.map.setViewWithOffset(latlng,-1);
+        }
     });
 
     app.addInitializer(function(options) {
+        app.options = options;
         Marionette.Handlebars = {
             path: 'scripts/templates/',
             extension: '.htm'
@@ -246,6 +296,12 @@ define(['backbone',
             dragging: false,
             attributionControl: false,
             zoomControl: false,
+            doubleClickZoom: false,
+            scrollWheelZoom: false,
+            touchZoom: false,
+            boxZoom: false,
+            tap: false,
+            tapTolerance: 50,
             mapOffset: options.mapOffset,
             megiCenter: options.megiCenter,
             graph: app.graph

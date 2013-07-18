@@ -19,21 +19,11 @@ define(['underscoreM', 'marionette', 'i18next'], function(_, Marionette, I18next
             });
             this.model.get('data').cropText = cropText;
         },
-        transEvent: function(){
-            var t;
-            var el = document.createElement('fakeelement');
-            var transitions = {
-                'transition':'transitionend',
-                'OTransition':'oTransitionEnd',
-                'MozTransition':'transitionend',
-                'WebkitTransition':'webkitTransitionEnd'
-            };
-
-            for(t in transitions){
-                if( el.style[t] !== undefined ){
-                    return transitions[t];
-                }
-            }
+        fadeIn: function(){
+            this.$el.animate({'opacity': 0.6});
+        },
+        fadeOut: function(){
+            this.$el.animate({'opacity': 0.0});
         },
         onShow:function () {
             this.$el.delay(800).animate({'opacity': 0.6});
@@ -41,7 +31,11 @@ define(['underscoreM', 'marionette', 'i18next'], function(_, Marionette, I18next
             //do something
         },
         events: {
-            'click':'makeMain'
+            'click':'makeMain',
+            'mouseup': 'test'
+        },
+        test: function (){
+            console.log('mouse uped');
         },
         makeMain: function (){
             window.Backbone.history.navigate('node/'+this.model.get('preview'),true);

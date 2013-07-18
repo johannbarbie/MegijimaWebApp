@@ -10,25 +10,25 @@ define([], function() {
 			},
 			node01 : {
 				name: 'Takagishi Toshikazu',
-				text: 'In 1950\'s, Megi still has the junior high school and elementary school, sports festival and the Bon festival dance are memorable. ',
+				text: 'Mrs. Hashimoto, whose husband was a fisherman, says that her memorial place is the port of the island. When it was windy and the waves were high, she was anxious for her husband and went to see the port with her small child even in the middle of the night. Mr. Takahashi says that the most scenic place of Megi-jima Island is the top of the mountain, where the cave is located. There you can enjoy the panoramic view. In a sunny day, you can also see Great Seto Bridge.',
 				crops: ['snap green peas', 'green peas', 'string beans'],
 				activity: 'farming'
 			},
 			node02 : {
 				name: 'Hashimoto Kisoe',
-				text: 'The field of barley when Megi were commercially successful (80% of the whole land)',
+				text: 'Mrs. Hashimoto, whose husband was a fisherman, says that her memorial place is the port of the island. When it was windy and the waves were high, she was anxious for her husband and went to see the port with her small child even in the middle of the night. Mr. Takahashi says that the most scenic place of Megi-jima Island is the top of the mountain, where the cave is located. There you can enjoy the panoramic view. In a sunny day, you can also see Great Seto Bridge.',
 				crops: [],
 				activity: 'farming'
 			},
 			node03 : {
 				name: 'Hashimoto Tadakazu',
-				text: 'Harbor (not for ferry), the big covern',
+				text: 'Mrs. Hashimoto, whose husband was a fisherman, says that her memorial place is the port of the island. When it was windy and the waves were high, she was anxious for her husband and went to see the port with her small child even in the middle of the night. Mr. Takahashi says that the most scenic place of Megi-jima Island is the top of the mountain, where the cave is located. There you can enjoy the panoramic view. In a sunny day, you can also see Great Seto Bridge.',
 				crops: ['black porgy', 'stromateidae'],
 				activity: 'farming'
 			},
 			node04 : {
 				name: 'Nakamura Masakatsu',
-				text: 'Harbor (not for ferry), the big covern',
+				text: '"It is not about money, it is about affection" says Mr. Nakamura. He shares the newly harvested rice with his relatives. He thinks that eating rice from the same rice field makes the family bounds stronger.  Mr. Nakamura often took his grandchildren to his rice field. He also has had lunch together with his family at the rice field before. In the past, it was common that people find their partner from another island in Setouchi. About 40 years ago Mrs. Nakamura moved from Ogi-jima Island to Megi-jima Island to get married with Mr. Nakamura. She was featured in the local magazine as an example of “Seto no hanayome (Bride of Seto).” “Seto no hanayome” is also the name of the Japanese famous pop song of 70’s. The song tells a story of newly bride who gets married to a man of a different island of Setouchi.',
 				crops: ['corn', 'garlic', 'peanuts', 'etc.'],
 				activity: 'farming'
 			},
@@ -58,20 +58,20 @@ define([], function() {
 			},
 			node09 : {
 				name: 'Nakakoji Mitsuko',
-				text: 'community centre and the cultrure festival ',
+				text: 'Mrs. Nakakouji says that growing potatoes in the island is not a good idea anymore because wild boars eat most of them. Originally there lived no wild boar in Megi-jima Island. It is said that some wild boars swam from Ogi-jima Island to Megi-jima Island and they bred and multiplied. Potatoes grown in her field were also eatn by wild boars. Therefore she has started to grow potatoes in her garden. She worries that if wild boars start to come around her house, she cannot grow any potatoes. There used to be a graveyard near from the beach. However, as the number of tourists has increased, the graveyard has been moved uphill. The original graveyard has been changed into a park.',
 				crops: ['garlic', 'peanuts'],
 				activity: 'farming'
 			},
 			node10 : {
 				name: 'Tani Kimiko',
-				text: 'the View of the Ocean & the big Cavern. Spending time with his grand children',
-				crops: ['winter: Japanese radish', 'cabbage', 'chinese cabbage', 'summer: corns', 'tomato', 'watermelon'],
+				text: 'When Tani Kimiko was in 8th grade, volleyball was first introduced to Megi-jima Island. Since then, she has been playing volleyball. She also coached the school volleyball team for some years after she had graduated and had started working. Even now she plays volleyball. She is one of the oldest players in Takamatsu-shi city. She also showed pictures of the old days. When she was in her twenties, she was working as a cave guide. At that time many students took a school trip to the cave.',
+				crops: ['Japanese radish', 'cabbage', 'chinese cabbage', 'corn', 'tomato', 'watermelon'],
 				activity: 'farming'
 			},
 			node11 : {
 				name: 'Kurokawa Isako',
-				text: 'Elementary school: she started playing valleyball & now still playing.',
-				crops: ['corns', 'garlic', 'a bit of greenpeas'],
+				text: 'Mrs. Kurokawa used to go to the west coast and the seashore below the light house in order to catch different clams. Before she was able to find many clams, but recently the number of the clams has been decreasing. She loves wild jonquil flowers which grow all around the island. Every year she picks up a lot of jonquil flowers. She also ships some of them to the market.',
+				crops: ['corns', 'garlic', 'greenpeas'],
 				activity: 'farming'
 			},
 			node12 : {
@@ -88,7 +88,7 @@ define([], function() {
 			},
 			node14 : {
 				name: 'Nakano Tsutomu',
-				text: 'She was the guide of the big Cavern, that period so many tourist for the cavern, 4 or 5 times everyday need to go to the ccavern.',
+				text: 'Mr. Nakano had been working as a fisherman until 3 years ago. The fish caught around Megi-island were gathered and shipped to Takamatsu. Mr. Nakano was once involved in a ship accident. His fishing boat was hit by a big working vessel. He managed to save his life by jumping into the water.',
 				crops: ['Nankin　Beans', 'greenpeas', 'beans etc'],
 				activity: 'farming'
 			},
@@ -118,7 +118,7 @@ define([], function() {
 			},
 			node19 : {
 				name: 'Yanagi Shinzou',
-				text: '',
+				text: '\u5973\u6728\u5CF6\u306E\u5168\u3066\u304C\u597D\u304D\u3067\u3059\u3002\u4E00\u756A\u306E\u601D\u3044\u51FA\u306F\u3001\u5C0F\u5B66\u751F\u306E\u6642\u306B\u8A2A\u308C\u305F\u9B3C\u306E\u6D1E\u7A9F\u3067\u3001\u3042\u306E\u3072\u3093\u3084\u308A\u3068\u3057\u305F\u96F0\u56F2\u6C17\u304C\u5FC3\u3092\u304A\u3060\u3084\u304B\u306B\u3057\u3066\u304F\u308C\u307E\u3059\u3002',
 				crops: [],
 				activity: ''
 			},
@@ -201,8 +201,11 @@ define([], function() {
 				activity: ''
 			},
 			credits : {
-				text: '',
-				title: ''
+				line1: 'Suhee',
+				line2: 'Songe',
+				line3: 'Patrick',
+				line4: 'Johann',
+				title: '[Human:Nature]'
 			}
 		}
 	};

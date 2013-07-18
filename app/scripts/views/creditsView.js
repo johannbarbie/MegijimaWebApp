@@ -5,9 +5,6 @@ define(['underscoreM', 'marionette', 'vent'], function(_, Marionette, vent) {
         className: 'creditsView',
         onShow:function () {
             //do something
-            vent.on('test:test',function(){
-                //aoseut
-            });
         },
         events: {
             'click':'handleClick'

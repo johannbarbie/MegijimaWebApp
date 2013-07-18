@@ -15,10 +15,16 @@ define(['underscoreM', 'marionette', 'vent', 'i18next'], function(_, Marionette,
         zoomIn: function(e){
             e.preventDefault();
             vent.trigger('app:zoomIn');
+            if (this.app.map.getZoom()>=this.app.options.maxZoom-1){
+                $('a.leaflet-control-zoom-in').addClass('disabled');
+            }
         },
         zoomOut: function(e){
             e.preventDefault();
             vent.trigger('app:zoomOut');
+            if (this.app.map.getZoom()<=this.app.options.minZoom+1){
+                $('a.leaflet-control-zoom-out').addClass('disabled');
+            }
         },
         showCredits: function(e){
             e.preventDefault();

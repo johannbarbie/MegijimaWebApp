@@ -68,6 +68,14 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         margin-right: 8em;
       }
 
+      img.portrait{
+        margin-top: -10%;
+      }
+
+      img.preview{
+        margin-top: -13%;
+      }
+
       .mainView .description{
         height: 100%;
       }
@@ -126,6 +134,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         color: #fff;
         left: 25%;
         width: 50%;
+        height: 108px;
         z-index: 3;
         -webkit-transition:all 1000ms ease-in-out;
         -moz-transition:all 1000ms ease-in-out;
@@ -134,12 +143,11 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       }
 
       div.introView.small {
-        transform:translate(40em,25em);
-        -moz-transform:translate(40em,25em);
-        -webkit-transform:translate(40em,25em);
-        -o-transform:translate(40em,25em);
-        width: 15em;
-        z-index: 0;
+        transform:translate(-30em,60em);
+        -moz-transform:translate(-30em,60em);
+        -webkit-transform:translate(-30em,60em);
+        -o-transform:translate(-30em,60em);
+        width: 15%;
       }
 
       marquee {

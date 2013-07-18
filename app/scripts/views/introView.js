@@ -9,13 +9,22 @@ define(['underscoreM', 'marionette', 'vent'], function(_, Marionette, vent) {
             vent.on('intro:shrink',function(){
                 self.shrink();
             });
-            $(document).click(function(e) {
-                self.handleClick(e);
-            });
+            if (!this.renderSmall){
+                $(document).click(function(e) {
+                    self.handleClick(e);
+                });
+            }
         },
         shrink: function(){
+            $(document).off('click');
             this.$el.addClass('small');
             $('.introView p').addClass('hidden');
+            this.shrinked = true;
+        },
+        enlarge: function(){
+            this.$el.removeClass('small');
+            $('.introView p').removeClass('hidden');
+            this.shrinked = false;
         },
         transEvent: function(){
             var t;
@@ -36,6 +45,7 @@ define(['underscoreM', 'marionette', 'vent'], function(_, Marionette, vent) {
         onShow:function () {
             if (this.renderSmall === true){
                 this.shrink();
+                this.$el.css('opacity', 1);
             }else{
                 var self = this;
                 var jCF = $('#crossfade');
@@ -46,22 +56,31 @@ define(['underscoreM', 'marionette', 'vent'], function(_, Marionette, vent) {
                             //do something
                         });
                     });
-                    self.$el.delay(1000).animate({'opacity': 1});
+                    self.$el.delay(1000).css('opacity', 1);
                 });
             }
-
         },
         events: {
             'click':'handleClick'
         },
-        handleClick: function(e){
-            e.preventDefault();
+        setColor: function(color){
             var svgDoc = this.$el.children(':first')[0].contentDocument;
             var styleElement = svgDoc.createElementNS('http://www.w3.org/2000/svg', 'style');
-            styleElement.textContent = 'polygon { fill: #000 } path { fill: #000 }'; // add whatever you need here
+            if (color === 'white'){
+                styleElement.textContent = 'polygon { fill: #EBEBEB } path { fill: #EBEBEB }';
+            }else{
+                styleElement.textContent = 'polygon { fill: #000 } path { fill: #000 }';
+            }
             svgDoc.getElementById('Layer_1').appendChild(styleElement);
-            this.shrink();
-            window.Backbone.history.navigate('map',true);
+        },
+        handleClick: function(e){
+            e.preventDefault();
+            if (this.shrinked){
+                window.Backbone.history.navigate('',true);
+            }else{
+                this.shrink();
+                window.Backbone.history.navigate('map',true);
+            }
         }
     });
 
