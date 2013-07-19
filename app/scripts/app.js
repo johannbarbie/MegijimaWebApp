@@ -194,18 +194,39 @@ define(['backbone',
         }
     });
 
+    vent.on('map:removePOIs', function(){
+        app.markers.clearLayers();
+    });
+
     //put all the pois on the map
     vent.on('map:showPOIs', function(callback){
         if (!app.markers){
             var geoJson = new Graph().getGeoJson();
+            console.dir(geoJson);
             var onEachFeature = function(feature, layer) {
                 layer.on('click', function(e){
                     var nodeId = e.target.feature.properties.nodeId;
                     window.Backbone.history.navigate('node/'+nodeId,true);
                 });
             };
-            var geojsonMarkerOptions = {
+            var selectedMarkerOptions = {
+                radius: 18,
+                fillColor: '#88b440',
+                color: '#000',
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8
+            };
+            var relatedMarkerOptions = {
                 radius: 16,
+                fillColor: '#88b440',
+                color: '#000',
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8
+            };
+            var otherMarkerOptions = {
+                radius: 14,
                 fillColor: '#88b440',
                 color: '#000',
                 weight: 1,
@@ -237,7 +258,7 @@ define(['backbone',
             var geoJsonLayer = window.L.geoJson(geoJson,{
                 onEachFeature: onEachFeature,
                 pointToLayer: function (feature, latlng) {
-                    return window.L.circleMarker(latlng, geojsonMarkerOptions);
+                    return window.L.circleMarker(latlng, otherMarkerOptions);
                 }
             });
             markers.addLayer(geoJsonLayer);

@@ -8,9 +8,7 @@ define(['underscoreM', 'marionette', 'vent', 'i18next'], function(_, Marionette,
         },
         events: {
             'click p.credits':'showCredits',
-            'click p.lang':'toggleLanguage',
-            'click a.leaflet-control-zoom-in':'zoomIn',
-            'click a.leaflet-control-zoom-out':'zoomOut'
+            'click p.lang':'toggleLanguage'
         },
         zoomIn: function(e){
             e.preventDefault();

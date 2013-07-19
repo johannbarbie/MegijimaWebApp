@@ -224,26 +224,6 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     {'nodeTo': 'node32','data': {'weight': 1.0}}
                 ]
             }, {
-                'id': 'node25',
-                'adjacencies': [
-                    {'nodeTo': 'node32','data': {'weight': 1.0}}
-                ]
-            }, {
-                'id': 'node26',
-                'adjacencies': [
-                    {'nodeTo': 'node32','data': {'weight': 1.0}}
-                ]
-            }, {
-                'id': 'node27',
-                'adjacencies': [
-                    {'nodeTo': 'node32','data': {'weight': 1.0}}
-                ]
-            }, {
-                'id': 'node28',
-                'adjacencies': [
-                    {'nodeTo': 'node32','data': {'weight': 1.0}}
-                ]
-            }, {
                 'id': 'node29',
                 'adjacencies': [
                     {'nodeTo': 'node32','data': {'weight': 1.0}}
@@ -494,7 +474,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.03,34.4]
+                        'coordinates': [134.056376, 34.398721]
                     }
                 },
                 {
@@ -504,7 +484,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.03,34.4]
+                        'coordinates': [134.054971, 34.395973]
                     }
                 },
                 {
@@ -514,47 +494,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     },
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [134.03,34.4]
-                    }
-                },
-                {
-                    'type': 'Feature',
-                    'properties': {
-                        'nodeId': 'node25'
-                    },
-                    'geometry': {
-                        'type': 'Point',
-                        'coordinates': [134.039016, 34.383892]
-                    }
-                },
-                {
-                    'type': 'Feature',
-                    'properties': {
-                        'nodeId': 'node26'
-                    },
-                    'geometry': {
-                        'type': 'Point',
-                        'coordinates': [134.054078, 34.401247]
-                    }
-                },
-                {
-                    'type': 'Feature',
-                    'properties': {
-                        'nodeId': 'node27'
-                    },
-                    'geometry': {
-                        'type': 'Point',
-                        'coordinates': [134.056318, 34.407003]
-                    }
-                },
-                {
-                    'type': 'Feature',
-                    'properties': {
-                        'nodeId': 'node28'
-                    },
-                    'geometry': {
-                        'type': 'Point',
-                        'coordinates': [134.045015, 34.395968]
+                        'coordinates': [134.055234, 34.396526]
                     }
                 },
                 {
@@ -599,9 +539,6 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 }
             ]
         },
-        getGeoJson: function() {
-            return this.geojsonFeatures;
-        },
         initialize: function() {
             if (typeof(Number.prototype.toRad) === 'undefined') {
                 Number.prototype.toRad = function() {
@@ -617,6 +554,28 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 self.points[point.properties.nodeId] = point;
             });
         },
+        getGeoJson: function() {
+            return this.geojsonFeatures;
+        },
+        getClosestGeoJson: function() {
+            var best = [];
+            //read from graph and make nodes to models
+            var self = this;
+            _.each(this.get('data').get(id).adjacencies, function(adjacence) {
+                var preview = adjacence.nodeTo.id;
+                if (preview === id){
+                    preview = adjacence.nodeFrom.id;
+                }
+                best[best.length] = new Node({
+                    data: self.get('data').get(preview).data,
+                    mainId: id,
+                    preview: preview,
+                    coordinates: self.points[preview].geometry.coordinates,
+                    weight: (1 - ((adjacence.data.weight+distWeight)/2))
+                });
+            });
+            return null;
+        },
         getNode: function(id){
             var rv = this.get('data').get(id);
             rv.data.name = id + '.name';
@@ -626,8 +585,6 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
             return new Node(rv);
         },
         getDistance: function(c1, c2){
-            //[0]long
-            //[1]lat
             var R = 6371; // km
             var dLat = (c2[1]-c1[1]).toRad();
             var dLon = (c2[0]-c1[0]).toRad();
@@ -639,7 +596,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
             var d = R * c;
             return d;
         },
-        getClosest: function(id, count){
+        getClosestRaw: function(id){
             var best = [];
             //read from graph and make nodes to models
             var self = this;
@@ -660,15 +617,10 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     weight: (1 - ((adjacence.data.weight+distWeight)/2))
                 });
             });
-            //fill up
-            // if (best.length < count){
-            //     for (var i = best.length;i<count;i++){
-            //         best[i] = new Node({
-            //             preview: 'empty',
-            //             weight: 10
-            //         });
-            //     }
-            // }
+            return best;
+        },
+        getClosest: function(id, count){
+            var best = this.getClosestRaw(id);
             //sort
             var rv = new NodeList(best,{comparator: 'weight'});
             //remove extra

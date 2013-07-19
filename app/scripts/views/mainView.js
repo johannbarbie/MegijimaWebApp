@@ -51,7 +51,7 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
             vent.trigger('map:display');
             //set background image for video
             var jMainVideo = $('#mainVideo');
-            jMainVideo.css('background-image', 'url(images/'+this.model.get('id')+'/poster.png)');
+            jMainVideo.css('background-image', 'url(images/'+this.model.get('id')+'/poster.jpg)');
         },
         fadeIn: function(callback){
             var jView = $('div.mainView');
@@ -67,6 +67,7 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
         },
         remove: function(){
             var mapChanged = this.mapChanged;
+            vent.trigger('map:removePOIs');
             this.map.off('zoomend moveend', mapChanged);
             this.fadeOut(function(){
                 this.remove();
