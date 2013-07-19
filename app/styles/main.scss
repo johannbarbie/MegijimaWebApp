@@ -99,8 +99,13 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         overflow: hidden;
       }
 
+      div.story{
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 0.2em;
+      }
+
       div.scroller{
-        width: 103.2%;
+        width: 105%;
         height: auto;
         padding-bottom: 15px;
         overflow-y: scroll; 
@@ -170,8 +175,8 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
       div.creditsView {
         position: absolute;
-        left: 30%;
-        width: 40%;
+        left: 10%;
+        width: 80%;
         height: 70%;
         top: 20%;
         z-index: 1050;

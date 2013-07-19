@@ -5,6 +5,19 @@ define(['underscoreM', 'marionette', 'vent'], function(_, Marionette, vent) {
         className: 'creditsView',
         onShow:function () {
             //do something
+            this.playmp3('audio/intro.wav');
+        },
+        playmp3: function(url){
+            var audioElement = document.createElement('audio');
+            audioElement.setAttribute('src', url);
+            audioElement.load();
+            audioElement.addEventListener('canplay', function() {
+                audioElement.play();
+            });
+            this.audioElement = audioElement;
+        },
+        onClose: function(){
+            this.audioElement.pause();
         },
         events: {
             'click':'handleClick'

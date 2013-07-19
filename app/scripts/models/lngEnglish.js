@@ -201,11 +201,21 @@ define([], function() {
 				activity: ''
 			},
 			credits : {
-				line1: 'Suhee',
-				line2: 'Songe',
-				line3: 'Patrick',
-				line4: 'Johann',
-				title: '[Human:Nature]'
+				line0: 'The [HUMAN:NATURE] project represents a starting point for re-imagining our roles within the vital social and ecological support systems of community and agriculture.',
+				title1: 'Project Leader, Landscape Photographer',
+				line1: 'Patrick Lydon (USA)',
+				title2: 'Portrait Photographer',
+				line2: 'Suhee Kang (Korea) ',
+				title3: ' Software Engineer',
+				line3: 'Johann Barbie (Germany)',
+				title4: 'Social Designer',
+				line4: 'Songyi Lee (Korea)',
+				title5: 'Advisers',
+				line5: 'Isao Suiz,\n Kei Toh,<br> Ikumasa Hayashi (Aichi Prefectural University of Fine Arts and Musik)',
+				title6: 'Many thanks to',
+				line6: 'Team Koebi <br>so on',
+				title7: 'Dedicated to ',
+				line7: 'Human and Nature in Megijima<br><br>This project is arranged through a partnership between The University of Edinburgh - Edinburgh College of Art (Scotland), Aichi University of Arts (Japan), with help from the Setouchi International Triennale.<br><br>All images and text used to create this work were licensed under Creative Commons Attribution-Share Alike 3.0 unported.'
 			}
 		}
 	};

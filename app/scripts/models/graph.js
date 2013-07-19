@@ -603,6 +603,11 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
             return this.geojsonFeatures;
         },
         initialize: function() {
+            if (typeof(Number.prototype.toRad) === 'undefined') {
+                Number.prototype.toRad = function() {
+                    return this * Math.PI / 180;
+                };
+            }
             var g = JitGraph.construct(this.gData);
             this.set('data', g);
             _.bindAll(this,'getNode','getClosest');
@@ -620,6 +625,20 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
             rv.coordinates = this.points[id].geometry.coordinates;
             return new Node(rv);
         },
+        getDistance: function(c1, c2){
+            //[0]long
+            //[1]lat
+            var R = 6371; // km
+            var dLat = (c2[1]-c1[1]).toRad();
+            var dLon = (c2[0]-c1[0]).toRad();
+            var lat1 = c1[1].toRad();
+            var lat2 = c2[1].toRad();
+
+            var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
+            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+            var d = R * c;
+            return d;
+        },
         getClosest: function(id, count){
             var best = [];
             //read from graph and make nodes to models
@@ -629,12 +648,16 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 if (preview === id){
                     preview = adjacence.nodeFrom.id;
                 }
+                var maxDistance = 3.6;
+                var distWeight = 1-self.getDistance(
+                    self.points[preview].geometry.coordinates,
+                    self.points[id].geometry.coordinates)/maxDistance;
                 best[best.length] = new Node({
                     data: self.get('data').get(preview).data,
                     mainId: id,
                     preview: preview,
                     coordinates: self.points[preview].geometry.coordinates,
-                    weight: (1 - adjacence.data.weight)
+                    weight: (1 - ((adjacence.data.weight+distWeight)/2))
                 });
             });
             //fill up

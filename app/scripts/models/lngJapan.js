@@ -204,11 +204,21 @@ define([], function() {
 				activity: ''
 			},
 			credits : {
-				line1: 'J_Suhee',
-				line2: 'J_Songe',
-				line3: 'J_Patrick',
-				line4: 'J_Johann',
-				title: 'J_[Human:Nature]'
+				line0: '',
+				title1: '',
+				line1: '',
+				title2: '',
+				line2: '',
+				title3: '',
+				line3: '',
+				title4: '',
+				line4: '',
+				title5: '',
+				line5: '',
+				title6: '',
+				line6: '',
+				title7: '',
+				line7: ''
 			}
 		}
 	};
