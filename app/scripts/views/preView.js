@@ -32,10 +32,6 @@ define(['underscoreM', 'marionette', 'i18next'], function(_, Marionette, I18next
         },
         events: {
             'click':'makeMain',
-            'mouseup': 'test'
-        },
-        test: function (){
-            console.log('mouse uped');
         },
         makeMain: function (){
             window.Backbone.history.navigate('node/'+this.model.get('preview'),true);

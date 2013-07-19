@@ -8,11 +8,12 @@ define(['backbone',
         'views/introView',
         'views/languageView',
         'views/creditsView',
+        'views/imageView',
         'models/graph',
         'i18next',
         'handlebars',
         'llMarkerClusterer',
-        'bootstrap' ], function(Backbone, _, Marionette, vent, ModalRegion, CompositeView, MainView, IntroView, LanguageView, CreditsView, Graph, I18next) {
+        'bootstrap' ], function(Backbone, _, Marionette, vent, ModalRegion, CompositeView, MainView, IntroView, LanguageView, CreditsView, ImageView, Graph, I18next) {
     'use strict';
 
     var app = new Marionette.Application();
@@ -89,7 +90,9 @@ define(['backbone',
             app.content.currentView.shrink();
         }else if (app.content.currentView){
             if (!app.background){
-                app.content.currentView.fadeOut();
+                app.content.currentView.fadeOut(function(){
+                    app.modal.show(new ImageView({nodeId: app.currNode, modal: app.modal}));
+                });
                 app.related.currentView.fadeOut();
                 $('#map').animate({'opacity': 0},500);
                 app.background=true;

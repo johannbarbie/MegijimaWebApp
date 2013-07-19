@@ -6,213 +6,261 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
         gData: [
             {
                 'id': 'node00',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 1}},
-                    {'nodeTo': 'node02','data': {'weight': 2}},
-                    {'nodeTo': 'node03','data': {'weight': 3}},
-                    {'nodeTo': 'node04','data': {'weight': 4}},
-                    {'nodeTo': 'node05','data': {'weight': 5}},
-                    {'nodeTo': 'node06','data': {'weight': 6}},
-                    {'nodeTo': 'node07','data': {'weight': 7}},
-                    {'nodeTo': 'node08','data': {'weight': 8}}
+                    {'nodeTo': 'node32','data': {'weight': 0.0}},
+                    {'nodeTo': 'node06','data': {'weight': 0.103}},
+                    {'nodeTo': 'node13','data': {'weight': 0.397}},
+                    {'nodeTo': 'node12','data': {'weight': 0.356}},
+                    {'nodeTo': 'node11','data': {'weight': 0.517}},
+                    {'nodeTo': 'node14','data': {'weight': 0.267}},
+                    {'nodeTo': 'node03','data': {'weight': 0.495}},
+                    {'nodeTo': 'node09','data': {'weight': 0.277}},
+                    {'nodeTo': 'node05','data': {'weight': 0.204}},
+                    {'nodeTo': 'node10','data': {'weight': 0.297}},
+                    {'nodeTo': 'node04','data': {'weight': 0.462}},
+                    {'nodeTo': 'node07','data': {'weight': 0.16}}
                 ]
             }, {
                 'id': 'node01',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node00','data': {'weight': 1}},
-                    {'nodeTo': 'node02','data': {'weight': 2}},
-                    {'nodeTo': 'node03','data': {'weight': 3}},
-                    {'nodeTo': 'node04','data': {'weight': 4}}
+                    {'nodeTo': 'node14','data': {'weight': 0.319}},
+                    {'nodeTo': 'node32','data': {'weight': 0.0}},
+                    {'nodeTo': 'node04','data': {'weight': 0.581}},
+                    {'nodeTo': 'node06','data': {'weight': 0.034}},
+                    {'nodeTo': 'node12','data': {'weight': 0.407}},
+                    {'nodeTo': 'node03','data': {'weight': 1.0}},
+                    {'nodeTo': 'node11','data': {'weight': 0.551}},
+                    {'nodeTo': 'node13','data': {'weight': 0.633}},
+                    {'nodeTo': 'node10','data': {'weight': 0.462}},
+                    {'nodeTo': 'node07','data': {'weight': 0.07}},
+                    {'nodeTo': 'node05','data': {'weight': 0.288}},
+                    {'nodeTo': 'node09','data': {'weight': 0.481}}
                 ]
             }, {
                 'id': 'node02',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node00','data': {'weight': 3}},
-                    {'nodeTo': 'node01','data': {'weight': 2}}
+                    {'nodeTo': 'node14','data': {'weight': 0.319}},
+                    {'nodeTo': 'node32','data': {'weight': 0.0}},
+                    {'nodeTo': 'node04','data': {'weight': 0.581}},
+                    {'nodeTo': 'node06','data': {'weight': 0.034}},
+                    {'nodeTo': 'node12','data': {'weight': 0.407}},
+                    {'nodeTo': 'node03','data': {'weight': 1.0}},
+                    {'nodeTo': 'node11','data': {'weight': 0.551}},
+                    {'nodeTo': 'node13','data': {'weight': 0.633}},
+                    {'nodeTo': 'node10','data': {'weight': 0.462}},
+                    {'nodeTo': 'node07','data': {'weight': 0.07}},
+                    {'nodeTo': 'node05','data': {'weight': 0.288}},
+                    {'nodeTo': 'node09','data': {'weight': 0.481}}
                 ]
             }, {
                 'id': 'node03',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node00','data': {'weight': 1}},
-                    {'nodeTo': 'node01','data': {'weight': 3}}
+                    {'nodeTo': 'node14','data': {'weight': 0.319}},
+                    {'nodeTo': 'node32','data': {'weight': 0.0}},
+                    {'nodeTo': 'node04','data': {'weight': 0.581}},
+                    {'nodeTo': 'node06','data': {'weight': 0.034}},
+                    {'nodeTo': 'node12','data': {'weight': 0.407}},
+                    {'nodeTo': 'node11','data': {'weight': 0.551}},
+                    {'nodeTo': 'node13','data': {'weight': 0.633}},
+                    {'nodeTo': 'node10','data': {'weight': 0.462}},
+                    {'nodeTo': 'node07','data': {'weight': 0.07}},
+                    {'nodeTo': 'node05','data': {'weight': 0.288}},
+                    {'nodeTo': 'node09','data': {'weight': 0.481}}
                 ]
             }, {
                 'id': 'node04',
-                'data': {'logoColor' : 'black'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node06','data': {'weight': 0.092}},
+                    {'nodeTo': 'node10','data': {'weight': 0.378}},
+                    {'nodeTo': 'node13','data': {'weight': 0.483}},
+                    {'nodeTo': 'node11','data': {'weight': 0.492}},
+                    {'nodeTo': 'node14','data': {'weight': 0.356}},
+                    {'nodeTo': 'node07','data': {'weight': 0.054}},
+                    {'nodeTo': 'node12','data': {'weight': 0.385}},
+                    {'nodeTo': 'node20','data': {'weight': 0.069}},
+                    {'nodeTo': 'node32','data': {'weight': 0.057}},
+                    {'nodeTo': 'node05','data': {'weight': 0.277}},
+                    {'nodeTo': 'node09','data': {'weight': 0.454}}
                 ]
             }, {
                 'id': 'node05',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 0.0}},
+                    {'nodeTo': 'node13','data': {'weight': 0.243}},
+                    {'nodeTo': 'node12','data': {'weight': 0.273}},
+                    {'nodeTo': 'node10','data': {'weight': 0.174}},
+                    {'nodeTo': 'node09','data': {'weight': 0.212}},
+                    {'nodeTo': 'node14','data': {'weight': 0.204}},
+                    {'nodeTo': 'node11','data': {'weight': 0.224}}
                 ]
             }, {
                 'id': 'node06',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 0.0}},
+                    {'nodeTo': 'node11','data': {'weight': 0.042}},
+                    {'nodeTo': 'node10','data': {'weight': 0.056}},
+                    {'nodeTo': 'node14','data': {'weight': 0.062}},
+                    {'nodeTo': 'node13','data': {'weight': 0.061}},
+                    {'nodeTo': 'node09','data': {'weight': 0.064}},
+                    {'nodeTo': 'node12','data': {'weight': 0.041}}
                 ]
             }, {
                 'id': 'node07',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 0.0}},
+                    {'nodeTo': 'node12','data': {'weight': 0.043}},
+                    {'nodeTo': 'node11','data': {'weight': 0.022}},
+                    {'nodeTo': 'node09','data': {'weight': 0.033}},
+                    {'nodeTo': 'node14','data': {'weight': 0.064}},
+                    {'nodeTo': 'node10','data': {'weight': 0.058}}
                 ]
             }, {
                 'id': 'node08',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node14','data': {'weight': 0.0}},
+                    {'nodeTo': 'node09','data': {'weight': 0.042}},
+                    {'nodeTo': 'node20','data': {'weight': 1.0}},
+                    {'nodeTo': 'node32','data': {'weight': 0.816}}
                 ]
             }, {
                 'id': 'node09',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node20','data': {'weight': 0.042}},
+                    {'nodeTo': 'node14','data': {'weight': 0.283}},
+                    {'nodeTo': 'node10','data': {'weight': 0.424}},
+                    {'nodeTo': 'node12','data': {'weight': 0.268}},
+                    {'nodeTo': 'node32','data': {'weight': 0.035}},
+                    {'nodeTo': 'node13','data': {'weight': 0.261}},
+                    {'nodeTo': 'node11','data': {'weight': 0.506}}
                 ]
             }, {
                 'id': 'node10',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 0.0}},
+                    {'nodeTo': 'node12','data': {'weight': 0.282}},
+                    {'nodeTo': 'node13','data': {'weight': 0.274}},
+                    {'nodeTo': 'node14','data': {'weight': 0.316}},
+                    {'nodeTo': 'node11','data': {'weight': 0.516}}
                 ]
             }, {
                 'id': 'node11',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 0.0}},
+                    {'nodeTo': 'node13','data': {'weight': 0.49}},
+                    {'nodeTo': 'node12','data': {'weight': 0.354}},
+                    {'nodeTo': 'node14','data': {'weight': 0.301}}
                 ]
             }, {
                 'id': 'node12',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 0.0}},
+                    {'nodeTo': 'node13','data': {'weight': 0.319}},
+                    {'nodeTo': 'node14','data': {'weight': 0.463}}
                 ]
             }, {
                 'id': 'node13',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 0.0}},
+                    {'nodeTo': 'node14','data': {'weight': 0.159}}
                 ]
             }, {
                 'id': 'node14',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 0.0}}
                 ]
             }, {
                 'id': 'node15',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 1.0}},
+                    {'nodeTo': 'node20','data': {'weight': 0.816}}
                 ]
             }, {
                 'id': 'node16',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node20','data': {'weight': 1.0}},
+                    {'nodeTo': 'node32','data': {'weight': 0.816}}
                 ]
             }, {
                 'id': 'node17',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 1.0}},
+                    {'nodeTo': 'node20','data': {'weight': 0.816}}
                 ]
             }, {
                 'id': 'node18',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 1.0}},
+                    {'nodeTo': 'node20','data': {'weight': 0.816}}
                 ]
             }, {
                 'id': 'node19',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node20','data': {'weight': 1.0}},
+                    {'nodeTo': 'node32','data': {'weight': 0.816}}
                 ]
             }, {
                 'id': 'node20',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 0.816}}
                 ]
             }, {
                 'id': 'node21',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 1.0}}
                 ]
             }, {
                 'id': 'node22',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 1.0}}
                 ]
             }, {
                 'id': 'node23',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 1.0}}
                 ]
             }, {
                 'id': 'node24',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 1.0}}
                 ]
             }, {
                 'id': 'node25',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 1.0}}
                 ]
             }, {
                 'id': 'node26',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 1.0}}
                 ]
             }, {
                 'id': 'node27',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 1.0}}
                 ]
             }, {
                 'id': 'node28',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 1.0}}
                 ]
             }, {
                 'id': 'node29',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 1.0}}
                 ]
             }, {
                 'id': 'node30',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 1.0}}
                 ]
             }, {
                 'id': 'node31',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
+                    {'nodeTo': 'node32','data': {'weight': 1.0}}
                 ]
             }, {
                 'id': 'node32',
-                'data': {'logoColor' : 'white'},
                 'adjacencies': [
-                    {'nodeTo': 'node01','data': {'weight': 4}}
                 ]
             }
         ],
@@ -586,7 +634,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     mainId: id,
                     preview: preview,
                     coordinates: self.points[preview].geometry.coordinates,
-                    weight: (10 - adjacence.data.weight)
+                    weight: (1 - adjacence.data.weight)
                 });
             });
             //fill up

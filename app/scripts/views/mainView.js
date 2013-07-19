@@ -27,6 +27,7 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
             this.model.get('data').cropText = cropText;
         },
         onShow: function(){
+            $('div#mainText').addClass('antiEllipsis');
             //prevent text overflow or cutoff
             $('.ellipsis').dotdotdot({
                 watch: '.mainview'
@@ -120,6 +121,10 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
                 });
                 jMainView.toggleClass('enlarged');
                 jStamp3.toggleClass('enlarged');
+                $('div#mainText').removeClass('ellipsis');
+                $('div#mainText').trigger('destroy');
+                $('div#mainText').removeClass('antiEllipsis');
+                $('div#mainText').addClass('scroller');
             }else{
                 this.shrink();
             }
@@ -137,6 +142,7 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
             });
         },
         onShrinked: function(){
+            $('div#mainText').dotdotdot();
             this.updateLine();
         },
         removePlayer: function(){
@@ -164,6 +170,9 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
             jMainView.toggleClass('enlarged');
             var jStamp3 = $('.stamp3');
             jStamp3.toggleClass('enlarged');
+            $('div#mainText').addClass('ellipsis');
+            $('div#mainText').removeClass('scroller');
+            $('div#mainText').addClass('antiEllipsis');
         },
         removeLine: function (){
             $(this.line).remove();
