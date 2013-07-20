@@ -56,7 +56,8 @@ define(['backbone',
         }
         var appView = new MainView({model: data, map: app.map});
         app.content.show(appView);
-        var compView = new CompositeView({collection: app.graph.getClosest(app.currNode,7),vent: vent});
+        var relNodes = app.graph.getClosest(app.currNode,7);
+        var compView = new CompositeView({collection: relNodes,vent: vent});
         app.related.show(compView);
         app.header.show(new LanguageView({'app':app}));
     });
@@ -209,22 +210,22 @@ define(['backbone',
                     window.Backbone.history.navigate('node/'+nodeId,true);
                 });
             };
-            var selectedMarkerOptions = {
-                radius: 18,
-                fillColor: '#88b440',
-                color: '#000',
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.8
-            };
-            var relatedMarkerOptions = {
-                radius: 16,
-                fillColor: '#88b440',
-                color: '#000',
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.8
-            };
+            // var selectedMarkerOptions = {
+            //     radius: 18,
+            //     fillColor: '#88b440',
+            //     color: '#000',
+            //     weight: 1,
+            //     opacity: 1,
+            //     fillOpacity: 0.8
+            // };
+            // var relatedMarkerOptions = {
+            //     radius: 16,
+            //     fillColor: '#88b440',
+            //     color: '#000',
+            //     weight: 1,
+            //     opacity: 1,
+            //     fillOpacity: 0.8
+            // };
             var otherMarkerOptions = {
                 radius: 14,
                 fillColor: '#88b440',

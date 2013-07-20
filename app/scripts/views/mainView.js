@@ -19,19 +19,23 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
             var crops = I18next.t(this.model.get('id')+'.crops',{ returnObjectTrees: true });
             var cropText = '';
             _.each(crops, function(crop){
-                if (cropText.length > 1){
-                    cropText += ', ';
+                if (crop !== 'none'){
+                    if (cropText.length > 1){
+                        cropText += ', ';
+                    }
+                    cropText += crop;
                 }
-                cropText += crop;
             });
             this.model.get('data').cropText = cropText;
         },
         onShow: function(){
             $('div#mainText').addClass('antiEllipsis');
             //prevent text overflow or cutoff
-            $('.ellipsis').dotdotdot({
-                watch: '.mainview'
-            });
+            if(I18next.lng()==='en'){
+                $('.ellipsis').dotdotdot({
+                    watch: '.mainview'
+                });
+            }
             var self = this;
             var jCF = $('#crossfade');
             var oldImg = jCF.children(':first');
@@ -52,6 +56,7 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
             //set background image for video
             var jMainVideo = $('#mainVideo');
             jMainVideo.css('background-image', 'url(images/'+this.model.get('id')+'/poster.jpg)');
+            jMainVideo.css('background-position', 'center');
         },
         fadeIn: function(callback){
             var jView = $('div.mainView');
@@ -67,7 +72,7 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
         },
         remove: function(){
             var mapChanged = this.mapChanged;
-            vent.trigger('map:removePOIs');
+            //vent.trigger('map:removePOIs');
             this.map.off('zoomend moveend', mapChanged);
             this.fadeOut(function(){
                 this.remove();
@@ -135,7 +140,7 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
             var jVideo = $('#mainVideo');
             this.removeLine();
             var id = this.model.get('id');
-            jVideo.html('<video id="example_video_1" class="video-js vjs-default-skin" controls preload="auto" poster="images/'+id+'/poster.png"><source src="videos/'+id+'/clip.mp4" type="video/mp4" /><source src="videos/'+id+'/clip.webm" type="video/webm" /><source src="videos/'+id+'/clip.ogg" type="video/ogg" /></video>');
+            jVideo.html('<video id="example_video_1" class="video-js vjs-default-skin" controls preload="auto" poster="images/'+id+'/poster.jpg"><source src="videos/'+id+'/clip.mp4" type="video/mp4" /><source src="videos/'+id+'/clip.webm" type="video/webm" /><source src="videos/'+id+'/clip.ogg" type="video/ogg" /></video>');
             window.videojs('example_video_1', { 'height': jVideo.height(), 'width':jVideo.width() }, function(){
                 var myPlayer = this;
                 self.player = myPlayer;
@@ -143,7 +148,9 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
             });
         },
         onShrinked: function(){
-            $('div#mainText').dotdotdot();
+            if(I18next.lng()==='en'){
+                $('div#mainText').dotdotdot();
+            }
             this.updateLine();
         },
         removePlayer: function(){

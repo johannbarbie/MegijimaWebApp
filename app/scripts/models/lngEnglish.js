@@ -5,7 +5,7 @@ define([], function() {
 			node00 : {
 				name: 'Hashimoto Hiromi',
 				text: 'As the police chief of Megijima and acting one-man police force, my most important duty is the regulation of wild boars (inoshishi) on the island. Originally from Ogijima, the boars had limited space to thrive and swam approximately one-and-a-half kilometers to find a new home on Megijima. In addition to ravaging Megijima\'s crops, the boar can also be dangerous to the inhabitants of the island. According to Japanese law, a person requires a license to hunt and shoot the inoshishi. Farmers on the island, therefore resort to scaring them off using the loud explosions of celebratory fireworks.',
-				crops: []
+				crops: ['none']
 			},
 			node01 : {
 				name: 'Takagishi Toshikazu',
@@ -19,7 +19,7 @@ define([], function() {
 			},
 			node03 : {
 				name: 'Hashimoto Tadakazu',
-			    text: '???',
+			    text: 'As a fisherman who often has to leave the safety of the island to go far out to see in order to secure a good catch, there are many powerful memories that my wife and I share from the years that we have lived together on Megijima. One particular place that is especially significant to our lives here is the port. There were many occasions when I was out at sea during dangerous storms that turned the normally tranquil ocean into a violent tempest with roaring waves and screaming winds. I would become fearful that I would not return safely to my wife and children, but I always managed to return to a port where my wife and children would be waiting.  The sight of their faces would fill my heart with joy.<br>In addition to fishing, we also grow crops of corn, garlic, peanuts and other vegetables. Since we do not farm for commercial reasons, we have the freedom to grow what we like. We work with nature and often plant what is in season. The important thing is that our grandchildren enjoy the crops that we grow.',
 				crops: ['black porgy']
 			},
 			node04 : {
@@ -149,6 +149,8 @@ define([], function() {
 			},
 			credits : {
 				line0: 'The [HUMAN:NATURE] project represents a starting point for re-imagining our roles within the vital social and ecological support systems of community and agriculture.',
+				titleCast: 'Cast',
+				cast: 'Hashimoto Hiromi<br>Hashimoto Kisoe<br>Hashimoto Tadakatsu<br>Hashimoto Tokio<br>Ikeda Shigeru<br>Kaji Akino<br>Kawai Miho<br>Kawamura Yashuhide<br>Kitaura Shuzo<br>Kurokawa Isako<br>Matsuuchi Chiho<br>Matsuuchi Hideo<br>Mitsui Yutaka<br>Nakakoji Mitsuko<br>Nakamura Masakatsu<br>Nakamura Yoko<br>Nakano Tsutomu<br>Nishiguchi Takamitsu<br>Nishioka Touhachi<br>Okada Natsue<br>Okamoto Ayako<br>Shibamoto Eiko<br>Shibamoto Katsuo<br>Takagishi Yaichi<br>Takahashi Toshikazu<br>Tani Kimiko<br>Yamamoto Toyoko<br>Yanagi Shinzou<br>Yokoyama Seiko',
 				title1: 'Project Leader, Landscape Photographer',
 				line1: 'Patrick Lydon (USA)',
 				title2: 'Portrait Photographer',
@@ -157,12 +159,12 @@ define([], function() {
 				line3: 'Johann Barbie (Germany)',
 				title4: 'Social Designer',
 				line4: 'Songyi Lee (Korea)',
-				title5: 'Advisers',
-				line5: 'Isao Suiz,<br> Kei Toh,<br> Ikumasa Hayashi (Aichi Prefectural University of Fine Arts and Musik)',
-				title6: 'Many thanks to',
-				line6: 'Team Koebi <br>so on',
-				title7: 'Dedicated to ',
-				line7: 'Human and Nature in Megijima<br><br>This project is arranged through a partnership between The University of Edinburgh - Edinburgh College of Art (Scotland), Aichi University of Arts (Japan), with help from the Setouchi International Triennale.<br><br>All images and text used to create this work were licensed under Creative Commons Attribution-Share Alike 3.0 unported.'
+				title5: 'Academic Advisers',
+				line5: 'Isao Suiz (Aichi University of the Arts)<br>Ross McLean (Edinburgh College of Arts – University of Edinburgh)',
+				title6: 'With',
+				line6: 'Kei Toh, Ikumasa Hayashi<br>Team Koebi<br>Aichi University of the Arts Masters Students',
+				title7: 'Dedicated to',
+				line7: 'The People of Megijima<br><br>This project is arranged through a partnership between The University of Edinburgh - Edinburgh College of Art (Scotland), Aichi University of Arts (Japan), with help from the Setouchi International Triennale.<br><br>All images and text used to create this work were licensed under Creative Commons Attribution-Share Alike 3.0 (CC BY-SA 3.0)<br><br>Our project source code is available on GitHub under the name “MegijimaWebApp”'
 			}
 		}
 	};

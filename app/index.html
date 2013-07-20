@@ -70,7 +70,9 @@
         </script>
         <script id="credits" type="text/html">
             <marquee scrollamount="3" direction="up" loop="true" style="color:white;"> <center> 
-            <h3>{{t 'credits.line0'}}</h3><br> <br>
+            <h4>{{t 'credits.line0'}}</h4><br> <br>
+            <h4>{{t 'credits.titleCast'}}</h4>
+            <strong>{{t 'credits.cast'}}</strong><br> <br>
             <h4>{{t 'credits.title1'}}</h4>
             <strong>{{t 'credits.line1'}}</strong><br><br>
             <h4>{{t 'credits.title2'}}</h4>
@@ -89,11 +91,11 @@
         </script>
         <script id="main" type="text/html">
             <div class="mainView row-fluid">
-              <div class="span7"><img class="portrait" src="images/{{id}}/portrait.jpg" alt="{{t data.name}}"></div>
+              <div class="span7" style="height: 100%; overflow: hidden;"><img class="portrait" src="images/{{id}}/portrait.jpg" alt="{{t data.name}}"></div>
               <div class="span5 description">
-                    <div class="name textField"><strong>{{t data.name}}</strong></div>
+                    <div class="name">{{t data.name}}</div>
                     <div class="story"><div id="mainText" class="ellipsis">{{t data.text}}</div></div>
-                  <div class="tags textField ellipsis">{{t data.cropText}}</div>
+                  <div class="tags  ellipsis">{{data.cropText}}</div>
                     <div id="mainVideo" class="video">
                     </div>
               </div>
@@ -104,8 +106,9 @@
             <img class="preview" src="images/{{preview}}/portrait.jpg" alt="{{data.text}}">
         </script>
         <script id="lang" type="text/html">
-            <p class="lang">[EN/JP]</p>
-            <p class="credits">[CREDITS]</p>
+            <img id="en" src="images/jpn.png">
+            <img id="jp" src="images/jpn.png">
+            <p style="position: absolute; top: 20px; left: 6c0px;" class="credits">[CREDITS]</p>
         </script>
         <script id="logo" type="text/html">
         <svg class="shadow" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 548 108" enable-background="new 0 0 548 108" xml:space="preserve">

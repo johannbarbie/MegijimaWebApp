@@ -8,7 +8,7 @@ define(['underscoreM', 'marionette', 'i18next'], function(_, Marionette, I18next
             var mainCrops = I18next.t(this.model.get('mainId')+'.crops',{ returnObjectTrees: true });
             var intersection = _.intersection(_.toArray(crops),_.toArray(mainCrops));
             if (intersection.length < 1){
-                intersection[0] = 'no common tags';
+                //intersection[0] = 'no common tags';
             }
             var cropText = '';
             _.each(intersection, function(crop){

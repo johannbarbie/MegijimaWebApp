@@ -80,32 +80,27 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         height: 100%;
       }
 
-      .mainView .textField{
-        overflow:hidden;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 0.2em;
-      }
-
       .mainView .name{
-        height: 10%;
-        color: #fff;
-        margin-bottom: 1%;
+        font: 1.6em Helvetica, Arial, sans-serif;
+        color: #E9C248;
+        text-shadow: 1px 1px 1px #000;
+        height: 8%;
       }
 
       div.story{
-        color: #880;
-        height: 43%;
-        margin-bottom: 1%;
+        height: 47%;
         overflow: hidden;
-      }
-
-      div.story{
-        background-color: rgba(0, 0, 0, 0.5);
+        font: 1.3em normal Helvetica, Arial, sans-serif;
+        color: #ffffff;
+        text-shadow: 2px 2px 2px #000;
+        letter-spacing: -0.06em;
         padding: 0.2em;
       }
 
       div.scroller{
-        width: 105%;
+        width: 104.2%;
+        right: -30px;
+        padding-right: 15px;
         height: auto;
         padding-bottom: 15px;
         overflow-y: scroll; 
@@ -117,13 +112,14 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       }
 
       .mainView .tags{
-        color: #880;
-        height: 10%;
-        margin-bottom: 1%;
+        height: 12.2%;
+        font: 1.4em normal Helvetica, Arial, sans-serif;
+        color: #84AF01;
+        text-shadow: 1px 1px 1px #000;
       }
 
       .mainView .video{
-        height: 34%;
+        height: 32.8%;
         background-size: 100%;
         overflow:hidden;
       }
@@ -290,7 +286,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       }
 
       .row-fluid [class*="span"] {
-        margin-left: 0.5%;
+        margin-left: 1.0%;
       }
 
       .shadow {

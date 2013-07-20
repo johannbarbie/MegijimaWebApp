@@ -8,25 +8,14 @@ define(['underscoreM', 'marionette', 'vent', 'i18next'], function(_, Marionette,
         },
         events: {
             'click p.credits':'showCredits',
-            'click p.lang':'toggleLanguage'
-        },
-        zoomIn: function(e){
-            e.preventDefault();
-            vent.trigger('app:zoomIn');
-            if (this.app.map.getZoom()>=this.app.options.maxZoom-1){
-                $('a.leaflet-control-zoom-in').addClass('disabled');
-            }
-        },
-        zoomOut: function(e){
-            e.preventDefault();
-            vent.trigger('app:zoomOut');
-            if (this.app.map.getZoom()<=this.app.options.minZoom+1){
-                $('a.leaflet-control-zoom-out').addClass('disabled');
-            }
+            'click img':'toggleLanguage'
         },
         showCredits: function(e){
             e.preventDefault();
             vent.trigger('app:credits', false);
+        },
+        onShow: function(){
+            $('img#jp').hide();
         },
         toggleLanguage: function (e){
             e.preventDefault();
@@ -36,6 +25,13 @@ define(['underscoreM', 'marionette', 'vent', 'i18next'], function(_, Marionette,
                     newLang = name;
                     break;
                 }
+            }
+            if (newLang!=='en'){
+                $('img#jp').show();
+                $('img#en').hide();
+            }else{
+                $('img#jp').hide();
+                $('img#en').show();
             }
             I18next.setLng(newLang);
             if (this.app.currNode){
