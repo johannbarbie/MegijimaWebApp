@@ -134,17 +134,17 @@ define([], function() {
 			},
 			node30 : {
 				name: 'Kawai Miho',
-				text: 'When I was 18 years-old, I left Megijima for Nagano and Osaka. I lived in Osaka around 10 years and came back to Megijima 17 or 18 years ago. A very special thing about Megijima is the night view of Takamatsu. In addition, the Seto bridge, the sunsets, and the stars at night are very beautiful. Because of the lack of city lights, Megijima gets very dark, making the stars shimmer against a pitch black backdrop.',
+				text: 'When I was 18 years-old, I left Megijima for Nagano and Osaka. I lived in Osaka for around 10 years and came back to Megijima 17 or 18 years ago. A very special thing about Megijima is the night view of Takamatsu. In addition, the Seto bridge, the sunsets, and the stars at night are very beautiful. Because of the lack of city lights, Megijima gets very dark, making the stars shimmer against a pitch black backdrop.',
 				crops: ['peanut', 'sweet potato', 'sweet corn', 'wheat']
 			},
 			node31 : {
 				name: 'Matsuuchi Chiho',
-				text: 'Our favorite place in Megijima is the beach because of the great view of the unspoiled ocean. Despite the beauty of the island, many people decided to leave because it is difficult to find employment and there are no Universities. My grandmother has hotel by the beach, and she grows many different kinds of seasonal vegetable. We do not grow for commercial purposes, only to feed our family.',
+				text: 'Our favorite place in Megijima is the beach because of the great view of the unspoiled ocean. Despite the beauty of the island, many people decided to leave because it is difficult to find employment and there are no schools. My grandmother has a hotel by the beach, and she grows many different kinds of seasonal vegetables. We do not grow for commercial purposes, only to feed our family.',
 				crops: ['corn', 'potato', 'peanut', 'mustard']
 			},
 			node32 : {
 				name: 'Mastuuchi Hideo',
-				text: 'Our favorite place in Megijima is the beach because of the great view of the unspoiled ocean. Despite the beauty of the island, many people decided to leave because it is difficult to find employment and there are no Universities. My grandmother has hotel by the beach, and she grows many different kinds of seasonal vegetable. We do not grow for commercial purposes, only to feed our family.',
+				text: 'Our favorite place in Megijima is the beach because of the great view of the unspoiled ocean. Despite the beauty of the island, many people decided to leave because it is difficult to find employment and there are no schools. My grandmother has a hotel by the beach, and she grows many different kinds of seasonal vegetables. We do not grow for commercial purposes, only to feed our family.',
 				crops: ['corn', 'potato', 'peanut', 'mustard']
 			},
 			credits : {
