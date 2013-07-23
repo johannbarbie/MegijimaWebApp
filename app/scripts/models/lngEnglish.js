@@ -24,12 +24,12 @@ define([], function() {
 			},
 			node04 : {
 				name: 'Nakamura Masakatsu',
-				text: 'About 40 years ago, my wife moved from Ogi-jima Island to Megi-jima Island to to become my bride. She was featured in the local magazine as an example of "Seto no hanayome (Bride of Seto)." "Seto no hanayome" is also the name of a Japanese pop song that was famous in the 1970\'s. The phrase, like the song, tells a story of bride who gets married to a man from a different island. In the past, it was common that people find their partners from other islands because the inhabitants of each island were all related. Since our marriage, my wife and I have been farming rice, eggplants, tomatoes, corn, apricots, and other fruits and vegetables for our family. In the past, we also sold our vegetables to the JA, but we mostly grew for our own consumption.',
+				text: 'It is not about money; it is about affection, and this affection can be expressed through the food that we grow and share. A family that eats rice from the same field creates a strong bond. I often take my grandchildren to my rice field and have lunch with them to share this idea. Our rice field is a very significant place for my family. It is a place to relax and connection. .',
 				crops: ['rice', 'biwa', 'corn', 'tomato', 'cucumber', 'eggplant']
 			},
 			node05 : {
 				name: 'Nakamura Yoko',
-				text: 'It is not about money; it is about affection, and this affection can be expressed through the food that we grow and share. A family that eats rice from the same field creates a strong bond. I often take my grandchildren to my rice field and have lunch with them to share this idea. Our rice field is a very significant place for my family. It is a place to relax and connect.',
+				text: 'About 40 years ago, my wife moved from Ogi-jima Island to Megi-jima Island to to become my bride. She was featured in the local magazine as an example of "Seto no hanayome (Bride of Seto)." "Seto no hanayome" is also the name of a Japanese pop song that was famous in the 1970\'s. The phrase, like the song, tells a story of bride who gets married to a man from a different island. In the past, it was common that people find their partners from other islands because the inhabitants of each island were all related. Since our marriage, my wife and I have been farming rice, eggplants, tomatoes, corn, apricots, and other fruits and vegetables for our family. In the past, we also sold our vegetables to the JA, but we mostly grew for our own consumption.',
 				crops: []
 			},
 			node06 : {
