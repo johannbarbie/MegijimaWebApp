@@ -32,8 +32,8 @@ define(['underscoreM', 'marionette', 'vent'], function(_, Marionette, vent) {
         enlarge: function(){
 	    var self = this;
 	    this.$el.one(this.transEvent(), function(){
-		    self.onEnlarged();
-		});
+		self.onEnlarged();
+	    });
             this.$el.removeClass('small');
             this.shrinked = false;
         },

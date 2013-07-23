@@ -36,7 +36,7 @@ define(['backbone',
 
     //prepare fadeout 
     vent.on('app:changeView', function() {
-	if (app.content.currentView){
+	    if (app.content.currentView){
             app.related.close();
             app.content.close();
         }
@@ -148,7 +148,7 @@ define(['backbone',
 	    // if (curCenter.lng!==newCenter.lng ||
 	    //     curCenter.lat !== newCenter.lat ||
 	    //     app.map.getZoom() !==15){
-	    app.map.setViewWithOffset(newCenter, 15);
+		app.map.setViewWithOffset(newCenter, 15);
 	    //}
             vent.trigger('app:changeView');
         }

@@ -156,15 +156,6 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
             this.updateLine();
         },
         removePlayer: function(){
-            // from here: http://help.videojs.com/discussions/problems/861-how-to-destroy-a-video-js-object
-            //var player = self.player;
-            // for html5 - clear out the src which solves a browser memory leak
-            //  this workaround was found here: http://stackoverflow.com/questions/5170398/ios-safari-memory-leak-when-loading-unloading-html5-video                
-            // if(player.techName === 'html5'){
-            //     player.tag.src = '';
-            //     player.tech.removeTriggers();
-            //     player.load();
-            // }
             // destroy the player                 
             this.player.dispose();
             this.player = undefined;
