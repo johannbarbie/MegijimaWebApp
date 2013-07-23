@@ -31,14 +31,12 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
         onShow: function(){
             $('div#mainText').addClass('antiEllipsis');
             //prevent text overflow or cutoff
-	    //if(I18next.lng()==='en'){
 	    $('.ellipsis').dotdotdot({
 		watch: '.mainview',
 		lastCharacter   : {
 		    remove      : [ ' ', ',', ';', '.', '!', '?' ]
 		}
 	    });
-	    //}
             var self = this;
             var jCF = $('#crossfade');
             var oldImg = jCF.children(':first');
@@ -75,6 +73,9 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
         },
         remove: function(){
             var mapChanged = this.mapChanged;
+	    if (this.enlarged){
+		this.removePlayer();
+	    }
             //vent.trigger('map:removePOIs');
             this.map.off('zoomend moveend', mapChanged);
             this.fadeOut(function(){
@@ -151,9 +152,7 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
             });
         },
         onShrinked: function(){
-	    //if(I18next.lng()==='en'){
 	    $('div#mainText').dotdotdot();
-	    //}
             this.updateLine();
         },
         removePlayer: function(){

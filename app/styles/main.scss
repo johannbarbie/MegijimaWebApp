@@ -72,10 +72,6 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         margin-top: -10%;
       }
 
-      img.preview{
-        margin-top: -13%;
-      }
-
       .mainView .description{
         height: 100%;
       }
@@ -113,7 +109,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
       .mainView .tags{
         height: 12.2%;
-	font: 1.5em normal Helvetica, Arial, sans-serif;
+	      font: 1.5em normal Helvetica, Arial, sans-serif;
         color: #84AF01;
         text-shadow: 1px 1px 1px #000;
       }
@@ -125,16 +121,23 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       }
 
       p.tag{
-        position: absolute;
-        color: #880;
-        font-weight:bold;
+	opacity: 0.8;
+	font: 1.5em normal Helvetica, Arial, sans-serif;
+	color: #84AF01;
+	text-shadow: 1px 1px 1px #000;
+	z-index: 3;
+      }
+
+      p.prevText{
+	opacity: 0.4;
+	z-index: 3;
       }
 
       div.lngView {
         position: absolute;
         top: 2em;
         left: 5%;
-	width: 10em;
+	       width: 10em;
         height: 44px;
         z-index: 3;
         color: #fff;
@@ -172,10 +175,10 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
       div.creditsView {
         position: absolute;
-        left: 10%;
-        width: 80%;
-        height: 70%;
-        top: 20%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	top: 0;
         z-index: 1050;
       }
 
@@ -203,6 +206,18 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         left: 3em;
       }
 
+      img.preview {
+	position: absolute;
+	top: 0;
+	opacity: 0.6;
+	margin-top: -13%;
+	-webkit-filter: grayscale(50%);
+	-moz-filter: grayscale(50%);
+	-o-filter: grayscale(50%);
+	-ms-filter: grayscale(50%);
+	filter: grayscale(50%);
+      }
+
       .item {
         cursor: pointer;
         width:  6em;
@@ -216,11 +231,6 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         -moz-transition:opacity 1000ms ease-in-out;
         -o-transition:opacity 1000ms ease-in-out;
         transition:opacity 1000ms ease-in-out;
-            -webkit-filter: grayscale(50%);
-       -moz-filter: grayscale(50%);
-         -o-filter: grayscale(50%);
-        -ms-filter: grayscale(50%);
-            filter: grayscale(50%);
       }
 
       .item.w2 { 

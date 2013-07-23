@@ -69,41 +69,26 @@
             <div class="stamp stamp3"></div>
         </script>
         <script id="credits" type="text/html">
-            <marquee scrollamount="3" direction="up" loop="true" style="color:white;"> <center> 
-            <h4>{{t 'credits.line0'}}</h4><br> <br>
-            <h4>{{t 'credits.titleCast'}}</h4>
-            <strong>{{t 'credits.cast'}}</strong><br> <br>
-            <h4>{{t 'credits.title1'}}</h4>
-            <strong>{{t 'credits.line1'}}</strong><br><br>
-            <h4>{{t 'credits.title2'}}</h4>
-            <strong>{{t 'credits.line2'}}</strong><br><br>
-            <h4>{{t 'credits.title3'}}</h4>
-            <strong>{{t 'credits.line3'}}</strong><br><br>
-            <h4>{{t 'credits.title4'}}</h4>
-            <strong>{{t 'credits.line4'}}</strong><br><br>
-            <h4>{{t 'credits.title5'}}</h4>
-            <strong>{{t 'credits.line5'}}</strong><br><br>
-            <h4>{{t 'credits.title6'}}</h4>
-            <strong>{{t 'credits.line6'}}</strong><br><br>
-            <h4>{{t 'credits.title7'}}</h4>
-            <strong>{{t 'credits.line7'}}</strong><br><br>
-            </center></marquee>
+	    <img class="credits" src="images/credits.webp">
         </script>
         <script id="main" type="text/html">
             <div class="mainView row-fluid">
               <div class="span7" style="height: 100%; overflow: hidden;"><img class="portrait" src="images/{{id}}/portrait.jpg" alt="{{t data.name}}"></div>
               <div class="span5 description">
                     <div class="name">{{t data.name}}</div>
-                    <div class="story"><div id="mainText" class="ellipsis">{{t data.text}}</div></div>
-                  <div class="tags  ellipsis">{{data.cropText}}</div>
-                    <div id="mainVideo" class="video">
-                    </div>
+		    <div class="story">
+			<div id="mainText" class="ellipsis">{{t data.text}}</div></div>
+		    <div class="tags">
+			<!--<object class="iconPlant" style="float:left" data="images/iconPlant.svg" type="image/svg+xml"></object>-->
+			<div style="height: 100%;" class="ellipsis">{{data.cropText}}</div></div>
+		    <div id="mainVideo" class="video"></div>
               </div>
             </div>
         </script>
         <script id="portrait" type="text/html">
-            <p class="tag">{{data.cropText}}</p>
             <img class="preview" src="images/{{preview}}/portrait.jpg" alt="{{data.text}}">
+	    <p class="tag">{{data.cropText}}</p>
+	    <p class="prevText">{{text}}</p>
         </script>
         <script id="lang" type="text/html">
 	    <p class="lang">[ 日本語 | ENGLISH ]</p>

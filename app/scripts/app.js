@@ -36,12 +36,9 @@ define(['backbone',
 
     //prepare fadeout 
     vent.on('app:changeView', function() {
-        if (!app.content.currentView){
-            //vent.trigger('app:show');
-        }else{
+	if (app.content.currentView){
             app.related.close();
             app.content.close();
-            //vent.trigger('app:show');
         }
         vent.trigger('app:show');
     });
@@ -147,12 +144,12 @@ define(['backbone',
             });
         }else{
             var newCenter = app.map.options.megiCenter;
-            var curCenter = app.map.getCenterWithOffset();
-            if (curCenter.lng!==newCenter.lng ||
-                curCenter.lat !== newCenter.lat ||
-                app.map.getZoom() !==15){
-                app.map.setViewWithOffset(newCenter, 15);
-            }
+	    //var curCenter = app.map.getCenterWithOffset();
+	    // if (curCenter.lng!==newCenter.lng ||
+	    //     curCenter.lat !== newCenter.lat ||
+	    //     app.map.getZoom() !==15){
+	    app.map.setViewWithOffset(newCenter, 15);
+	    //}
             vent.trigger('app:changeView');
         }
     });
@@ -284,6 +281,10 @@ define(['backbone',
     });
 
     app.addInitializer(function(options) {
+	window.onerror = function() {
+	    console.log('global error!!!');
+	    location.reload();
+	};
         app.options = options;
         Marionette.Handlebars = {
             path: 'scripts/templates/',
