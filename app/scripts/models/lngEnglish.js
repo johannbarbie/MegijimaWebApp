@@ -9,7 +9,7 @@ define([], function() {
 			},
 			node01 : {
 				name: 'Takagishi Toshikazu',
-				text: 'For me, the most scenic place of Megijima Island is the top of the mountain where the cave is located. There you can enjoy the panoramic view of the island, the sea, and the main land of Japan. In a sunny day, you can also see Great Seto Bridge. The beauty of Megijima is unparalleled by any other islands in Japan. Of my many cherished memories of the island are the times I have spent with my grandchildren. The time I spend with them is especially precious since, as a father, I could not afford the time with my own children that I have with my grandchildren.',
+				text: 'For me, the most scenic place of Megijima is the top of the mountain where the cave is located. There you can enjoy the panoramic view of the island, the sea, and the main land of Japan. In a sunny day, you can also see Great Seto Bridge. The beauty of Megijima is unparalleled by any other islands in Japan. Of my many cherished memories of the island are the times I have spent with my grandchildren. The time I spend with them is especially precious since, as a father, I could not afford the time with my own children that I have with my grandchildren.',
 				crops: ['radish', 'cabbage', 'corn', 'tomato', 'watermelon']
 			},
 			node02 : {
@@ -24,13 +24,13 @@ define([], function() {
 			},
 			node04 : {
 				name: 'Nakamura Masakatsu',
-				text: 'It is not about money; it is about affection, and this affection can be expressed through the food that we grow and share. A family that eats rice from the same field creates a strong bond. I often take my grandchildren to my rice field and have lunch with them to share this idea. Our rice field is a very significant place for my family. It is a place to relax and connection. .',
+				text: 'It is not about money; it is about affection, and this affection can be expressed through the food that we grow and share. A family that eats rice from the same field creates a strong bond. I often take my grandchildren to my rice field and have lunch with them to share this idea. Our rice field is a very significant place for my family. It is a place to relax and connection.',
 				crops: ['rice', 'biwa', 'corn', 'tomato', 'cucumber', 'eggplant']
 			},
 			node05 : {
 				name: 'Nakamura Yoko',
-				text: 'About 40 years ago, my wife moved from Ogi-jima Island to Megi-jima Island to to become my bride. She was featured in the local magazine as an example of "Seto no hanayome (Bride of Seto)." "Seto no hanayome" is also the name of a Japanese pop song that was famous in the 1970\'s. The phrase, like the song, tells a story of bride who gets married to a man from a different island. In the past, it was common that people find their partners from other islands because the inhabitants of each island were all related. Since our marriage, my wife and I have been farming rice, eggplants, tomatoes, corn, apricots, and other fruits and vegetables for our family. In the past, we also sold our vegetables to the JA, but we mostly grew for our own consumption.',
-				crops: []
+				text: 'About 40 years ago, I moved from Ogijima to Megijima to become a  bride. I was featured in the local magazine as an example of "Seto no hanayome (Bride of Seto)." "Seto no hanayome" is also the name of a Japanese pop song that was famous in the 1970\'s. The phrase, like the song, tells a story of bride who gets married to a man from a different island. In the past, it was common that people find their partners from other islands because the inhabitants of each island were all related. Since our marriage, my husband and I have been farming rice, eggplants, tomatoes, corn, apricots, and other fruits and vegetables for our family. In the past, we also sold our vegetables to JA(Japan Agriculture), but we mostly grew for our own consumption.',
+				crops: ['rice', 'biwa', 'corn', 'tomato', 'cucumber', 'eggplant']
 			},
 			node06 : {
 				name: 'Nishioka Touhachi',
@@ -54,12 +54,12 @@ define([], function() {
 			},
 			node10 : {
 				name: 'Tani Kimiko',
-				text: 'When I was in 8th grade, I enjoyed playing volleyball and other sports. When I got a little older, I began to coach volleyball as well as play. I did this until I began working Even now, at 79 years-old, I still play volleyball. I am one of the oldest players in Takamatsu-shi city.<br>In my twenties, I worked as a cave guide. I have also been involved in farming, growing corn, garlic, and peas. Garlic is the easiest to grow and yields more profit than other vegetables. When I turn 80 years-old I plan to retire from farming.',
+				text: 'When I was in 8th grade, I enjoyed playing volleyball and other sports. When I got a little older, I began to coach volleyball as well as play. I did this until I began working Even now, at 79 years-old, I still play volleyball. I am one of the oldest players in Takamatsu city.<br>In my twenties, I worked as a cave guide. I have also been involved in farming, growing corn, garlic, and peas. Garlic is the easiest to grow and yields more profit than other vegetables. When I turn 80 years-old I plan to retire from farming.',
 				crops: ['corn', 'garlic', 'green pea']
 			},
 			node11 : {
 				name: 'Kurokawa Isako',
-				text: 'I used to go to the west coast and the seashore below the light house in order to gather clams. I would often go home with many bag-fulls of clams, but as the years have passed, the number of the clams has been steadily decreasing. I love wild jonquil flowers which grow all around the island. Every year I pick dozens of them and sell them in Takamatsu city for pocket money. I also ships some of them to the market to be sold.',
+				text: 'I used to go to the west coast and the seashore below the light house in order to gather clams. I would often go home with many bag-fulls of clams, but as the years have passed, the number of the clams has been steadily decreasing. I love wild jonquil flowers which grow all around the island. Every year I pick dozens of them and sell them in Takamatsu for pocket money. I also ships some of them to the market to be sold.',
 				crops: ['sweet potato', 'potato', 'peanut', 'corn']
 			},
 			node12 : {
@@ -74,7 +74,7 @@ define([], function() {
 			},
 			node14 : {
 				name: 'Nakano Tsutomu',
-				text: 'I have been living on Megijima island since 1953, and for the majority of that time I have been a fisherman, catching fish, octopus, and shrimp. The fish caught around Megijima were gathered and shipped to Takamatsu for commercial sale. About 40 years ago, I was involved in a ship accident that almost took my life. It was a normal day, and I was going about my usual business fishing when a ship that was about 20 times the size of my vessel came headed straight for me. I had no time to maneuver my boat out of its path, and had to jump out of my boat into the water to save my own life. It was a very scary moment for me.',
+				text: 'I have been living on Megijima since 1953, and for the majority of that time I have been a fisherman, catching fish, octopus, and shrimp. The fish caught around Megijima were gathered and shipped to Takamatsu for commercial sale. About 40 years ago, I was involved in a ship accident that almost took my life. It was a normal day, and I was going about my usual business fishing when a ship that was about 20 times the size of my vessel came headed straight for me. I had no time to maneuver my boat out of its path, and had to jump out of my boat into the water to save my own life. It was a very scary moment for me.',
 				crops: []
 			},
 			node15 : {
@@ -84,7 +84,7 @@ define([], function() {
 			},
 			node16 : {
 				name: 'Okada Natsue',
-				text: 'Many people ask me my secret to a long and healthy life, and I explain that it is very simple. Every day I make sure to eat meat and enjoy a drink. In the summer, my drink of choice is beer, and in the winter it is sake. I also avoid planting vegetables because I hate vegetables. In my garden I mainly grow peas, beans, and peanuts. I was born on Megijima, but when I was a young girl, I moved to Osaka for about three years working in a cosmetic shop. I returned to Megijima after the war and found that many things had changed. Before the war, there were many beachfront restaurants, but they are all gone now. When they graduated from elementary school, many people were working at those restaurants . And I was working for tourism association as a tour guide for the Oni cave.',
+				text: 'Many people ask me my secret to a long and healthy life, and I explain that it is very simple. Every day I make sure to eat meat and enjoy a drink. In the summer, my drink of choice is beer, and in the winter it is sake. I also avoid planting vegetables because I hate vegetables. In my garden I mainly grow peas, beans, and peanuts.<br>I was born on Megijima, but when I was a young girl, I moved to Osaka for about three years working in a cosmetic shop. I returned to Megijima after the war and found that many things had changed. Before the war, there were many beachfront restaurants, but they are all gone now. When they graduated from elementary school, many people were working at those restaurants . And I was working for tourism association as a tour guide for the Oni cave.',
 				crops: ['bean', 'green pea']
 			},
 			node17 : {
@@ -99,12 +99,12 @@ define([], function() {
 			},
 			node19 : {
 				name: 'Yanagi Shinzou',
-				text: 'I am originally from Takamatsu; however, I feel attached to Megijima as if it were my birth home. From the fertile soil and thriving vegetation, to the warm and hospitable inhabitants, I love everything about Megijima. Of my many fond memories of the island, is my first trip to Oni’s cave. I was just a child, but I can still remember the feeling of the cool temperature on my skin. There is a certain power in Megijima, which is why I am so passionate about working here and helping Megima to be the best it can be.',
+				text: 'I am originally from Takamatsu; however, I feel attached to Megijima as if it were my birth home. From the fertile soil and thriving vegetation, to the warm and hospitable inhabitants, I love everything about Megijima. Of my many fond memories of the island, is my first trip to Oni’s cave. I was just a child, but I can still remember the feeling of the cool temperature on my skin. There is a certain power in Megijima, which is why I am so passionate about working here and helping Megijima to be the best it can be.',
 				crops: []
 			},
 			node20 : {
 				name: 'Hashimoto Tokio',
-				text: 'Springtime in Megijima is accented by the abundance of cherry blossoms. The beauty and ambiance created by this time of year make every day sublime experience. The view of the sunset from the vantage point of the lighthouse looks as if the sky is a blue canvas painted with a blend or pink and orange hues that turn Megijima into a scene worthy to be captured by a master artist. Since I am a fisherman by trade and work every day in the ocean to make a living, the ocean does not provide me with any special emotions. Fishing to me is analogous to breathing. It is just what I do, so I do not really think about it.',
+				text: 'Springtime in Megijima is accented by the abundance of cherry blossoms. The beauty and ambiance created by this time of year make every day sublime experience. The view of the sunset from the vantage point of the lighthouse looks as if the sky is a blue canvas painted with a blend or pink and orange hues that turn Megijima into a scene worthy to be captured by a master artist.<br> Since I am a fisherman by trade and work every day in the ocean to make a living, the ocean does not provide me with any special emotions. Fishing to me is analogous to breathing. It is just what I do, so I do not really think about it.',
 				crops: ['sierra', 'butter fish', 'octopus', 'shrimp']
 			},
 			node21 : {
@@ -134,17 +134,17 @@ define([], function() {
 			},
 			node30 : {
 				name: 'Kawai Miho',
-				text: 'When I was 18 years-old, I left Megijima for Nagano and Osaka. I lived in Osaka for around 10 years and came back to Megijima 17 or 18 years ago. A very special thing about Megijima is the night view of Takamatsu. In addition, the Seto bridge, the sunsets, and the stars at night are very beautiful. Because of the lack of city lights, Megijima gets very dark, making the stars shimmer against a pitch black backdrop.',
+				text: 'When I was 18 years-old, I left Megijima for Nagano and Osaka. I lived in Osaka around 10 years and came back to Megijima 17 or 18 years ago. A very special thing about Megijima is the night view of Takamatsu. In addition, the Seto bridge, the sunsets, and the stars at night are very beautiful. Because of the lack of city lights, Megijima gets very dark, making the stars shimmer against a pitch black backdrop.',
 				crops: ['peanut', 'sweet potato', 'sweet corn', 'wheat']
 			},
 			node31 : {
 				name: 'Matsuuchi Chiho',
-				text: 'Our favorite place in Megijima is the beach because of the great view of the unspoiled ocean. Despite the beauty of the island, many people decided to leave because it is difficult to find employment and there are no schools. My grandmother has a hotel by the beach, and she grows many different kinds of seasonal vegetables. We do not grow for commercial purposes, only to feed our family.',
+				text: 'Our favorite place in Megijima is the beach because of the great view of the unspoiled ocean. Despite the beauty of the island, many people decided to leave because it is difficult to find employment and there are no Universities. My grandmother has hotel by the beach, and she grows many different kinds of seasonal vegetable. We do not grow for commercial purposes, only to feed our family.',
 				crops: ['corn', 'potato', 'peanut', 'mustard']
 			},
 			node32 : {
 				name: 'Mastuuchi Hideo',
-				text: 'Our favorite place in Megijima is the beach because of the great view of the unspoiled ocean. Despite the beauty of the island, many people decided to leave because it is difficult to find employment and there are no schools. My grandmother has a hotel by the beach, and she grows many different kinds of seasonal vegetables. We do not grow for commercial purposes, only to feed our family.',
+				text: 'Our favorite place in Megijima is the beach because of the great view of the unspoiled ocean. Despite the beauty of the island, many people decided to leave because it is difficult to find employment and there are no Universities. My grandmother has hotel by the beach, and she grows many different kinds of seasonal vegetable. We do not grow for commercial purposes, only to feed our family.',
 				crops: ['corn', 'potato', 'peanut', 'mustard']
 			},
 			credits : {
