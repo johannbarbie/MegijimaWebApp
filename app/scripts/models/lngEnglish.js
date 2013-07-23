@@ -29,18 +29,18 @@ define([], function() {
 			},
 			node05 : {
 				name: 'Nakamura Yoko',
-				text: 'About 40 years ago, I moved from Ogijima to Megijima to become a  bride. I was featured in the local magazine as an example of "Seto no hanayome (Bride of Seto)." "Seto no hanayome" is also the name of a Japanese pop song that was famous in the 1970\'s. The phrase, like the song, tells a story of bride who gets married to a man from a different island. In the past, it was common that people find their partners from other islands because the inhabitants of each island were all related. Since our marriage, my husband and I have been farming rice, eggplants, tomatoes, corn, apricots, and other fruits and vegetables for our family. In the past, we also sold our vegetables to JA(Japan Agriculture), but we mostly grew for our own consumption.',
+				text: 'About 40 years ago, I moved from Ogijima to Megijima to become a  bride. I was featured in the local magazine as an example of "Seto no hanayome (Bride of Seto)." "Seto no hanayome" is also the name of a Japanese pop song that was famous in the 1970\'s. The phrase, like the song, tells a story of bride who gets married to a man from a different island. In the past, it was common that people find their partners from other islands because the inhabitants of each island were all related. Since our marriage, my husband and I have been farming rice, eggplants, tomatoes, corn, apricots, and other fruits and vegetables for our family. In the past, we also sold our vegetables to Japan Agriculture (JA), but we mostly grew for our own consumption.',
 				crops: ['rice', 'biwa', 'corn', 'tomato', 'cucumber', 'eggplant']
 			},
 			node06 : {
 				name: 'Nishioka Touhachi',
-				text: 'The main crops of Megijima are tobacco, wheat, peanut, potato, and sweet potato. When it\'s wheat season, the whole island becomes yellow because of the wheat flower. A long time ago, all the households had two cows, so more than 300 cows inhabited the island. Since 1961 the number of milk producing cows decreased. Megijima had an elementary school, junior high school, and a big sport festival which lasted from the morning and went on until the late night. There was also a three-day dance festival. At that time the population of the island was more than 1300. Today the population is approximately 140 and we only have one main event on the island which is Bon Odori.',
+				text: 'The main crops of Megijima are tobacco, wheat, peanut, potato, and sweet potato. Years ago, during wheat season, all of the hills would glisten yellow from the wheat flower. A long time ago, the households each had two cows, so more than 300 cows inhabited the island. Since 1961 the number of milk producing cows decreased. <br>Megijima had an elementary school, junior high school, and a big sport festival which lasted from the morning and went on until the late night. There was also a three-day dance festival. At that time the population of the island was more than 1300. Today the population is approximately 140 and we only have one main event on the island which is Bon Odori.',
 				crops: ['green pea', 'bean']
 			},
 			node07 : {
 				name: 'Ikeda Shigeru',
-				text: 'The main crops of Megijima are tobacco, wheat, peanut, potato, and sweet potato. When it\'s wheat season, the whole island becomes yellow because of the wheat flower. A long time ago, all the households had two cows, so more than 300 cows inhabited the island. Since 1961 the number of milk producing cows decreased. Megijima had an elementary school, junior high school, and a big sport festival which lasted from the morning and went on until the late night. There was also a three-day dance festival. At that time the population of the island was more than 1300. Today the population is approximately 140 and we only have one main event on the island which is Bon Odori.',
-				crops: []
+				text: 'The main crops of Megijima are tobacco, wheat, peanut, potato, and sweet potato. Years ago, during wheat season, all of the hills would glisten yellow from the wheat flower. A long time ago, the households each had two cows, so more than 300 cows inhabited the island. Since 1961 the number of milk producing cows decreased. <br>Megijima had an elementary school, junior high school, and a big sport festival which lasted from the morning and went on until the late night. There was also a three-day dance festival. At that time the population of the island was more than 1300. Today the population is approximately 140 and we only have one main event on the island which is Bon Odori.',
+				crops: ['green pea', 'bean']
 			},
 			node08 : {
 				name: 'Kitaura Shuzo',
@@ -49,38 +49,38 @@ define([], function() {
 			},
 			node09 : {
 				name: 'Nakakoji Mitsuko',
-				text: 'Growing potatoes on the island is not a good idea anymore because wild boars eat most of them. Originally there were no wild boars in Megijima, but that all changed when a few swam from Ogijima to Megijima and they bred and multiplied. Despite my experience with the boars, I do have a small patch of soil where I grow a few potatoes, but I mostly grow okra, rice, tobacco, and garlic. Of my favorite places on the island is the old beach that is now being developed. My memories of this place included singing songs with friends, catching dragon flies, and relaxing near the cave.',
-				crops: ['okura', 'rice', 'tabacco']
+				text: 'Growing potatoes on the island is not a good idea anymore because wild boars (inoshishi) eat most of them. Originally there were no wild boars in Megijima, but that all changed when a few swam from Ogijima to Megijima and they bred and multiplied. Despite my experience with the boars, I do have a small patch of soil where I grow a few potatoes, but I mostly grow okra, rice, tobacco, and garlic.<br>Of my favorite places on the island is the old beach that is now being developed. My memories of this place included singing songs with friends, catching dragon flies, and relaxing near the cave.',
+				crops: ['okra', 'rice', 'tobacco', 'garlic']
 			},
 			node10 : {
 				name: 'Tani Kimiko',
-				text: 'When I was in 8th grade, I enjoyed playing volleyball and other sports. When I got a little older, I began to coach volleyball as well as play. I did this until I began working Even now, at 79 years-old, I still play volleyball. I am one of the oldest players in Takamatsu city.<br>In my twenties, I worked as a cave guide. I have also been involved in farming, growing corn, garlic, and peas. Garlic is the easiest to grow and yields more profit than other vegetables. When I turn 80 years-old I plan to retire from farming.',
+				text: 'When I was in 8th grade, I enjoyed playing volleyball and other sports. When I got a little older, I began to coach volleyball as well as play. I did this until I began working Even now, at 79 years-old, I still play volleyball. I am one of the oldest players in Takamatsu.<br>In my twenties, I worked as a cave guide. I have also been involved in farming, growing corn, garlic, and peas. Garlic is the easiest to grow and yields more profit than other vegetables. When I turn 80 years-old I plan to retire from farming.',
 				crops: ['corn', 'garlic', 'green pea']
 			},
 			node11 : {
 				name: 'Kurokawa Isako',
-				text: 'I used to go to the west coast and the seashore below the light house in order to gather clams. I would often go home with many bag-fulls of clams, but as the years have passed, the number of the clams has been steadily decreasing. I love wild jonquil flowers which grow all around the island. Every year I pick dozens of them and sell them in Takamatsu for pocket money. I also ships some of them to the market to be sold.',
+				text: 'I used to go to the west coast and the seashore below the light house in order to gather clams. I would often go home with many bag-fulls of clams, but as the years have passed, the number of the clams has been steadily decreasing.<br>I love wild jonquil flowers which grow all around the island. Every year I pick dozens of them and sell them in Takamatsu for pocket money. I also ship some of them to the market to be sold.',
 				crops: ['sweet potato', 'potato', 'peanut', 'corn']
 			},
 			node12 : {
 				name: 'Nishiguchi Toshio',
-				text: 'I have an eighty-three-year-old relative, who grows mandarins at the other side of the island. Every year I help her pick up the mandarins, but I mostly fish for a living catching Spanish mackerel, abalone, and sea cucumber. My wife and children live in Takamatsu because my children go to school there. When I am off, I take the ferry go visit them. Transportation is more convenient today than it was just a few years ago, but there still needs to be improvements. More people would come back to the island if the last ship would leave around 8:00 pm from the Takamatsu port. People would have the opportunity to come back to the island after they finish their job in Takamatsu.',
-				crops: ['sierra', 'butter fish', 'turban shell', 'abalone', 'sea cucumber']
+				text: 'I have an eighty-three-year-old relative, who grows mandarins at the other side of the island. Every year I help her pick up the mandarins, but I mostly fish for a living catching Spanish mackerel, abalone, and sea cucumber.<br>My wife and children live in Takamatsu because my children go to school there. When I am off, I take the ferry go visit them. Transportation is more convenient today than it was just a few years ago, but there still needs to be improvements. More people would come back to the island if the last ship would leave around 8:00 pm from the Takamatsu port. People would have the opportunity to come back to the island after they finish their job in Takamatsu.',
+				crops: ['sierra', 'Spanish mackerel', 'butter fish', 'turban shell', 'abalone', 'sea cucumber']
 			},
 			node13 : {
 				name: 'Takagishi Yaichi',
-				text: 'Before my wife became a farmer, I was half fisherman and half farmer. I often went out to sea fishing for three months at a time. I also went to Osaka by myself to work.<br>In the winter, my wife and I grew wheat. In the Summer it was sweet potato. We used cows to plow the field and we could rent a cow from Takamatsu in exchange for rice.<br>When people from Osaka started to build the Summer house, we created the garlic association and began to focus on growing garlic. The main crops in Megijima are wheat, rice, and plum. Plum was very popular for some time. At that time, It was typical for women in Megijima to seek employment in Osaka after graduating junior high school. They would typically work for 3-5 years and then return to Megijima.<br>There was a time when I raised silk worms on my farm. This was the most lucrative form of farming that I have ever done.',
+				text: 'Before my wife became a farmer, I was half fisherman and half farmer. I often went out to sea fishing for three months at a time. I also went to Osaka by myself to work.<br>In the winter, my wife and I grew wheat. In the Summer it was sweet potato. We used cows to plow the field and we could rent a cow from Takamatsu in exchange for rice.<br>When people from Osaka started to build the Summer house, we created the garlic association and began to focus on growing garlic. The main crops in Megijima have been wheat, rice, and plum. Plum was very popular for some time.<br>In the past, It was typical for women in Megijima to seek employment in Osaka after graduating junior high school. They would typically work for 3-5 years and then return to Megijima.<br>There was a time when I raised silk worms on my farm. This was the most lucrative form of farming that I have ever done.',
 				crops: ['garlic', 'peanut']
 			},
 			node14 : {
 				name: 'Nakano Tsutomu',
-				text: 'I have been living on Megijima since 1953, and for the majority of that time I have been a fisherman, catching fish, octopus, and shrimp. The fish caught around Megijima were gathered and shipped to Takamatsu for commercial sale. About 40 years ago, I was involved in a ship accident that almost took my life. It was a normal day, and I was going about my usual business fishing when a ship that was about 20 times the size of my vessel came headed straight for me. I had no time to maneuver my boat out of its path, and had to jump out of my boat into the water to save my own life. It was a very scary moment for me.',
+				text: 'I have been living on Megijima since 1953, and for the majority of that time I have been a fisherman, catching fish, octopus, and shrimp. The fish caught around Megijima were gathered and shipped to Takamatsu for commercial sale.<br>About 40 years ago, I was involved in a ship accident that almost took my life. It was a normal day, and I was going about my usual business fishing when a ship that was about 20 times the size of my vessel came headed straight for me. I had no time to maneuver my boat out of its path, and had to jump out of my boat into the water to save my own life. It was a very scary moment for me.',
 				crops: []
 			},
 			node15 : {
 				name: 'Mitsui Yutaka',
 				text: 'The star speckled sky of Megijima is one of the most beautiful aspects of the island. On one side of the sky is the glow of lights of Takamatsu which slowly fade into the pitch black sky of an undisturbed island, sprinkled with bright flecks of light, making it appear as if hand fulls of diamonds were thrown into a moon light lake. From the observation deck on the top of the mountain I can enjoy this spectacular view as well as the view of Setouchi, the ocean, islands, and the slow ferries moving from port to port. Visitors to the island who experienced these views were in awe, describing the vistas as amazing. If I use a bicycle to go to the observation deck, is very difficult, but worth the work. The way back is much easier and enjoyable.',
-				crops: []
+				crops: ['cucumber', 'eggplant', 'corn']
 			},
 			node16 : {
 				name: 'Okada Natsue',
