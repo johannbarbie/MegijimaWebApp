@@ -81,7 +81,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       }
 
       .mainView .name{
-        font: 1.6em Helvetica, Arial, sans-serif;
+	font: 1.8em Helvetica, Arial, sans-serif;
         color: #E9C248;
         text-shadow: 1px 1px 1px #000;
         height: 8%;
@@ -90,7 +90,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       div.story{
         height: 47%;
         overflow: hidden;
-        font: 1.3em normal Helvetica, Arial, sans-serif;
+	font: 1.5em normal Helvetica, Arial, sans-serif;
         color: #ffffff;
         text-shadow: 2px 2px 2px #000;
         letter-spacing: -0.06em;
@@ -113,7 +113,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
       .mainView .tags{
         height: 12.2%;
-        font: 1.4em normal Helvetica, Arial, sans-serif;
+	font: 1.5em normal Helvetica, Arial, sans-serif;
         color: #84AF01;
         text-shadow: 1px 1px 1px #000;
       }
@@ -134,7 +134,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         position: absolute;
         top: 2em;
         left: 5%;
-        width: 6em;
+	width: 10em;
         height: 44px;
         z-index: 3;
         color: #fff;

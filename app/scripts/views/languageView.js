@@ -8,7 +8,7 @@ define(['underscoreM', 'marionette', 'vent', 'i18next'], function(_, Marionette,
         },
         events: {
             'click p.credits':'showCredits',
-            'click img':'toggleLanguage'
+	    'click p.lang':'toggleLanguage'
         },
         showCredits: function(e){
             e.preventDefault();
@@ -25,13 +25,6 @@ define(['underscoreM', 'marionette', 'vent', 'i18next'], function(_, Marionette,
                     newLang = name;
                     break;
                 }
-            }
-            if (newLang!=='en'){
-                $('img#jp').show();
-                $('img#en').hide();
-            }else{
-                $('img#jp').hide();
-                $('img#en').show();
             }
             I18next.setLng(newLang);
             if (this.app.currNode){

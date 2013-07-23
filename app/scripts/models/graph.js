@@ -132,7 +132,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
             }, {
                 'id': 'node05',
                 'adjacencies': [
-                    {'nodeTo': 'node19','data': {'weight': 0.0}},
+		    {'nodeTo': 'node04','data': {'weight': 0.900}},
                     {'nodeTo': 'node12','data': {'weight': 0.053}},
                     {'nodeTo': 'node30','data': {'weight': 0.072}},
                     {'nodeTo': 'node07','data': {'weight': 0.049}},
