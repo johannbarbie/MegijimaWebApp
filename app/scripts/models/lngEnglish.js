@@ -147,6 +147,7 @@ define([], function() {
 				text: 'Our favorite place in Megijima is the beach because of the great view of the unspoiled ocean. Despite the beauty of the island, many people decided to leave because it is difficult to find employment and there are no schools. My grandmother has hotel by the beach, and she grows many different kinds of seasonal vegetable. We do not grow for commercial purposes, only to feed our family.',
 				crops: ['corn', 'potato', 'peanut', 'mustard']
 			},
+			subtitle: 'An interactive documentary project by Sociecity.',
 			credits : {
 				line0: 'The [HUMAN:NATURE] project represents a starting point for re-imagining our roles within the vital social and ecological support systems of community and agriculture.',
 				titleCast: 'Cast',

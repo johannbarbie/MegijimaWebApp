@@ -148,7 +148,7 @@ define(['backbone',
 	    // if (curCenter.lng!==newCenter.lng ||
 	    //     curCenter.lat !== newCenter.lat ||
 	    //     app.map.getZoom() !==15){
-		app.map.setViewWithOffset(newCenter, 15);
+	    app.map.setViewWithOffset(newCenter, 15);
 	    //}
             vent.trigger('app:changeView');
         }
@@ -283,7 +283,7 @@ define(['backbone',
     app.addInitializer(function(options) {
 	window.onerror = function() {
 	    console.log('global error!!!');
-	    location.reload();
+	    //location.reload();
 	};
         app.options = options;
         Marionette.Handlebars = {
