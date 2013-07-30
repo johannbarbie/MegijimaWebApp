@@ -46,7 +46,7 @@ require(['backbone', 'app', 'controllers/pageController', 'i18next', 'models/lng
             maxZoom: 17
         };
     I18next.init({
-	lng: 'dev',
+        lng: 'dev',
         resStore : {
             en: english,
             dev: japanese

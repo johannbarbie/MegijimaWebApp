@@ -31,12 +31,12 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
         onShow: function(){
             $('div#mainText').addClass('antiEllipsis');
             //prevent text overflow or cutoff
-	    $('.ellipsis').dotdotdot({
-		watch: '.mainview',
-		lastCharacter   : {
-		    remove      : [ ' ', ',', ';', '.', '!', '?' ]
-		}
-	    });
+            $('.ellipsis').dotdotdot({
+                watch: '.mainview',
+                lastCharacter   : {
+                    remove      : [ ' ', ',', ';', '.', '!', '?' ]
+                }
+            });
             var self = this;
             var jCF = $('#crossfade');
             var oldImg = jCF.children(':first');
@@ -73,9 +73,9 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
         },
         remove: function(){
             var mapChanged = this.mapChanged;
-	    if (this.enlarged){
-		this.removePlayer();
-	    }
+            if (this.enlarged){
+                this.removePlayer();
+            }
             //vent.trigger('map:removePOIs');
             this.map.off('zoomend moveend', mapChanged);
             this.fadeOut(function(){
@@ -144,15 +144,16 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
             var jVideo = $('#mainVideo');
             this.removeLine();
             var id = this.model.get('id');
-	    jVideo.html('<video id="example_video_1" class="video-js vjs-default-skin" preload="auto" poster="images/'+id+'/poster.jpg"><source src="videos/'+id+'/clip.mp4" type="video/mp4" /><source src="videos/'+id+'/clip.webm" type="video/webm" /><source src="videos/'+id+'/clip.ogg" type="video/ogg" /></video>');
+            jVideo.html('<video id="example_video_1" class="video-js vjs-default-skin" preload="auto" poster="images/'+id+'/poster.jpg"><source src="videos/'+id+'/clip.mp4" type="video/mp4" /><source src="videos/'+id+'/clip.webm" type="video/webm" /><source src="videos/'+id+'/clip.ogg" type="video/ogg" /></video>');
             window.videojs('example_video_1', { 'height': jVideo.height(), 'width':jVideo.width() }, function(){
                 var myPlayer = this;
                 self.player = myPlayer;
                 myPlayer.play();
             });
+            vent.trigger('popup:start',this.model.get('id'));
         },
         onShrinked: function(){
-	    $('div#mainText').dotdotdot();
+	        $('div#mainText').dotdotdot();
             this.updateLine();
         },
         removePlayer: function(){
@@ -174,6 +175,7 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
             $('div#mainText').addClass('ellipsis');
             $('div#mainText').removeClass('scroller');
             $('div#mainText').addClass('antiEllipsis');
+            vent.trigger('popup:stop',this.model.get('id'));
         },
         removeLine: function (){
             $(this.line).remove();

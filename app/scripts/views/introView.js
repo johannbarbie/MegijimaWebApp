@@ -21,19 +21,19 @@ define(['underscoreM', 'marionette', 'vent'], function(_, Marionette, vent) {
             $('.introView p').addClass('hidden');
             this.shrinked = true;
         },
-	onEnlarged: function(){
-	    var self = this;
-	    $('.introView p').removeClass('hidden');
-	    this.shrinked = false;
-	    $(document).click(function(e) {
-		self.handleClick(e);
-	    });
-	},
+        onEnlarged: function(){
+            var self = this;
+            $('.introView p').removeClass('hidden');
+            this.shrinked = false;
+            $(document).click(function(e) {
+                self.handleClick(e);
+            });
+        },
         enlarge: function(){
-	    var self = this;
-	    this.$el.one(this.transEvent(), function(){
-		self.onEnlarged();
-	    });
+            var self = this;
+            this.$el.one(this.transEvent(), function(){
+                self.onEnlarged();
+            });
             this.$el.removeClass('small');
             this.shrinked = false;
         },
