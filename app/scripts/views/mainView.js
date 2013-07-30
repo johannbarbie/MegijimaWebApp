@@ -150,6 +150,7 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
                 self.player = myPlayer;
                 myPlayer.play();
             });
+            $('div.scroller').css('height','100%');
             vent.trigger('popup:start',this.model.get('id'));
         },
         onShrinked: function(){

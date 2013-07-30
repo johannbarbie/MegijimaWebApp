@@ -37,7 +37,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     {'nodeTo': 'node15','data': {'weight': 0.754}},
                     {'nodeTo': 'node21','data': {'weight': 0.615}},
                     {'nodeTo': 'node18','data': {'weight': 0.488}},
-                    {'nodeTo': 'node32','data': {'weight': 0.628}},
+                    {'nodeTo': 'node31','data': {'weight': 0.628}},
                     {'nodeTo': 'node08','data': {'weight': 0.562}},
                     {'nodeTo': 'node03','data': {'weight': 0.555}},
                     {'nodeTo': 'node22','data': {'weight': 0.41}},
@@ -97,7 +97,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     {'nodeTo': 'node30','data': {'weight': 0.456}},
                     {'nodeTo': 'node09','data': {'weight': 0.569}},
                     {'nodeTo': 'node10','data': {'weight': 0.435}},
-                    {'nodeTo': 'node32','data': {'weight': 0.565}},
+                    {'nodeTo': 'node31','data': {'weight': 0.565}},
                     {'nodeTo': 'node29','data': {'weight': 0.5}},
                     {'nodeTo': 'node04','data': {'weight': 0.626}},
                     {'nodeTo': 'node24','data': {'weight': 0.577}},
@@ -144,7 +144,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     {'nodeTo': 'node13','data': {'weight': 0.041}},
                     {'nodeTo': 'node20','data': {'weight': 0.231}},
                     {'nodeTo': 'node04','data': {'weight': 0.971}},
-                    {'nodeTo': 'node32','data': {'weight': 0.158}},
+                    {'nodeTo': 'node31','data': {'weight': 0.158}},
                     {'nodeTo': 'node22','data': {'weight': 0.123}},
                     {'nodeTo': 'node15','data': {'weight': 0.091}},
                     {'nodeTo': 'node16','data': {'weight': 0.133}},
@@ -183,7 +183,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     {'nodeTo': 'node24','data': {'weight': 0.458}},
                     {'nodeTo': 'node11','data': {'weight': 0.492}},
                     {'nodeTo': 'node15','data': {'weight': 0.662}},
-                    {'nodeTo': 'node32','data': {'weight': 0.543}},
+                    {'nodeTo': 'node31','data': {'weight': 0.543}},
                     {'nodeTo': 'node10','data': {'weight': 0.203}},
                     {'nodeTo': 'node16','data': {'weight': 0.385}},
                     {'nodeTo': 'node14','data': {'weight': 0.419}},
@@ -221,7 +221,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     {'nodeTo': 'node13','data': {'weight': 0.469}},
                     {'nodeTo': 'node18','data': {'weight': 0.458}},
                     {'nodeTo': 'node19','data': {'weight': 0.156}},
-                    {'nodeTo': 'node32','data': {'weight': 0.517}},
+                    {'nodeTo': 'node31','data': {'weight': 0.517}},
                     {'nodeTo': 'node24','data': {'weight': 0.429}},
                     {'nodeTo': 'node11','data': {'weight': 0.486}},
                     {'nodeTo': 'node14','data': {'weight': 0.524}},
@@ -260,7 +260,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     {'nodeTo': 'node29','data': {'weight': 0.584}},
                     {'nodeTo': 'node12','data': {'weight': 0.664}},
                     {'nodeTo': 'node19','data': {'weight': 0.185}},
-                    {'nodeTo': 'node32','data': {'weight': 0.555}},
+                    {'nodeTo': 'node31','data': {'weight': 0.555}},
                     {'nodeTo': 'node18','data': {'weight': 0.545}},
                     {'nodeTo': 'node21','data': {'weight': 0.588}},
                     {'nodeTo': 'node24','data': {'weight': 0.496}},
@@ -293,7 +293,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     {'nodeTo': 'node21','data': {'weight': 0.589}},
                     {'nodeTo': 'node14','data': {'weight': 0.65}},
                     {'nodeTo': 'node30','data': {'weight': 0.542}},
-                    {'nodeTo': 'node32','data': {'weight': 0.438}},
+                    {'nodeTo': 'node31','data': {'weight': 0.438}},
                     {'nodeTo': 'node22','data': {'weight': 0.312}},
                     {'nodeTo': 'node20','data': {'weight': 0.52}},
                     {'nodeTo': 'node24','data': {'weight': 0.498}},
@@ -326,7 +326,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     {'nodeTo': 'node18','data': {'weight': 0.562}},
                     {'nodeTo': 'node29','data': {'weight': 0.756}},
                     {'nodeTo': 'node24','data': {'weight': 0.52}},
-                    {'nodeTo': 'node32','data': {'weight': 0.651}},
+                    {'nodeTo': 'node31','data': {'weight': 0.651}},
                     {'nodeTo': 'node21','data': {'weight': 0.51}},
                     {'nodeTo': 'node22','data': {'weight': 0.376}},
                     {'nodeTo': 'node19','data': {'weight': 0.091}}
@@ -346,7 +346,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
             }, {
                 'id': 'node17',
                 'adjacencies': [
-                    {'nodeTo': 'node32','data': {'weight': 0.618}},
+                    {'nodeTo': 'node31','data': {'weight': 0.618}},
                     {'nodeTo': 'node29','data': {'weight': 0.588}},
                     {'nodeTo': 'node30','data': {'weight': 0.512}},
                     {'nodeTo': 'node22','data': {'weight': 0.422}},
@@ -371,7 +371,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
             }, {
                 'id': 'node19',
                 'adjacencies': [
-                    {'nodeTo': 'node32','data': {'weight': 0.0}},
+                    {'nodeTo': 'node31','data': {'weight': 0.0}},
                     {'nodeTo': 'node21','data': {'weight': 0.264}},
                     {'nodeTo': 'node20','data': {'weight': 0.128}},
                     {'nodeTo': 'node30','data': {'weight': 0.143}},
@@ -396,7 +396,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     {'nodeTo': 'node29','data': {'weight': 0.451}},
                     {'nodeTo': 'node30','data': {'weight': 0.464}},
                     {'nodeTo': 'node24','data': {'weight': 0.444}},
-                    {'nodeTo': 'node32','data': {'weight': 0.434}}
+                    {'nodeTo': 'node31','data': {'weight': 0.434}}
                 ]
             }, {
                 'id': 'node22',
@@ -411,7 +411,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 'adjacencies': [
                     {'nodeTo': 'node29','data': {'weight': 0.542}},
                     {'nodeTo': 'node30','data': {'weight': 0.442}},
-                    {'nodeTo': 'node32','data': {'weight': 0.544}},
+                    {'nodeTo': 'node31','data': {'weight': 0.544}},
                     {'nodeTo': 'node24','data': {'weight': 1.0}}
                 ]
             }, {
@@ -812,7 +812,7 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                     mainId: id,
                     preview: preview,
                     coordinates: self.points[preview].geometry.coordinates,
-                    weight: (1 - ((adjacence.data.weight+distWeight)/2))
+                    weight: (1 - ((adjacence.data.weight+adjacence.data.weight+distWeight)/3))
                 });
             });
             return best;
