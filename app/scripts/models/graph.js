@@ -6,6 +6,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
         gData: [
             {
                 'id': 'node00',
+                'data': {
+                    'video': 'http://youtu.be/2xRo69ygo5I'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node18','data': {'weight': 0.653}},
                     {'nodeTo': 'node29','data': {'weight': 0.703}},
@@ -32,6 +35,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node01',
+                'data': {
+                    'video': 'http://youtu.be/_i_RsS4S7vg'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node07','data': {'weight': 0.653}},
                     {'nodeTo': 'node15','data': {'weight': 0.754}},
@@ -58,6 +64,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node02',
+                'data': {
+                    'video': 'http://youtu.be/_i_RsS4S7vg'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node29','data': {'weight': 0.546}},
                     {'nodeTo': 'node13','data': {'weight': 0.61}},
@@ -84,6 +93,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node03',
+                'data': {
+                    'video': 'http://youtu.be/_i_RsS4S7vg'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node13','data': {'weight': 0.653}},
                     {'nodeTo': 'node20','data': {'weight': 0.581}},
@@ -107,6 +119,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node04',
+                'data': {
+                    'video': 'http://youtu.be/FV663DbJY7c'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node30','data': {'weight': 0.513}},
                     {'nodeTo': 'node18','data': {'weight': 0.61}},
@@ -131,6 +146,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node05',
+                'data': {
+                    'video': 'http://youtu.be/FV663DbJY7c'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node19','data': {'weight': 0.0}},
                     {'nodeTo': 'node12','data': {'weight': 0.053}},
@@ -153,6 +171,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node06',
+                'data': {
+                    'video': 'http://youtu.be/XKQlXnhDEeU'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node18','data': {'weight': 0.503}},
                     {'nodeTo': 'node21','data': {'weight': 0.461}},
@@ -175,6 +196,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node07',
+                'data': {
+                    'video': 'http://youtu.be/XKQlXnhDEeU'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node18','data': {'weight': 0.503}},
                     {'nodeTo': 'node21','data': {'weight': 0.461}},
@@ -196,6 +220,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node08',
+                'data': {
+                    'video': 'http://youtu.be/Vhazl0Rm60o'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node30','data': {'weight': 0.503}},
                     {'nodeTo': 'node12','data': {'weight': 0.528}},
@@ -217,6 +244,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node09',
+                'data': {
+                    'video': 'http://youtu.be/cb4Tpe5KYh8'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node13','data': {'weight': 0.469}},
                     {'nodeTo': 'node18','data': {'weight': 0.458}},
@@ -237,6 +267,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node10',
+                'data': {
+                    'video': 'http://youtu.be/1SpZ9kSh4n4'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node20','data': {'weight': 0.372}},
                     {'nodeTo': 'node13','data': {'weight': 0.513}},
@@ -255,6 +288,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node11',
+                'data': {
+                    'video': 'http://youtu.be/kjc4eHlsJTY'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node22','data': {'weight': 0.341}},
                     {'nodeTo': 'node29','data': {'weight': 0.584}},
@@ -272,6 +308,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node12',
+                'data': {
+                    'video': 'http://youtu.be/d7TVeFqwym0'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node14','data': {'weight': 0.503}},
                     {'nodeTo': 'node20','data': {'weight': 0.539}},
@@ -288,6 +327,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node13',
+                'data': {
+                    'video': 'http://youtu.be/LxhWOI0TuJE'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node29','data': {'weight': 0.455}},
                     {'nodeTo': 'node21','data': {'weight': 0.589}},
@@ -304,6 +346,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node14',
+                'data': {
+                    'video': 'http://youtu.be/M6wnc-kmIkE'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node30','data': {'weight': 0.503}},
                     {'nodeTo': 'node24','data': {'weight': 0.409}},
@@ -319,6 +364,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node15',
+                'data': {
+                    'video': 'http://youtu.be/oOeQcPmFnNY'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node30','data': {'weight': 0.58}},
                     {'nodeTo': 'node16','data': {'weight': 0.388}},
@@ -333,6 +381,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node16',
+                'data': {
+                    'video': 'http://youtu.be/9KWWSUoVtRM'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node21','data': {'weight': 0.599}},
                     {'nodeTo': 'node19','data': {'weight': 0.243}},
@@ -345,6 +396,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node17',
+                'data': {
+                    'video': 'http://youtu.be/58O4LsM7i_c'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node31','data': {'weight': 0.618}},
                     {'nodeTo': 'node29','data': {'weight': 0.588}},
@@ -358,6 +412,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node18',
+                'data': {
+                    'video': 'http://youtu.be/58O4LsM7i_c'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node32','data': {'weight': 0.618}},
                     {'nodeTo': 'node29','data': {'weight': 0.588}},
@@ -370,6 +427,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node19',
+                'data': {
+                    'video': 'http://youtu.be/_LIxD9nFGUc'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node31','data': {'weight': 0.0}},
                     {'nodeTo': 'node21','data': {'weight': 0.264}},
@@ -381,6 +441,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node20',
+                'data': {
+                    'video': 'http://youtu.be/DsaKjXHn9BM'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node30','data': {'weight': 0.552}},
                     {'nodeTo': 'node22','data': {'weight': 0.418}},
@@ -391,6 +454,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node21',
+                'data': {
+                    'video': 'http://youtu.be/NBRNQEoNkrM'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node22','data': {'weight': 0.26}},
                     {'nodeTo': 'node29','data': {'weight': 0.451}},
@@ -400,6 +466,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node22',
+                'data': {
+                    'video':'http://youtu.be/nYrtt2Hlsm8'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node32','data': {'weight': 0.401}},
                     {'nodeTo': 'node24','data': {'weight': 0.344}},
@@ -408,6 +477,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node23',
+                'data': {
+                    'video':'http://youtu.be/fi0xImKNBBA'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node29','data': {'weight': 0.542}},
                     {'nodeTo': 'node30','data': {'weight': 0.442}},
@@ -416,6 +488,9 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node24',
+                'data': {
+                    'video':'http://youtu.be/fi0xImKNBBA'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node29','data': {'weight': 0.542}},
                     {'nodeTo': 'node30','data': {'weight': 0.442}},
@@ -423,22 +498,34 @@ define(['jquery', 'underscoreM', 'backbone', 'vent','jitGraph', 'models/node', '
                 ]
             }, {
                 'id': 'node29',
+                'data': {
+                    'video': 'http://youtu.be/aLa5-1kbgss'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node32','data': {'weight': 0.624}},
                     {'nodeTo': 'node30','data': {'weight': 0.637}}
                 ]
             }, {
                 'id': 'node30',
+                'data': {
+                    'video': 'http://youtu.be/GQ5KTxLfJC4'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node32','data': {'weight': 0.495}}
                 ]
             }, {
                 'id': 'node31',
+                'data': {
+                    'video': 'http://youtu.be/_B5DJlnkrSw'
+                },
                 'adjacencies': [
                     {'nodeTo': 'node32','data': {'weight': 1.0}}
                 ]
             }, {
                 'id': 'node32',
+                'data': {
+                    'video': 'http://youtu.be/_B5DJlnkrSw'
+                },
                 'adjacencies': [
                 ]
             }

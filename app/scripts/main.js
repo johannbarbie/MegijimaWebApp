@@ -14,6 +14,7 @@ require.config({
         leaflet: '../components/leaflet/dist/leaflet',
         llMarkerClusterer: '../components/leaflet.markerclusterer/dist/leaflet.markercluster',
         videojs: '../components/video.js/video',
+        vjsYoutube: '../components/videojs-youtube/vjs.youtube',
         handlebars: '../components/handlebars/handlebars',
         i18next: '../components/i18next/release/i18next.amd-1.6.3.min',
         dotdotdot: 'libs/dotdotdot/jquery.dotdotdot-1.5.9'
@@ -31,17 +32,22 @@ require.config({
         },
         dotdotdot: {
             deps: ['jquery']
+        },
+        vjsYoutube: {
+            deps: ['videojs']
         }
     }
 });
 
-require(['backbone', 'app', 'controllers/pageController', 'i18next', 'models/lngEnglish', 'models/lngJapan'], function(Backbone, App, PageController, I18next, english, japanese) {
+require(['backbone', 'app', 'controllers/pageController', 'i18next', 'models/lngEnglish', 'models/lngJapan', 'vjsYoutube'], function(Backbone, App, PageController, I18next, english, japanese) {
     'use strict';
+
+    var width = $(document).width();
 
     var options = {
             pageController: PageController,
             megiCenter: {lat: 34.397987, lng: 134.048989},
-            mapOffset: 1400,
+            mapOffset: width - (width * 0.25),
             minZoom: 14,
             maxZoom: 17
         };

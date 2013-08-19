@@ -20,6 +20,7 @@
     "leaflet": "*",
     "leaflet.markerclusterer": "*",
     "video.js": "*",
+    "vjs.youtube": "https://github.com/eXon/videojs-youtube.git",
     "i18next": "*",
     "handlebars": "*"
   },

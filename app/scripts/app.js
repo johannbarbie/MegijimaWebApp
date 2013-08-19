@@ -152,12 +152,8 @@ define(['backbone',
             });
         }else{
             var newCenter = app.map.options.megiCenter;
-	    //var curCenter = app.map.getCenterWithOffset();
-	    // if (curCenter.lng!==newCenter.lng ||
-	    //     curCenter.lat !== newCenter.lat ||
-	    //     app.map.getZoom() !==15){
-	        app.map.setViewWithOffset(newCenter, 15);
-	    //}
+            var defZoom = ($(document).width()>1600)?15:14;
+	        app.map.setViewWithOffset(newCenter, defZoom);
             vent.trigger('app:changeView');
         }
     });
@@ -165,7 +161,9 @@ define(['backbone',
     //display the map
     vent.on('map:display', function(callback,center,zoom){
         var newCenter = center||app.map.options.megiCenter;
-        var newZoom = zoom||15;
+        var defZoom = ($(document).width()>1600)?15:14;
+        console.log(defZoom);
+        var newZoom = zoom||defZoom;
         var setLoc = function(firstZoom){
             var curCenter;
             if (!firstZoom){
@@ -188,7 +186,7 @@ define(['backbone',
         };
         if (!app.mapInitialized){
             window.L.Icon.Default.imagePath = 'images/leaflet';
-            window.L.tileLayer('images/tiles/{z}/{x}/{y}.png', {
+            window.L.tileLayer('http://{s}.tile.cloudmade.com/a57b9e7194ea41bba4ed92f6d3022766/99822/256/{z}/{x}/{y}.png', {
                 attribution: 'Map data © OpenStreetMap contributors',
                 maxZoom: 17,
                 minZoom: 14
@@ -208,29 +206,12 @@ define(['backbone',
     vent.on('map:showPOIs', function(callback){
         if (!app.markers){
             var geoJson = new Graph().getGeoJson();
-            console.dir(geoJson);
             var onEachFeature = function(feature, layer) {
                 layer.on('click', function(e){
                     var nodeId = e.target.feature.properties.nodeId;
                     window.Backbone.history.navigate('node/'+nodeId,true);
                 });
             };
-            // var selectedMarkerOptions = {
-            //     radius: 18,
-            //     fillColor: '#88b440',
-            //     color: '#000',
-            //     weight: 1,
-            //     opacity: 1,
-            //     fillOpacity: 0.8
-            // };
-            // var relatedMarkerOptions = {
-            //     radius: 16,
-            //     fillColor: '#88b440',
-            //     color: '#000',
-            //     weight: 1,
-            //     opacity: 1,
-            //     fillOpacity: 0.8
-            // };
             var otherMarkerOptions = {
                 radius: 14,
                 fillColor: '#88b440',

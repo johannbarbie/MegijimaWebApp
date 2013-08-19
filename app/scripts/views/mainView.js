@@ -144,11 +144,19 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
             var jVideo = $('#mainVideo');
             this.removeLine();
             var id = this.model.get('id');
-            jVideo.html('<video id="example_video_1" class="video-js vjs-default-skin" preload="auto" poster="images/'+id+'/poster.jpg"><source src="videos/'+id+'/clip.mp4" type="video/mp4" /><source src="videos/'+id+'/clip.webm" type="video/webm" /><source src="videos/'+id+'/clip.ogg" type="video/ogg" /></video>');
-            window.videojs('example_video_1', { 'height': jVideo.height(), 'width':jVideo.width() }, function(){
-                var myPlayer = this;
-                self.player = myPlayer;
-                myPlayer.play();
+            var time = new Date().getTime();
+            jVideo.html('<video id="example_video_'+time+'" class="video-js vjs-default-skin" preload="auto" poster="images/'+id+'/poster.jpg"> </video>');
+            window.onYouTubeIframeAPIReady = function(){
+                var yt;
+                while ((yt = window.videojs.Youtube.loadingQueue.shift())){
+                    yt.loadYoutube();
+                    self.player = yt;
+                }
+                window.videojs.Youtube.loadingQueue = [];
+                window.videojs.Youtube.apiReady = true;
+            };
+            window.videojs('example_video_'+time, { 'autoplay': true, 'height': jVideo.height(), 'width':jVideo.width() , 'techOrder': ['youtube'], 'src': this.model.get('data').video }, function(){
+                console.log('ready');
             });
             $('div.scroller').css('height','100%');
             vent.trigger('popup:start',this.model.get('id'));
@@ -158,9 +166,12 @@ define(['underscoreM', 'marionette', 'i18next', 'vent' , 'videojs','dotdotdot'],
             this.updateLine();
         },
         removePlayer: function(){
-            // destroy the player                 
-            this.player.dispose();
-            this.player = undefined;
+            // destroy the player
+            if (this.player){
+                this.player.dispose();
+                this.player = undefined;
+            }
+            $('#mainVideo').empty();
         },
         shrink: function (){
             var self = this;

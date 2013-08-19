@@ -45,6 +45,176 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
           transition: opacity 1s ease-in-out;
       }
 
+@media all and (max-width: 1600px){
+
+      div.mainView {
+        opacity: 0;
+        position: absolute;
+        cursor: pointer;
+        overflow:hidden;
+        right: 0%;
+        width: 35em;
+        height: 20em;
+        z-index: 3;
+        -webkit-transition:width 300ms ease-in-out, height 300ms ease-in-out, margin 300ms ease-in-out, opacity 1000ms ease-in-out;
+        -moz-transition:width 300ms ease-in-out, height 300ms ease-in-out, margin 300ms ease-in-out, opacity 1000ms ease-in-out;
+        -o-transition:width 300ms ease-in-out, height 300ms ease-in-out, margin 300ms ease-in-out, opacity 1000ms ease-in-out;
+        transition:width 300ms ease-in-out, height 300ms ease-in-out, margin 300ms ease-in-out, opacity 1000ms ease-in-out;
+      }
+
+      div.mainView.enlarged{
+        width: 63em;
+        height: 42em;
+        margin-top: -2em;
+        margin-right: -8em;
+      }
+
+
+      div.scroller{
+        width: 100%;
+        right: -30px;
+        padding-right: 15px;
+        height: auto;
+        padding-bottom: 15px;
+        overflow-y: scroll; 
+        overflow-x: hidden;
+      }
+
+
+
+      div.lngView {
+        position: absolute;
+        top: 2em;
+        left: 5%;
+         width: 10em;
+        height: 44px;
+        z-index: 3;
+        color: #fff;
+        cursor: pointer;
+        font-weight:bold;
+      }
+
+      div.introView {
+        opacity: 0;
+        position: absolute;
+        top: 10em;
+        color: #fff;
+        left: 25%;
+        width: 50%;
+        height: 108px;
+        z-index: 3;
+        -webkit-transition:all 1000ms ease-in-out;
+        -moz-transition:all 1000ms ease-in-out;
+        -o-transition:all 1000ms ease-in-out;
+        transition:all 1000ms ease-in-out;
+      }
+
+      div.introView.small {
+        transform:translate(-30em,60em);
+        -moz-transform:translate(-30em,60em);
+        -webkit-transform:translate(-30em,60em);
+        -o-transform:translate(-30em,60em);
+        width: 15%;
+      }
+
+
+      .masonry {
+        max-width: 56em;
+        position: relative;
+        top: 6em;
+        left: 3em;
+      }
+
+      img.preview {
+        position: absolute;
+        top: 0;
+        opacity: 0.6;
+        margin-top: -13%;
+        -webkit-filter: grayscale(50%);
+        -moz-filter: grayscale(50%);
+        -o-filter: grayscale(50%);
+        -ms-filter: grayscale(50%);
+        filter: grayscale(50%);
+      }
+
+      .item {
+        cursor: pointer;
+        width:  3em;
+        height: 3em;
+        float: left;
+        margin-bottom: 0.7em;
+        overflow: hidden;
+        opacity: 0;
+        z-index: 2;
+        -webkit-transition:opacity 1000ms ease-in-out;
+        -moz-transition:opacity 1000ms ease-in-out;
+        -o-transition:opacity 1000ms ease-in-out;
+        transition:opacity 1000ms ease-in-out;
+      }
+
+      .item.w2 { 
+        width:  6em; 
+      }
+      .item.w3 { 
+        width:  9em; 
+      }
+      .item.w4 { 
+        width:  12em; 
+      }
+      .item.h2 { 
+        height: 6em; 
+      }
+      .item.h3 { 
+        height: 9em; 
+      }
+      .item.h4 { 
+        height: 12em; 
+      }
+
+      /* position stamp elements with CSS */
+      .stamp {
+        position: absolute;
+      }
+      .stamp1 {
+        left: 0%;
+        top: 0px;
+        width: 6em;
+        height: 6em;
+      }
+      .stamp2 {
+        left: 0%;
+        top: 0px;
+        width: 14em;
+        height: 1.5em;
+      }
+      .stamp4 {
+        left: 0%;
+        top: 0px;
+        width: 1.5em;
+        height: 16em;
+      }
+      .stamp5 {
+        right: 0%;
+        top: 20em;
+        width: 8em;
+        height: 8em;
+      }
+      .stamp3 {
+        right: 0%;
+        top: 0px;
+        width: 35em;
+        height: 20em;
+        margin-bottom: 0.5em;
+      }
+
+      p.credits{
+        top: 40px;
+      }
+
+  
+}
+
+@media all and (min-width: 16001px) {
 
       div.mainView {
         opacity: 0;
@@ -68,30 +238,6 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         margin-right: 8em;
       }
 
-      img.portrait{
-        margin-top: -10%;
-      }
-
-      .mainView .description{
-        height: 100%;
-      }
-
-      .mainView .name{
-	font: 1.8em Helvetica, Arial, sans-serif;
-        color: #E9C248;
-        text-shadow: 1px 1px 1px #000;
-        height: 8%;
-      }
-
-      div.story{
-        height: 47%;
-        overflow: hidden;
-	font: 1.5em normal Helvetica, Arial, sans-serif;
-        color: #ffffff;
-        text-shadow: 2px 2px 2px #000;
-        letter-spacing: -0.06em;
-        padding: 0.2em;
-      }
 
       div.scroller{
         width: 100%;
@@ -103,36 +249,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         overflow-x: hidden;
       }
 
-      .antiEllipsis{
-        height: 100%;
-      }
 
-      .mainView .tags{
-        height: 12.2%;
-	      font: 1.5em normal Helvetica, Arial, sans-serif;
-        color: #84AF01;
-        text-shadow: 1px 1px 1px #000;
-      }
-
-      .mainView .video{
-        height: 32.8%;
-        background-size: 100%;
-        overflow:hidden;
-      }
-
-      p.tag{
-	opacity: 0.8;
-	font: 1.5em normal Helvetica, Arial, sans-serif;
-	color: #84AF01;
-	text-shadow: 1px 1px 1px #000;
-	z-index: 3;
-      }
-
-      p.prevText{
-	opacity: 0.2;
-	z-index: 3;
-	color: white;
-      }
 
       div.lngView {
         position: absolute;
@@ -169,36 +286,6 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         width: 15%;
       }
 
-      marquee {
-        width: 100%;
-        height: 100%;
-      }
-
-      div.creditsView {
-        position: absolute;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	top: 0;
-        z-index: 1050;
-      }
-
-      #map { 
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        padding:0px;
-        margin:0px;
-        z-index: 1;
-      }
-
-      * {
-        -webkit-box-sizing: border-box;
-           -moz-box-sizing: border-box;
-                box-sizing: border-box;
-      }
 
       .masonry {
         max-width: 100em;
@@ -208,15 +295,15 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       }
 
       img.preview {
-	position: absolute;
-	top: 0;
-	opacity: 0.6;
-	margin-top: -13%;
-	-webkit-filter: grayscale(50%);
-	-moz-filter: grayscale(50%);
-	-o-filter: grayscale(50%);
-	-ms-filter: grayscale(50%);
-	filter: grayscale(50%);
+      	position: absolute;
+      	top: 0;
+      	opacity: 0.6;
+      	margin-top: -13%;
+      	-webkit-filter: grayscale(50%);
+      	-moz-filter: grayscale(50%);
+      	-o-filter: grayscale(50%);
+      	-ms-filter: grayscale(50%);
+      	filter: grayscale(50%);
       }
 
       .item {
@@ -288,6 +375,101 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
         height: 28em;
         margin-bottom: 0.5em;
       }
+
+      p.credits{
+        top: 40px;
+      }
+
+}
+
+      img.portrait{
+        margin-top: -10%;
+      }
+
+      .mainView .description{
+        height: 100%;
+      }
+
+      .mainView .name{
+        font: 1.8em Helvetica, Arial, sans-serif;
+        color: #E9C248;
+        text-shadow: 1px 1px 1px #000;
+        height: 8%;
+      }
+
+      div.story{
+        height: 47%;
+        overflow: hidden;
+        font: 1.5em normal Helvetica, Arial, sans-serif;
+        color: #ffffff;
+        text-shadow: 2px 2px 2px #000;
+        letter-spacing: -0.06em;
+        padding: 0.2em;
+      }
+
+      .antiEllipsis{
+        height: 100%;
+      }
+
+      .mainView .tags{
+        height: 12.2%;
+        font: 1.5em normal Helvetica, Arial, sans-serif;
+        color: #84AF01;
+        text-shadow: 1px 1px 1px #000;
+      }
+
+      .mainView .video{
+        height: 32.8%;
+        background-size: 100%;
+        overflow:hidden;
+      }
+
+      p.tag{
+        opacity: 0.8;
+        font: 1.5em normal Helvetica, Arial, sans-serif;
+        color: #84AF01;
+        text-shadow: 1px 1px 1px #000;
+        z-index: 3;
+      }
+
+      p.prevText{
+        opacity: 0.2;
+        z-index: 3;
+        color: white;
+      }
+
+      marquee {
+        width: 100%;
+        height: 100%;
+      }
+
+      div.creditsView {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 1050;
+      }
+
+      #map { 
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        padding:0px;
+        margin:0px;
+        z-index: 1;
+      }
+
+      * {
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+
+
       .leaflet-container {
         background: none;
       }
@@ -306,9 +488,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
       }
 
 
-      p.credits{
-        top: 40px;
-      }
+
 
       .lala{
           animation: fadein 2s;
